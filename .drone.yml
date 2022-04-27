@@ -20,6 +20,7 @@ steps:
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
     commands:
+      - rm -rf /root/.m2/repository/org/ujar/
       - mvn clean package -DskipTests=true -Dcheckstyle.skip=true --file parent-pom-base/pom.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-base/settings.xml
     when:
       branch:
@@ -79,6 +80,7 @@ steps:
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
     commands:
+      - rm -rf /root/.m2/repository/org/ujar/
       - mvn clean package -DskipTests=true -Dcheckstyle.skip=true --file parent-pom-rest/pom.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-rest/settings.xml
     when:
       branch:
@@ -138,6 +140,7 @@ steps:
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
     commands:
+      - rm -rf /root/.m2/repository/org/ujar/
       - mvn clean package -DskipTests=true -Dcheckstyle.skip=true --file parent-pom-async-kafka/pom.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-async-kafka/settings.xml
     when:
       branch:
