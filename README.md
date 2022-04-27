@@ -1,7 +1,7 @@
 Generic Maven 3 parent POM with lots of default configuration. It is pre-configured to handle the "org.ujar.*" software
 stack in a suitable way.
 
-The latest released version requires JDK 11 at build time.
+The latest released version requires JDK 17 at build time.
 
 [![Build Status](https://drone.ujar.org/api/badges/ujar-org/bom/status.svg?ref=refs/heads/main)](https://drone.ujar.org/ujar-org/bom)
 

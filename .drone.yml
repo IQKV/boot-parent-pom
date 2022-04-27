@@ -6,7 +6,7 @@ type : docker
 steps:
 
   - name: build parent-pom-base
-    image: maven:3-jdk-11
+    image: maven:3-openjdk-17-slim
     environment :
       DEPLOYER_USERNAME :
         from_secret : DEPLOYER_USERNAME
@@ -25,7 +25,7 @@ steps:
           - pull_request
 
   - name: publish-snapshot-package parent-pom-base
-    image: maven:3-jdk-11
+    image: maven:3-openjdk-17-slim
     environment :
       DEPLOYER_USERNAME :
         from_secret : DEPLOYER_USERNAME
@@ -44,7 +44,7 @@ steps:
           - pull_request
 
   - name: publish-release-package parent-pom-base
-    image: maven:3-jdk-11
+    image: maven:3-openjdk-17-slim
     environment :
       DEPLOYER_USERNAME :
         from_secret : DEPLOYER_USERNAME
@@ -56,7 +56,7 @@ steps:
       event: tag
 
   - name: build parent-pom-rest
-    image: maven:3-jdk-11
+    image: maven:3-openjdk-17-slim
     environment :
       DEPLOYER_USERNAME :
         from_secret : DEPLOYER_USERNAME
@@ -75,7 +75,7 @@ steps:
           - pull_request
 
   - name: publish-snapshot-package parent-pom-rest
-    image: maven:3-jdk-11
+    image: maven:3-openjdk-17-slim
     environment :
       DEPLOYER_USERNAME :
         from_secret : DEPLOYER_USERNAME
@@ -94,7 +94,7 @@ steps:
           - pull_request
 
   - name: publish-release-package parent-pom-rest
-    image: maven:3-jdk-11
+    image: maven:3-openjdk-17-slim
     environment :
       DEPLOYER_USERNAME :
         from_secret : DEPLOYER_USERNAME
@@ -106,7 +106,7 @@ steps:
       event: tag
 
   - name: build parent-pom-async-kafka
-    image: maven:3-jdk-11
+    image: maven:3-openjdk-17-slim
     environment :
       DEPLOYER_USERNAME :
         from_secret : DEPLOYER_USERNAME
@@ -125,7 +125,7 @@ steps:
           - pull_request
 
   - name: publish-snapshot-package parent-pom-async-kafka
-    image: maven:3-jdk-11
+    image: maven:3-openjdk-17-slim
     environment :
       DEPLOYER_USERNAME :
         from_secret : DEPLOYER_USERNAME
@@ -144,7 +144,7 @@ steps:
           - pull_request
 
   - name: publish-release-package parent-pom-async-kafka
-    image: maven:3-jdk-11
+    image: maven:3-openjdk-17-slim
     environment :
       DEPLOYER_USERNAME :
         from_secret : DEPLOYER_USERNAME
