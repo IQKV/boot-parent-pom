@@ -44,13 +44,13 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <sonar.exclusions>**/*Application.java</sonar.exclusions>
-        <spring-boot-starter-parent.version>2.6.6</spring-boot-starter-parent.version>
+        <spring-boot-starter-parent.version>2.6.7</spring-boot-starter-parent.version>
 
         <liquibase.version>4.9.1</liquibase.version>
         <vladmihalcea.hibernate-types.version>2.15.2</vladmihalcea.hibernate-types.version>
         <testcontainers.version>1.17.0</testcontainers.version>
         <archunit.version>0.22.0</archunit.version>
-        <spring-boot.version>2.5.12</spring-boot.version>
+        <spring-boot.version>2.6.7</spring-boot.version>
         <javax-servlet-api.version>4.0.1</javax-servlet-api.version>
         <postgresql.version>42.3.3</postgresql.version>
         <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
