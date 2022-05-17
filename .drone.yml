@@ -3,6 +3,11 @@ name: build
 
 type : docker
 
+trigger:
+  branch:
+    - main
+    - feature/*
+
 volumes:
   - name: m2cache
     host:
