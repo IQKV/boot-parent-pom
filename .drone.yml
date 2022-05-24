@@ -5,6 +5,7 @@ type : docker
 trigger:
   branch:
     - main
+    - develop
     - feature/*
   event:
     - push
@@ -32,6 +33,7 @@ steps:
       branch:
         include:
           - feature/*
+          - develop
           - main
 
   - name: publish-snapshot-package
@@ -50,6 +52,7 @@ steps:
       branch:
         include:
           - feature/*
+          - develop
           - main
 
   - name: publish-release-package
