@@ -1,6 +1,5 @@
 kind: pipeline
-name: build
-
+name: CI
 type : docker
 
 trigger:
@@ -16,7 +15,7 @@ volumes:
       path: /var/cache/m2cache
 steps:
 
-  - name: build parent-pom-base
+  - name: build
     image: maven:3-openjdk-17-slim
     volumes:
       - name: m2cache
@@ -28,14 +27,14 @@ steps:
         from_secret : DEPLOYER_PASSWORD
     commands:
       - rm -rf /root/.m2/repository/org/ujar/
-      - mvn clean package -DskipTests=true -Dcheckstyle.skip=true --file parent-pom-base/pom.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-base/settings.xml
+      - mvn clean package -DskipTests=true -Dcheckstyle.skip=true --file pom.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s settings.xml
     when:
       branch:
         include:
           - feature/*
           - main
 
-  - name: publish-snapshot-package parent-pom-base
+  - name: publish-snapshot-package
     image: maven:3-openjdk-17-slim
     volumes:
       - name: m2cache
@@ -46,14 +45,14 @@ steps:
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
     commands:
-      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-base/settings.xml  --file parent-pom-base/pom.xml
+      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s settings.xml  --file pom.xml
     when:
       branch:
         include:
           - feature/*
           - main
 
-  - name: publish-release-package parent-pom-base
+  - name: publish-release-package
     image: maven:3-openjdk-17-slim
     volumes:
       - name: m2cache
@@ -64,110 +63,6 @@ steps:
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
     commands:
-      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-base/settings.xml  --file parent-pom-base/pom.xml
-    when:
-      event: tag
-
-  - name: build parent-pom-rest
-    image: maven:3-openjdk-17-slim
-    volumes:
-      - name: m2cache
-        path: /root/.m2
-    environment :
-      DEPLOYER_USERNAME :
-        from_secret : DEPLOYER_USERNAME
-      DEPLOYER_PASSWORD :
-        from_secret : DEPLOYER_PASSWORD
-    commands:
-      - rm -rf /root/.m2/repository/org/ujar/
-      - mvn clean package -DskipTests=true -Dcheckstyle.skip=true --file parent-pom-rest/pom.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-rest/settings.xml
-    when:
-      branch:
-        include:
-          - feature/*
-          - main
-
-  - name: publish-snapshot-package parent-pom-rest
-    image: maven:3-openjdk-17-slim
-    volumes:
-      - name: m2cache
-        path: /root/.m2
-    environment :
-      DEPLOYER_USERNAME :
-        from_secret : DEPLOYER_USERNAME
-      DEPLOYER_PASSWORD :
-        from_secret : DEPLOYER_PASSWORD
-    commands:
-      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-rest/settings.xml  --file parent-pom-rest/pom.xml
-    when:
-      branch:
-        include:
-          - feature/*
-          - main
-
-  - name: publish-release-package parent-pom-rest
-    image: maven:3-openjdk-17-slim
-    volumes:
-      - name: m2cache
-        path: /root/.m2
-    environment :
-      DEPLOYER_USERNAME :
-        from_secret : DEPLOYER_USERNAME
-      DEPLOYER_PASSWORD :
-        from_secret : DEPLOYER_PASSWORD
-    commands:
-      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-rest/settings.xml  --file parent-pom-rest/pom.xml
-    when:
-      event: tag
-
-  - name: build parent-pom-async-kafka
-    image: maven:3-openjdk-17-slim
-    volumes:
-      - name: m2cache
-        path: /root/.m2
-    environment :
-      DEPLOYER_USERNAME :
-        from_secret : DEPLOYER_USERNAME
-      DEPLOYER_PASSWORD :
-        from_secret : DEPLOYER_PASSWORD
-    commands:
-      - rm -rf /root/.m2/repository/org/ujar/
-      - mvn clean package -DskipTests=true -Dcheckstyle.skip=true --file parent-pom-async-kafka/pom.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s parent-pom-async-kafka/settings.xml
-    when:
-      branch:
-        include:
-          - feature/*
-          - main
-
-  - name: publish-snapshot-package parent-pom-async-kafka
-    image: maven:3-openjdk-17-slim
-    volumes:
-      - name: m2cache
-        path: /root/.m2
-    environment :
-      DEPLOYER_USERNAME :
-        from_secret : DEPLOYER_USERNAME
-      DEPLOYER_PASSWORD :
-        from_secret : DEPLOYER_PASSWORD
-    commands:
-      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD -s parent-pom-async-kafka/settings.xml  --file parent-pom-async-kafka/pom.xml
-    when:
-      branch:
-        include:
-          - feature/*
-          - main
-
-  - name: publish-release-package parent-pom-async-kafka
-    image: maven:3-openjdk-17-slim
-    volumes:
-      - name: m2cache
-        path: /root/.m2
-    environment :
-      DEPLOYER_USERNAME :
-        from_secret : DEPLOYER_USERNAME
-      DEPLOYER_PASSWORD :
-        from_secret : DEPLOYER_PASSWORD
-    commands:
-      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD -s parent-pom-async-kafka/settings.xml  --file parent-pom-async-kafka/pom.xml
+      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s settings.xml  --file pom.xml
     when:
       event: tag

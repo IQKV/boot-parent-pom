@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.ujar.bom</groupId>
-    <artifactId>parent-pom-base</artifactId>
-    <version>0.0.7-SNAPSHOT</version>
+    <groupId>org.ujar.parent</groupId>
+    <artifactId>ujar-parent-pom</artifactId>
+    <version>0.7.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Spring-based parent POM</name>
@@ -33,7 +33,7 @@
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/ujar-org/bom.git</connection>
+        <connection>scm:git:https://github.com/ujar-org/ujar-parent-pom.git</connection>
         <tag>HEAD</tag>
     </scm>
 
@@ -44,17 +44,24 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <sonar.exclusions>**/*Application.java</sonar.exclusions>
-        <spring-boot-starter-parent.version>2.6.7</spring-boot-starter-parent.version>
+        <spring-boot.version>2.7.0</spring-boot.version>
 
-        <liquibase.version>4.9.1</liquibase.version>
-        <vladmihalcea.hibernate-types.version>2.15.2</vladmihalcea.hibernate-types.version>
-        <testcontainers.version>1.17.0</testcontainers.version>
+        <liquibase.version>4.10.0</liquibase.version>
+        <vladmihalcea.hibernate-types.version>2.16.2</vladmihalcea.hibernate-types.version>
+        <testcontainers.version>1.17.2</testcontainers.version>
         <archunit.version>0.22.0</archunit.version>
-        <spring-boot.version>2.6.7</spring-boot.version>
+        <spring-boot.version>2.7.0</spring-boot.version>
         <javax-servlet-api.version>4.0.1</javax-servlet-api.version>
-        <postgresql.version>42.3.3</postgresql.version>
+        <spring-cloud-dependencies.version>2021.0.2</spring-cloud-dependencies.version>
+        <springdoc.version>1.6.8</springdoc.version>
+        <logbook-spring-boot-starter.version>2.14.0</logbook-spring-boot-starter.version>
+        <postgresql.version>42.3.5</postgresql.version>
+        <spring-kafka.version>2.8.6</spring-kafka.version>
+        <kafka.avro.serde.version>7.1.1</kafka.avro.serde.version>
+        <playtika.testcontainers.version>2.2.0</playtika.testcontainers.version>
+        <awaitility.version>4.2.0</awaitility.version>
         <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
-        <google.findbugs.version>3.0.1</google.findbugs.version>
+        <findbugs.version>3.0.1</findbugs.version>
         <google.guava.version>31.1-jre</google.guava.version>
         <spotbugs-annotations.version>4.6.0</spotbugs-annotations.version>
         <gaul.modernizer-maven-plugin.version>2.4.0</gaul.modernizer-maven-plugin.version>
@@ -62,13 +69,13 @@
         <apache.maven-resources-plugin.version>3.2.0</apache.maven-resources-plugin.version>
         <apache.maven-checkstyle-plugin.version>3.1.2</apache.maven-checkstyle-plugin.version>
         <puppycrawl.checkstyle.version>10.1</puppycrawl.checkstyle.version>
-        <ujar.code-quality-checkstyle.version>0.0.7-SNAPSHOT</ujar.code-quality-checkstyle.version>
+        <ujar.code-quality-checkstyle.version>0.7.0-SNAPSHOT</ujar.code-quality-checkstyle.version>
     </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.7</version>
+        <version>2.7.0</version>
         <relativePath/>
     </parent>
 
@@ -96,6 +103,17 @@
                 <version>${spring-boot.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-rest</artifactId>
+                <version>${spring-boot.version}</version>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-ui</artifactId>
+                <version>${springdoc.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.postgresql</groupId>
                 <artifactId>postgresql</artifactId>
                 <version>${postgresql.version}</version>
@@ -120,6 +138,51 @@
                 <optional>true</optional>
             </dependency>
             <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>${spring-kafka.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.confluent</groupId>
+                <artifactId>kafka-streams-avro-serde</artifactId>
+                <version>${kafka.avro.serde.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.playtika.testcontainers</groupId>
+                <artifactId>embedded-kafka</artifactId>
+                <version>${playtika.testcontainers.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>kafka</artifactId>
+                <version>${testcontainers.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka-test</artifactId>
+                <version>${spring-kafka.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-amqp</artifactId>
+                <version>${spring-boot.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-tomcat</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>rabbitmq</artifactId>
+                <version>${testcontainers.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${google.guava.version}</version>
@@ -137,6 +200,19 @@
                 <scope>provided</scope>
                 <version>${javax-servlet-api.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.zalando</groupId>
+                <artifactId>logbook-spring-boot-starter</artifactId>
+                <version>${logbook-spring-boot-starter.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.testcontainers</groupId>
                 <artifactId>junit-jupiter</artifactId>
@@ -158,7 +234,7 @@
             <dependency>
                 <groupId>com.google.code.findbugs</groupId>
                 <artifactId>annotations</artifactId>
-                <version>${google.findbugs.version}</version>
+                <version>${findbugs.version}</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
@@ -166,6 +242,12 @@
                 <artifactId>spotbugs-annotations</artifactId>
                 <version>${spotbugs-annotations.version}</version>
                 <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.awaitility</groupId>
+                <artifactId>awaitility</artifactId>
+                <version>${awaitility.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -236,7 +318,7 @@
                         </dependency>
                         <dependency>
                             <groupId>org.ujar.codequality</groupId>
-                            <artifactId>code-quality-checkstyle</artifactId>
+                            <artifactId>ujar-code-quality-checkstyle</artifactId>
                             <version>${ujar.code-quality-checkstyle.version}</version>
                         </dependency>
                     </dependencies>
