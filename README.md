@@ -16,3 +16,10 @@ To use it as your parent POM using the following snippet:
     <version>0.7.0-SNAPSHOT</version>
   </parent>
 ```
+## Code conventions
+
+The code follows [Google Code Conventions](https://google.github.io/styleguide/javaguide.html) without exceptions. Code quality is measured by:
+- [Sonarqube](https://sonarqube.ujar.org/)
+- [PMD](https://pmd.github.io/)
+- [CheckStyle](https://checkstyle.sourceforge.io/)
+- [SpotBugs](https://spotbugs.github.io/)
