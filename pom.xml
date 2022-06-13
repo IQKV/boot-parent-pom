@@ -56,6 +56,7 @@
         <springdoc.version>1.6.8</springdoc.version>
         <logbook-spring-boot-starter.version>2.14.0</logbook-spring-boot-starter.version>
         <postgresql.version>42.3.5</postgresql.version>
+        <mysql-connector.version>8.0.29</mysql-connector.version>
         <spring-kafka.version>2.8.6</spring-kafka.version>
         <kafka.avro.serde.version>7.1.1</kafka.avro.serde.version>
         <playtika.testcontainers.version>2.2.0</playtika.testcontainers.version>
@@ -118,6 +119,14 @@
                 <artifactId>postgresql</artifactId>
                 <version>${postgresql.version}</version>
                 <optional>true</optional>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>>${mysql-connector.version}</version>
+                <optional>true</optional>
+                <scope>runtime</scope>
             </dependency>
             <dependency>
                 <groupId>org.liquibase</groupId>
