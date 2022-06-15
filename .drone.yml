@@ -27,7 +27,6 @@ steps:
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
     commands:
-      - rm -rf /root/.m2/repository/org/ujar/
       - mvn clean package -DskipTests=true -Dcheckstyle.skip=true --file pom.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s settings.xml
     when:
       branch:
