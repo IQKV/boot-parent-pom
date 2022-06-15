@@ -8,7 +8,7 @@
     <version>0.8.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>Spring-based parent POM</name>
+    <name>ujar-parent-pom</name>
     <description>Default configurations for complete dependency tree to quickly build Spring Boot project.</description>
     <licenses>
         <license>
