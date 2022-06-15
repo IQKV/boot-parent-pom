@@ -13,7 +13,7 @@ trigger:
 volumes:
   - name: m2cache
     host:
-      path: /var/cache/m2cache
+      path: /volume1/m2cache
 steps:
 
   - name: build
