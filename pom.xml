@@ -131,7 +131,7 @@
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>>${mysql-connector.version}</version>
+                <version>${mysql-connector.version}</version>
                 <optional>true</optional>
                 <scope>runtime</scope>
             </dependency>
