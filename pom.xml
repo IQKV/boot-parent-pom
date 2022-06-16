@@ -70,6 +70,7 @@
         <apache.maven-resources-plugin.version>3.2.0</apache.maven-resources-plugin.version>
         <apache.maven-checkstyle-plugin.version>3.1.2</apache.maven-checkstyle-plugin.version>
         <puppycrawl.checkstyle.version>10.1</puppycrawl.checkstyle.version>
+        <ehcache.version>3.10.0</ehcache.version>
         <jjwt.version>0.9.1</jjwt.version>
         <keycloak.version>18.0.0</keycloak.version>
         <sleuth.version>3.1.3</sleuth.version>
@@ -153,6 +154,12 @@
                 <version>${vladmihalcea.hibernate-types.version}</version>
                 <optional>true</optional>
             </dependency>
+            <dependency>
+                <groupId>org.ehcache</groupId>
+                <artifactId>ehcache</artifactId>
+                <version>${ehcache.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework.kafka</groupId>
                 <artifactId>spring-kafka</artifactId>
