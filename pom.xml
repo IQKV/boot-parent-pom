@@ -61,7 +61,7 @@
         <kafka.avro.serde.version>7.1.1</kafka.avro.serde.version>
         <playtika.testcontainers.version>2.2.0</playtika.testcontainers.version>
         <awaitility.version>4.2.0</awaitility.version>
-        <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
+        <mapstruct.version>1.5.1.Final</mapstruct.version>
         <findbugs.version>3.0.1</findbugs.version>
         <google.guava.version>31.1-jre</google.guava.version>
         <spotbugs-annotations.version>4.6.0</spotbugs-annotations.version>
@@ -240,14 +240,13 @@
             <dependency>
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct</artifactId>
-                <version>${org.mapstruct.version}</version>
+                <version>${mapstruct.version}</version>
                 <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct-processor</artifactId>
                 <version>${mapstruct.version}</version>
-                <scope>provided</scope>
             </dependency>
 
               <dependency>
