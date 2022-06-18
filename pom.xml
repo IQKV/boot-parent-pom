@@ -72,9 +72,11 @@
         <puppycrawl.checkstyle.version>10.1</puppycrawl.checkstyle.version>
         <ehcache.version>3.10.0</ehcache.version>
         <jjwt.version>0.9.1</jjwt.version>
+        <jjwt-jackson.version>0.11.5</jjwt-jackson.version>
+        <micrometer.version>1.9.1</micrometer.version>
         <keycloak.version>18.0.0</keycloak.version>
         <sleuth.version>3.1.3</sleuth.version>
-        <evreka.version>3.1.3</evreka.version>
+        <eureka.version>3.1.3</eureka.version>
         <hystrix.version>2.2.10.RELEASE</hystrix.version>
         <zuul.version>1.4.7.RELEASE</zuul.version>
         <ribbon.version>2.2.10.RELEASE</ribbon.version>
@@ -256,16 +258,19 @@
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt-jackson</artifactId>
+                <version>${jjwt-jackson.version}</version>
                 <scope>runtime</scope>
             </dependency>
 
             <dependency>
                 <groupId>io.micrometer</groupId>
                 <artifactId>micrometer-registry-prometheus</artifactId>
+                <version>${micrometer.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.dropwizard.metrics</groupId>
                 <artifactId>metrics-core</artifactId>
+                <version>${dropwizard-metrics.version}</version>
             </dependency>
 
             <dependency>
@@ -282,13 +287,13 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-                <version>${evreka.version}</version>
+                <version>${eureka.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-                <version>${evreka.version}</version>
+                <version>${eureka.version}</version>
             </dependency>
 
             <dependency>
