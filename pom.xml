@@ -71,7 +71,7 @@
         <apache.maven-checkstyle-plugin.version>3.1.2</apache.maven-checkstyle-plugin.version>
         <puppycrawl.checkstyle.version>10.1</puppycrawl.checkstyle.version>
         <ehcache.version>3.10.0</ehcache.version>
-        <jjwt.version>0.9.1</jjwt.version>
+        <jjwt.version>0.11.5</jjwt.version>
         <jjwt-jackson.version>0.11.5</jjwt-jackson.version>
         <micrometer.version>1.9.1</micrometer.version>
         <keycloak.version>18.0.0</keycloak.version>
@@ -250,15 +250,21 @@
                 <scope>provided</scope>
             </dependency>
 
-            <dependency>
+              <dependency>
                 <groupId>io.jsonwebtoken</groupId>
-                <artifactId>jjwt</artifactId>
+                <artifactId>jjwt-api</artifactId>
                 <version>${jjwt.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-impl</artifactId>
+                <version>${jjwt.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt-jackson</artifactId>
-                <version>${jjwt-jackson.version}</version>
+                <version>${jjwt.version}</version>
                 <scope>runtime</scope>
             </dependency>
 
