@@ -58,6 +58,7 @@
         <postgresql.version>42.3.5</postgresql.version>
         <mysql-connector.version>8.0.29</mysql-connector.version>
         <spring-kafka.version>2.8.6</spring-kafka.version>
+        <zipkin.version>2.2.8.RELEASE</zipkin.version>
         <kafka.avro.serde.version>7.1.1</kafka.avro.serde.version>
         <playtika.testcontainers.version>2.2.0</playtika.testcontainers.version>
         <awaitility.version>4.2.0</awaitility.version>
@@ -347,6 +348,12 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
                 <version>${ribbon.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-zipkin</artifactId>
+                <scope>${zipkin.version}</scope>
             </dependency>
 
             <dependency>
