@@ -353,7 +353,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-zipkin</artifactId>
-                <scope>${zipkin.version}</scope>
+                <version>${zipkin.version}</version>
             </dependency>
 
             <dependency>
