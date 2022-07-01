@@ -50,9 +50,9 @@
         <vladmihalcea.hibernate-types.version>2.16.2</vladmihalcea.hibernate-types.version>
         <testcontainers.version>1.17.2</testcontainers.version>
         <archunit.version>0.22.0</archunit.version>
-        <spring-boot.version>2.7.0</spring-boot.version>
+        <spring-boot.version>2.7.1</spring-boot.version>
         <javax-servlet-api.version>4.0.1</javax-servlet-api.version>
-        <spring-cloud-dependencies.version>2021.0.2</spring-cloud-dependencies.version>
+        <spring-cloud-dependencies.version>2021.0.3</spring-cloud-dependencies.version>
         <springdoc.version>1.6.8</springdoc.version>
         <logbook-spring-boot-starter.version>2.14.0</logbook-spring-boot-starter.version>
         <postgresql.version>42.3.5</postgresql.version>
