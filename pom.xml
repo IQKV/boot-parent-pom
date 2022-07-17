@@ -55,6 +55,7 @@
         <spring-cloud-dependencies.version>2021.0.3</spring-cloud-dependencies.version>
         <springdoc.version>1.6.8</springdoc.version>
         <logbook-spring-boot-starter.version>2.14.0</logbook-spring-boot-starter.version>
+        <logstash.logback.encoder.version>7.2</logstash.logback.encoder.version>
         <postgresql.version>42.3.5</postgresql.version>
         <mysql-connector.version>8.0.29</mysql-connector.version>
         <spring-kafka.version>2.8.6</spring-kafka.version>
@@ -391,6 +392,11 @@
                 <groupId>org.zalando</groupId>
                 <artifactId>logbook-spring-boot-starter</artifactId>
                 <version>${logbook-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.logstash.logback</groupId>
+                <artifactId>logstash-logback-encoder</artifactId>
+                <version>${logstash.logback.encoder.version}</version>
             </dependency>
 
             <dependency>
