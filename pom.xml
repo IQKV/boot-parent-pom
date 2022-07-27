@@ -82,6 +82,7 @@
         <hystrix.version>2.2.10.RELEASE</hystrix.version>
         <zuul.version>1.4.7.RELEASE</zuul.version>
         <ribbon.version>2.2.10.RELEASE</ribbon.version>
+        <spring-native.version>0.12.1</spring-native.version>
         <ujar.code-quality-checkstyle.version>0.8.0-SNAPSHOT</ujar.code-quality-checkstyle.version>
     </properties>
 
@@ -370,6 +371,12 @@
             </dependency>
 
             <dependency>
+                <groupId>org.springframework.experimental</groupId>
+                <artifactId>spring-native</artifactId>
+                <version>${spring-native.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
                 <version>${spring-boot.version}</version>
@@ -562,6 +569,25 @@
                                 <goal>revision</goal>
                             </goals>
                             <phase>initialize</phase>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.experimental</groupId>
+                    <artifactId>spring-aot-maven-plugin</artifactId>
+                    <version>${spring-native.version}</version>
+                    <executions>
+                        <execution>
+                            <id>test-generate</id>
+                            <goals>
+                                <goal>test-generate</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>generate</id>
+                            <goals>
+                                <goal>generate</goal>
+                            </goals>
                         </execution>
                     </executions>
                 </plugin>
