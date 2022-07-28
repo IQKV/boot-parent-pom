@@ -1,70 +1,70 @@
-kind: pipeline
-name: CI
+kind : pipeline
+name : CI
 type : docker
 
-trigger:
-  branch:
+trigger :
+  branch :
     - main
     - develop
     - feature/*
-  event:
+  event :
     - push
 
-volumes:
-  - name: m2cache
-    host:
-      path: /volume1/m2cache
-steps:
+volumes :
+  - name : m2cache
+    host :
+      path : /volume1/m2cache
+steps :
 
-  - name: build
-    image: maven:3-openjdk-17-slim
-    volumes:
-      - name: m2cache
-        path: /root/.m2
+  - name : build
+    image : docker-registry.ujar.org/ujar/maven:3-openjdk-17-slim
+    volumes :
+      - name : m2cache
+        path : /root/.m2
     environment :
       DEPLOYER_USERNAME :
         from_secret : DEPLOYER_USERNAME
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
-    commands:
-      - mvn clean package -DskipTests=true -Dcheckstyle.skip=true --file pom.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s settings.xml
-    when:
-      branch:
-        include:
+    commands :
+      - mvn clean package -DskipTests=true -Dcheckstyle.skip=true --file pom.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s ../maven-settings.xml
+    when :
+      branch :
+        include :
           - feature/*
           - develop
           - main
 
-  - name: publish-snapshot-package
-    image: maven:3-openjdk-17-slim
-    volumes:
-      - name: m2cache
-        path: /root/.m2
+  - name : publish-snapshot-package
+    image : docker-registry.ujar.org/ujar/maven:3-openjdk-17-slim
+    volumes :
+      - name : m2cache
+        path : /root/.m2
     environment :
       DEPLOYER_USERNAME :
         from_secret : DEPLOYER_USERNAME
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
-    commands:
-      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s settings.xml  --file pom.xml
-    when:
-      branch:
-        include:
+    commands :
+      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s ../maven-settings.xml  --file pom.xml
+    when :
+      branch :
+        include :
           - feature/*
           - develop
           - main
 
-  - name: publish-release-package
-    image: maven:3-openjdk-17-slim
-    volumes:
-      - name: m2cache
-        path: /root/.m2
+  - name : publish-release-package
+    image : docker-registry.ujar.org/ujar/maven:3-openjdk-17-slim
+    volumes :
+      - name : m2cache
+        path : /root/.m2
     environment :
       DEPLOYER_USERNAME :
         from_secret : DEPLOYER_USERNAME
       DEPLOYER_PASSWORD :
         from_secret : DEPLOYER_PASSWORD
-    commands:
-      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s settings.xml  --file pom.xml
-    when:
-      event: tag
+    commands :
+      - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s ../maven-settings.xml  --file pom.xml
+    when :
+      event : tag
