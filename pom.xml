@@ -46,24 +46,24 @@
         <sonar.exclusions>**/*Application.java</sonar.exclusions>
         <spring-boot.version>2.7.2</spring-boot.version>
 
-        <liquibase.version>4.10.0</liquibase.version>
-        <vladmihalcea.hibernate-types.version>2.16.2</vladmihalcea.hibernate-types.version>
-        <testcontainers.version>1.17.2</testcontainers.version>
-        <archunit.version>0.22.0</archunit.version>
-        <spring-boot.version>2.7.1</spring-boot.version>
+        <liquibase.version>4.14.0</liquibase.version>
+        <flyway.version>9.0.4</flyway.version>
+        <vladmihalcea.hibernate-types.version>2.17.1</vladmihalcea.hibernate-types.version>
+        <testcontainers.version>1.17.3</testcontainers.version>
+        <archunit.version>0.23.1</archunit.version>
         <javax-servlet-api.version>4.0.1</javax-servlet-api.version>
         <spring-cloud-dependencies.version>2021.0.3</spring-cloud-dependencies.version>
-        <springdoc.version>1.6.8</springdoc.version>
+        <springdoc.version>1.6.9</springdoc.version>
         <logbook-spring-boot-starter.version>2.14.0</logbook-spring-boot-starter.version>
         <logstash.logback.encoder.version>7.2</logstash.logback.encoder.version>
-        <postgresql.version>42.3.5</postgresql.version>
-        <mysql-connector.version>8.0.29</mysql-connector.version>
-        <spring-kafka.version>2.8.6</spring-kafka.version>
+        <postgresql.version>42.4.0</postgresql.version>
+        <mysql-connector.version>8.0.30</mysql-connector.version>
+        <spring-kafka.version>2.9.0</spring-kafka.version>
         <zipkin.version>2.2.8.RELEASE</zipkin.version>
         <kafka.avro.serde.version>7.1.1</kafka.avro.serde.version>
         <playtika.testcontainers.version>2.2.0</playtika.testcontainers.version>
         <awaitility.version>4.2.0</awaitility.version>
-        <mapstruct.version>1.5.1.Final</mapstruct.version>
+        <mapstruct.version>1.5.2.Final</mapstruct.version>
         <findbugs.version>3.0.1</findbugs.version>
         <google.guava.version>31.1-jre</google.guava.version>
         <spotbugs-annotations.version>4.6.0</spotbugs-annotations.version>
@@ -75,8 +75,8 @@
         <ehcache.version>3.10.0</ehcache.version>
         <jjwt.version>0.11.5</jjwt.version>
         <jjwt-jackson.version>0.11.5</jjwt-jackson.version>
-        <micrometer.version>1.9.1</micrometer.version>
-        <keycloak.version>18.0.0</keycloak.version>
+        <micrometer.version>1.9.2</micrometer.version>
+        <keycloak.version>19.0.1</keycloak.version>
         <sleuth.version>3.1.3</sleuth.version>
         <eureka.version>3.1.3</eureka.version>
         <hystrix.version>2.2.10.RELEASE</hystrix.version>
@@ -166,6 +166,12 @@
                 <groupId>org.liquibase.ext</groupId>
                 <artifactId>liquibase-hibernate5</artifactId>
                 <version>${liquibase.version}</version>
+                <optional>true</optional>
+            </dependency>
+           <dependency>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-core</artifactId>
+                <version>${flyway.version}</version>
                 <optional>true</optional>
             </dependency>
             <dependency>
@@ -535,6 +541,11 @@
                             </goals>
                         </execution>
                     </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.flywaydb</groupId>
+                    <artifactId>flyway-maven-plugin</artifactId>
+                    <version>${flyway.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.gaul</groupId>
