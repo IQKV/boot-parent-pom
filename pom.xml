@@ -54,9 +54,11 @@
         <javax-servlet-api.version>4.0.1</javax-servlet-api.version>
         <spring-cloud-dependencies.version>2021.0.3</spring-cloud-dependencies.version>
         <springdoc.version>1.6.9</springdoc.version>
+        <springfox.version>3.0.0</springfox.version>
         <logbook-spring-boot-starter.version>2.14.0</logbook-spring-boot-starter.version>
         <logstash.logback.encoder.version>7.2</logstash.logback.encoder.version>
         <postgresql.version>42.4.0</postgresql.version>
+        <r2dbc-postgresql.version>0.8.12.RELEASE</r2dbc-postgresql.version>
         <mysql-connector.version>8.0.30</mysql-connector.version>
         <spring-kafka.version>2.9.0</spring-kafka.version>
         <zipkin.version>2.2.8.RELEASE</zipkin.version>
@@ -179,6 +181,22 @@
                 <artifactId>hibernate-types-52</artifactId>
                 <version>${vladmihalcea.hibernate-types.version}</version>
                 <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-webflux</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-r2dbc</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.r2dbc</groupId>
+                <artifactId>r2dbc-postgresql</artifactId>
+                <version>${r2dbc-postgresql.version}</version>
+                <scope>runtime</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -374,6 +392,27 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-actuator</artifactId>
                 <version>${spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>${springfox.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-spring-webflux</artifactId>
+                <version>${springfox.version}</version>
             </dependency>
 
             <dependency>
