@@ -412,7 +412,7 @@
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-spring-webflux</artifactId>
-                <version>${springfox-webflux.version}</version>
+                <version>${springfox.version}</version>
             </dependency>
 
             <dependency>
