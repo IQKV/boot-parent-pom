@@ -54,7 +54,7 @@
         <javax-servlet-api.version>4.0.1</javax-servlet-api.version>
         <spring-cloud-dependencies.version>2021.0.3</spring-cloud-dependencies.version>
         <springdoc.version>1.6.9</springdoc.version>
-        <springfox.version>3.0.0</springfox.version>
+        <springfox.version>2.7.0</springfox.version>
         <logbook-spring-boot-starter.version>2.14.0</logbook-spring-boot-starter.version>
         <logstash.logback.encoder.version>7.2</logstash.logback.encoder.version>
         <postgresql.version>42.4.0</postgresql.version>
