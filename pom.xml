@@ -84,6 +84,7 @@
         <hystrix.version>2.2.10.RELEASE</hystrix.version>
         <zuul.version>1.4.7.RELEASE</zuul.version>
         <ribbon.version>2.2.10.RELEASE</ribbon.version>
+        <zalando-problem.version>0.27.1</zalando-problem.version>
         <spring-native.version>0.12.1</spring-native.version>
         <ujar.code-quality-checkstyle.version>0.9.0-SNAPSHOT</ujar.code-quality-checkstyle.version>
     </properties>
@@ -212,6 +213,21 @@
                 <groupId>org.ehcache</groupId>
                 <artifactId>ehcache</artifactId>
                 <version>${ehcache.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.zalando</groupId>
+                <artifactId>problem</artifactId>
+                <version>${zalando-problem.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.zalando</groupId>
+                <artifactId>jackson-datatype-problem</artifactId>
+                <version>${zalando-problem.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.zalando</groupId>
+                <artifactId>problem-gson</artifactId>
+                <version>${zalando-problem.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.kafka</groupId>
