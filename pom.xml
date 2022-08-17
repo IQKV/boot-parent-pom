@@ -57,7 +57,7 @@
         <springfox.version>2.10.5</springfox.version>
         <logbook-spring-boot-starter.version>2.14.0</logbook-spring-boot-starter.version>
         <logstash.logback.encoder.version>7.2</logstash.logback.encoder.version>
-        <postgresql.version>42.4.0</postgresql.version>
+        <postgresql.version>42.4.1</postgresql.version>
         <r2dbc-postgresql.version>0.8.12.RELEASE</r2dbc-postgresql.version>
         <mysql-connector.version>8.0.30</mysql-connector.version>
         <spring-kafka.version>2.9.0</spring-kafka.version>
