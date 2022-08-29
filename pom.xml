@@ -44,7 +44,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <sonar.exclusions>**/*Application.java</sonar.exclusions>
-        <spring-boot.version>2.7.2</spring-boot.version>
+        <spring-boot.version>2.7.3</spring-boot.version>
 
         <liquibase.version>4.14.0</liquibase.version>
         <flyway.version>8.5.13</flyway.version>
@@ -92,7 +92,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.0</version>
+        <version>2.7.3</version>
         <relativePath/>
     </parent>
 
