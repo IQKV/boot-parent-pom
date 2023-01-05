@@ -1,6 +1,6 @@
 # Spring-based parent POM.
 
-[![Build Status](https://drone.ujar.org/api/badges/ujar-org/ujar-parent-pom/status.svg)](https://drone.ujar.org/ujar-org/ujar-parent-pom)
+[![Build Status](https://drone.c2a2.com/api/badges/ujar-org/ujar-parent-pom/status.svg)](https://drone.c2a2.com/ujar-org/ujar-parent-pom)
 
 Generic Maven 3 parent POM with lots of default configuration. It is pre-configured to handle the "org.ujar.*" software
 stack in a suitable way.
@@ -19,7 +19,7 @@ To use it as your parent POM using the following snippet:
 ## Code conventions
 
 The code follows [Google Code Conventions](https://google.github.io/styleguide/javaguide.html). Code quality is measured by:
-- [Sonarqube](https://sonarqube.ujar.org/)
+- [Sonarqube](https://sonarqube.c2a2.com/)
 - [PMD](https://pmd.github.io/)
 - [CheckStyle](https://checkstyle.sourceforge.io/)
 - [SpotBugs](https://spotbugs.github.io/)
