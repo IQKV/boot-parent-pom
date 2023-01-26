@@ -46,39 +46,39 @@
         <sonar.exclusions>**/*Application.java</sonar.exclusions>
         <spring-boot.version>2.7.4</spring-boot.version>
 
-        <liquibase.version>4.15.0</liquibase.version>
-        <flyway.version>8.5.13</flyway.version>
-        <vladmihalcea.hibernate-types.version>2.17.1</vladmihalcea.hibernate-types.version>
-        <testcontainers.version>1.17.3</testcontainers.version>
+        <liquibase.version>4.19.0</liquibase.version>
+        <flyway.version>9.12.0</flyway.version>
+        <vladmihalcea.hibernate-types.version>2.21.1</vladmihalcea.hibernate-types.version>
+        <testcontainers.version>1.17.6</testcontainers.version>
         <archunit.version>0.23.1</archunit.version>
         <javax-servlet-api.version>4.0.1</javax-servlet-api.version>
-        <spring-cloud-dependencies.version>2021.0.4</spring-cloud-dependencies.version>
-        <springdoc.version>1.6.11</springdoc.version>
+        <spring-cloud-dependencies.version>2022.0.0</spring-cloud-dependencies.version>
+        <springdoc.version>1.6.14</springdoc.version>
         <springfox.version>2.10.5</springfox.version>
         <logbook-spring-boot-starter.version>2.14.0</logbook-spring-boot-starter.version>
         <logstash.logback.encoder.version>7.2</logstash.logback.encoder.version>
-        <postgresql.version>42.5.0</postgresql.version>
+        <postgresql.version>42.5.1</postgresql.version>
         <r2dbc-postgresql.version>0.8.13.RELEASE</r2dbc-postgresql.version>
-        <mysql-connector.version>8.0.30</mysql-connector.version>
-        <spring-kafka.version>2.9.1</spring-kafka.version>
+        <mysql-connector.version>8.0.32</mysql-connector.version>
+        <spring-kafka.version>3.0.2</spring-kafka.version>
         <zipkin.version>2.2.8.RELEASE</zipkin.version>
         <kafka.avro.serde.version>7.1.1</kafka.avro.serde.version>
         <playtika.testcontainers.version>2.2.0</playtika.testcontainers.version>
         <awaitility.version>4.2.0</awaitility.version>
-        <mapstruct.version>1.5.2.Final</mapstruct.version>
-        <findbugs.version>3.0.1</findbugs.version>
+        <mapstruct.version>1.5.3.Final</mapstruct.version>
+        <findbugs.version>3.0.2</findbugs.version>
         <google.guava.version>31.1-jre</google.guava.version>
         <spotbugs-annotations.version>4.6.0</spotbugs-annotations.version>
-        <gaul.modernizer-maven-plugin.version>2.4.0</gaul.modernizer-maven-plugin.version>
+        <gaul.modernizer-maven-plugin.version>2.5.0</gaul.modernizer-maven-plugin.version>
         <codehaus.versions-maven-plugin.version>2.8.1</codehaus.versions-maven-plugin.version>
-        <apache.maven-resources-plugin.version>3.2.0</apache.maven-resources-plugin.version>
-        <apache.maven-checkstyle-plugin.version>3.1.2</apache.maven-checkstyle-plugin.version>
-        <puppycrawl.checkstyle.version>10.1</puppycrawl.checkstyle.version>
-        <ehcache.version>3.10.0</ehcache.version>
+        <apache.maven-resources-plugin.version>3.3.0</apache.maven-resources-plugin.version>
+        <apache.maven-checkstyle-plugin.version>3.2.1</apache.maven-checkstyle-plugin.version>
+        <puppycrawl.checkstyle.version>10.6.0</puppycrawl.checkstyle.version>
+        <ehcache.version>3.10.8</ehcache.version>
         <jjwt.version>0.11.5</jjwt.version>
         <jjwt-jackson.version>0.11.5</jjwt-jackson.version>
-        <micrometer.version>1.9.4</micrometer.version>
-        <keycloak.version>19.0.2</keycloak.version>
+        <micrometer.version>1.10.3</micrometer.version>
+        <keycloak.version>20.0.3</keycloak.version>
         <sleuth.version>3.1.4</sleuth.version>
         <eureka.version>3.1.3</eureka.version>
         <hystrix.version>2.2.10.RELEASE</hystrix.version>
