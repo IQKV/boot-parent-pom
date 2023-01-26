@@ -52,7 +52,7 @@
         <testcontainers.version>1.17.6</testcontainers.version>
         <archunit.version>0.23.1</archunit.version>
         <javax-servlet-api.version>4.0.1</javax-servlet-api.version>
-        <spring-cloud-dependencies.version>2022.0.0</spring-cloud-dependencies.version>
+        <spring-cloud-dependencies.version>2021.0.5</spring-cloud-dependencies.version>
         <springdoc.version>1.6.14</springdoc.version>
         <springfox.version>2.10.5</springfox.version>
         <logbook-spring-boot-starter.version>2.14.0</logbook-spring-boot-starter.version>
