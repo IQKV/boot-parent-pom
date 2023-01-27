@@ -1,7 +1,5 @@
 # Spring-based parent POM.
 
-[![Build Status](http://iaolg9igjr3tghootxslfe.webrelay.io/api/badges/ujar-org/ujar-parent-pom/status.svg)](http://iaolg9igjr3tghootxslfe.webrelay.io/ujar-org/ujar-parent-pom)
-
 Generic Maven 3 parent POM with lots of default configuration. It is pre-configured to handle the "org.ujar.*" software
 stack in a suitable way.
 
