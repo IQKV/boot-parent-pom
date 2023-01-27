@@ -585,7 +585,6 @@
                     <configuration>
                         <sourceDirectories>${basedir}/src</sourceDirectories>
                         <configLocation>ujar_checks.xml</configLocation>
-                        <encoding>UTF-8</encoding>
                         <includeTestSourceDirectory>true</includeTestSourceDirectory>
                     </configuration>
                     <executions>
