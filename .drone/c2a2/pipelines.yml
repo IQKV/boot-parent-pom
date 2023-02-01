@@ -3,11 +3,9 @@ name : CI
 type : docker
 
 trigger :
-  branch :
-    - develop
-    - feature/*
   event :
     - push
+    - tag
 
 volumes :
   - name : m2cache
@@ -28,11 +26,7 @@ steps :
         from_secret : DEPLOYER_PASSWORD
     commands :
       - mvn clean package -DskipTests=true -Dcheckstyle.skip=true --file pom.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s ../maven-settings.xml
-    when :
-      branch :
-        include :
-          - feature/*
-          - develop
+
 
   - name : publish-snapshot-package
     image : docker-registry.c2a2.com/ujar/maven:3-openjdk-17-slim
@@ -52,6 +46,8 @@ steps :
         include :
           - feature/*
           - develop
+    depends_on :
+      - build
 
   - name : publish-release-package
     image : docker-registry.c2a2.com/ujar/maven:3-openjdk-17-slim
@@ -66,5 +62,8 @@ steps :
         from_secret : DEPLOYER_PASSWORD
     commands :
       - mvn deploy -DskipTests=true -Dcheckstyle.skip=true -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s ../maven-settings.xml  --file pom.xml -DaltDeploymentRepository=ujar-releases-repository::default::https://nexus.c2a2.com/repository/maven-releases
-    when :
-      event : tag
+    when:
+      ref:
+        - refs/tags/*
+    depends_on :
+      - build
