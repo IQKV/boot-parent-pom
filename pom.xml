@@ -68,7 +68,7 @@
         <codehaus.versions-maven-plugin.version>2.8.1</codehaus.versions-maven-plugin.version>
         <apache.maven-resources-plugin.version>3.3.0</apache.maven-resources-plugin.version>
         <apache.maven-checkstyle-plugin.version>3.2.1</apache.maven-checkstyle-plugin.version>
-        <puppycrawl.checkstyle.version>10.6.0</puppycrawl.checkstyle.version>
+        <puppycrawl.checkstyle.version>10.7.0</puppycrawl.checkstyle.version>
         <ehcache.version>3.10.8</ehcache.version>
         <jjwt.version>0.11.5</jjwt.version>
         <jjwt-jackson.version>0.11.5</jjwt-jackson.version>
