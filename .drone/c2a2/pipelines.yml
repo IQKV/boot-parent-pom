@@ -28,7 +28,7 @@ steps :
       - mvn clean package -DskipTests=true -Dcheckstyle.skip=true --file pom.xml -Ddeployer.username=$DEPLOYER_USERNAME -Ddeployer.password=$DEPLOYER_PASSWORD  -s ../maven-settings.xml
 
 
-  - name : publish-snapshot-package
+  - name : publish-snapshot-jar
     image : docker-registry.c2a2.com/ujar/maven:3-openjdk-17-slim
     pull : if-not-exists
     volumes :
@@ -49,7 +49,7 @@ steps :
     depends_on :
       - build
 
-  - name : publish-release-package
+  - name : publish-release-jar
     image : docker-registry.c2a2.com/ujar/maven:3-openjdk-17-slim
     pull : if-not-exists
     volumes :
