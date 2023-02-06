@@ -11,7 +11,7 @@ To use it as your parent POM using the following snippet:
   <parent>
     <groupId>org.ujar.parent</groupId>
     <artifactId>ujar-parent-pom</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.1.0</version>
   </parent>
 ```
 ## Code conventions
