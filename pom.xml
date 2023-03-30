@@ -3,12 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.ujar.parent</groupId>
-    <artifactId>ujar-parent-pom</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <groupId>org.ujar.boot</groupId>
+    <artifactId>ujar-boot-parent-pom</artifactId>
+    <version>23.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>ujar-parent-pom</name>
+    <name>ujar-boot-parent-pom</name>
     <description>Default configurations for complete dependency tree to quickly build Spring Boot project.</description>
     <licenses>
         <license>
@@ -33,66 +33,117 @@
     </developers>
 
     <properties>
-        <java.version>17</java.version>
+        <java.version>19</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <sonar.exclusions>**/*Application.java</sonar.exclusions>
-        <spring-boot.version>2.7.8</spring-boot.version>
 
-        <liquibase.version>4.19.0</liquibase.version>
-        <flyway.version>9.12.0</flyway.version>
-        <vladmihalcea.hibernate-types.version>2.21.1</vladmihalcea.hibernate-types.version>
-        <testcontainers.version>1.17.6</testcontainers.version>
-        <archunit.version>0.23.1</archunit.version>
-        <javax-servlet-api.version>4.0.1</javax-servlet-api.version>
-        <spring-cloud-dependencies.version>2021.0.5</spring-cloud-dependencies.version>
-        <springdoc.version>1.6.14</springdoc.version>
-        <springfox.version>2.10.5</springfox.version>
-        <logbook-spring-boot-starter.version>2.14.0</logbook-spring-boot-starter.version>
-        <logstash.logback.encoder.version>7.2</logstash.logback.encoder.version>
-        <postgresql.version>42.5.1</postgresql.version>
+        <ujar.version>23.0.0-SNAPSHOT</ujar.version>
+
+        <spring-boot.version>3.0.4</spring-boot.version>
+        <spring-cloud-dependencies.version>2022.0.1</spring-cloud-dependencies.version>
+        <opentelemetry.version>1.23.1</opentelemetry.version>
+        <spring-test.version>6.0.4</spring-test.version>
+
+
+        <jakarta.servlet-api.version>6.0.0</jakarta.servlet-api.version>
+        <jakarta.validation-api.version>3.0.2</jakarta.validation-api.version>
+        <hibernate-validator.version>8.0.0.Final</hibernate-validator.version>
+
+        <hibernate.version>6.1.7.Final</hibernate.version>
+        <postgresql.version>42.5.4</postgresql.version>
         <r2dbc-postgresql.version>0.8.13.RELEASE</r2dbc-postgresql.version>
         <mysql-connector.version>8.0.32</mysql-connector.version>
-        <spring-kafka.version>2.9.5</spring-kafka.version>
-        <zipkin.version>2.2.8.RELEASE</zipkin.version>
-        <kafka.avro.serde.version>7.1.1</kafka.avro.serde.version>
-        <playtika.testcontainers.version>2.2.0</playtika.testcontainers.version>
+        <vladmihalcea.hibernate-types.version>2.21.1</vladmihalcea.hibernate-types.version>
+
+        <javax-cache-api.version>1.1.1</javax-cache-api.version>
+        <ehcache.version>3.10.8</ehcache.version>
+
+        <liquibase.version>4.19.1</liquibase.version>
+        <flyway.version>9.15.2</flyway.version>
+
+        <jjwt.version>0.11.5</jjwt.version>
+        <vaadin.version>24.0.0</vaadin.version>
+
+        <testcontainers.version>1.17.6</testcontainers.version>
+        <playtika-testcontainers.version>2.3.2</playtika-testcontainers.version>
+        <archunit.version>1.0.1</archunit.version>
         <awaitility.version>4.2.0</awaitility.version>
-        <mapstruct.version>1.5.3.Final</mapstruct.version>
-        <findbugs.version>3.0.1</findbugs.version>
-        <google.guava.version>31.1-jre</google.guava.version>
-        <spotbugs-annotations.version>4.6.0</spotbugs-annotations.version>
+
+        <springdoc.version>2.0.2</springdoc.version>
+        <springfox.version>2.10.5</springfox.version>
+        <logstash-logback-encoder.version>7.2</logstash-logback-encoder.version>
+
         <gaul.modernizer-maven-plugin.version>2.5.0</gaul.modernizer-maven-plugin.version>
         <codehaus.versions-maven-plugin.version>2.8.1</codehaus.versions-maven-plugin.version>
         <apache.maven-resources-plugin.version>3.3.0</apache.maven-resources-plugin.version>
         <apache.maven-checkstyle-plugin.version>3.2.1</apache.maven-checkstyle-plugin.version>
+        <maven-javadoc-plugin.version>3.5.0</maven-javadoc-plugin.version>
+        <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
         <puppycrawl.checkstyle.version>10.7.0</puppycrawl.checkstyle.version>
-        <ehcache.version>3.10.8</ehcache.version>
-        <jjwt.version>0.11.5</jjwt.version>
-        <jjwt-jackson.version>0.11.5</jjwt-jackson.version>
-        <micrometer.version>1.10.3</micrometer.version>
-        <keycloak.version>20.0.3</keycloak.version>
-        <sleuth.version>3.1.4</sleuth.version>
-        <eureka.version>3.1.3</eureka.version>
-        <hystrix.version>2.2.10.RELEASE</hystrix.version>
-        <zuul.version>1.4.7.RELEASE</zuul.version>
-        <ribbon.version>2.2.10.RELEASE</ribbon.version>
-        <zalando-problem.version>0.27.1</zalando-problem.version>
-        <spring-native.version>0.12.1</spring-native.version>
-        <ujar.code-quality-checkstyle.version>0.1.0</ujar.code-quality-checkstyle.version>
+        <git-commit-id-plugin.version>5.0.0</git-commit-id-plugin.version>
     </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.8</version>
+        <version>3.0.4</version>
         <relativePath/>
     </parent>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.ujar.boot</groupId>
+                <artifactId>ujar-boot-build</artifactId>
+                <version>${ujar.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.ujar.boot</groupId>
+                <artifactId>ujar-boot-cache</artifactId>
+                <version>${ujar.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.ujar.boot</groupId>
+                <artifactId>ujar-boot-kafka</artifactId>
+                <version>${ujar.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.ujar.boot</groupId>
+                <artifactId>ujar-boot-restful</artifactId>
+                <version>${ujar.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.ujar.boot</groupId>
+                <artifactId>ujar-boot-starter-cache</artifactId>
+                <version>${ujar.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.ujar.boot</groupId>
+                <artifactId>ujar-boot-starter-observability</artifactId>
+                <version>${ujar.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.ujar.boot</groupId>
+                <artifactId>ujar-boot-starter-amqp</artifactId>
+                <version>${ujar.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.ujar.boot</groupId>
+                <artifactId>ujar-boot-starter-kafka</artifactId>
+                <version>${ujar.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.ujar.boot</groupId>
+                <artifactId>ujar-boot-starter-restful</artifactId>
+                <version>${ujar.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-autoconfigure</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-validation</artifactId>
@@ -100,8 +151,12 @@
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-configuration-processor</artifactId>
-                <optional>true</optional>
                 <version>${spring-boot.version}</version>
             </dependency>
             <dependency>
@@ -133,50 +188,66 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-data-rest</artifactId>
                 <version>${spring-boot.version}</version>
-                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring-test.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springdoc</groupId>
-                <artifactId>springdoc-openapi-ui</artifactId>
+                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
                 <version>${springdoc.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.postgresql</groupId>
                 <artifactId>postgresql</artifactId>
                 <version>${postgresql.version}</version>
-                <optional>true</optional>
-                <scope>runtime</scope>
             </dependency>
             <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
+                <groupId>com.mysql</groupId>
+                <artifactId>mysql-connector-j</artifactId>
                 <version>${mysql-connector.version}</version>
-                <optional>true</optional>
-                <scope>runtime</scope>
             </dependency>
             <dependency>
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-core</artifactId>
                 <version>${liquibase.version}</version>
-                <optional>true</optional>
             </dependency>
             <dependency>
-                <groupId>org.liquibase.ext</groupId>
-                <artifactId>liquibase-hibernate5</artifactId>
-                <version>${liquibase.version}</version>
-                <optional>true</optional>
-            </dependency>
-           <dependency>
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-core</artifactId>
                 <version>${flyway.version}</version>
-                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate.orm</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate.orm</groupId>
+                <artifactId>hibernate-hikaricp</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate.orm</groupId>
+                <artifactId>hibernate-jcache</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate-validator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.validation</groupId>
+                <artifactId>jakarta.validation-api</artifactId>
+                <version>${jakarta.validation-api.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.vladmihalcea</groupId>
-                <artifactId>hibernate-types-52</artifactId>
+                <artifactId>hibernate-types-60</artifactId>
                 <version>${vladmihalcea.hibernate-types.version}</version>
-                <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -192,7 +263,6 @@
                 <groupId>io.r2dbc</groupId>
                 <artifactId>r2dbc-postgresql</artifactId>
                 <version>${r2dbc-postgresql.version}</version>
-                <scope>runtime</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -200,81 +270,9 @@
                 <version>${spring-boot.version}</version>
             </dependency>
             <dependency>
-                <groupId>javax.cache</groupId>
-                <artifactId>cache-api</artifactId>
-                <version>1.1.1</version>
-            </dependency>
-            <dependency>
-                <groupId>org.ehcache</groupId>
-                <artifactId>ehcache</artifactId>
-                <version>${ehcache.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.zalando</groupId>
-                <artifactId>problem</artifactId>
-                <version>${zalando-problem.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.zalando</groupId>
-                <artifactId>jackson-datatype-problem</artifactId>
-                <version>${zalando-problem.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.zalando</groupId>
-                <artifactId>problem-gson</artifactId>
-                <version>${zalando-problem.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.kafka</groupId>
-                <artifactId>spring-kafka</artifactId>
-                <version>${spring-kafka.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.confluent</groupId>
-                <artifactId>kafka-streams-avro-serde</artifactId>
-                <version>${kafka.avro.serde.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.playtika.testcontainers</groupId>
-                <artifactId>embedded-kafka</artifactId>
-                <version>${playtika.testcontainers.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.playtika.testcontainers</groupId>
-                <artifactId>embedded-postgresql</artifactId>
-                <version>${playtika.testcontainers.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.playtika.testcontainers</groupId>
-                <artifactId>embedded-mysql</artifactId>
-                <version>${playtika.testcontainers.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.playtika.testcontainers</groupId>
-                <artifactId>embedded-mongodb</artifactId>
-                <version>${playtika.testcontainers.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.playtika.testcontainers</groupId>
-                <artifactId>embedded-rabbitmq</artifactId>
-                <version>${playtika.testcontainers.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.testcontainers</groupId>
-                <artifactId>kafka</artifactId>
-                <version>${testcontainers.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.kafka</groupId>
-                <artifactId>spring-kafka-test</artifactId>
-                <version>${spring-kafka.version}</version>
-                <scope>test</scope>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-devtools</artifactId>
+                <version>${spring-boot.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -288,36 +286,67 @@
                 </exclusions>
             </dependency>
             <dependency>
+                <groupId>javax.cache</groupId>
+                <artifactId>cache-api</artifactId>
+                <version>${javax-cache-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.ehcache</groupId>
+                <artifactId>ehcache</artifactId>
+                <version>${ehcache.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.playtika.testcontainers</groupId>
+                <artifactId>embedded-kafka</artifactId>
+                <version>${playtika-testcontainers.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.playtika.testcontainers</groupId>
+                <artifactId>embedded-postgresql</artifactId>
+                <version>${playtika-testcontainers.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.playtika.testcontainers</groupId>
+                <artifactId>embedded-mysql</artifactId>
+                <version>${playtika-testcontainers.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.playtika.testcontainers</groupId>
+                <artifactId>embedded-mongodb</artifactId>
+                <version>${playtika-testcontainers.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.playtika.testcontainers</groupId>
+                <artifactId>embedded-rabbitmq</artifactId>
+                <version>${playtika-testcontainers.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>kafka</artifactId>
+                <version>${testcontainers.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka-test</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.testcontainers</groupId>
                 <artifactId>rabbitmq</artifactId>
                 <version>${testcontainers.version}</version>
-                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.testcontainers</groupId>
                 <artifactId>mongodb</artifactId>
                 <version>${testcontainers.version}</version>
-                <scope>test</scope>
             </dependency>
             <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>${google.guava.version}</version>
-                <optional>true</optional>
-            </dependency>
-            <dependency>
-                <groupId>org.mapstruct</groupId>
-                <artifactId>mapstruct</artifactId>
-                <version>${mapstruct.version}</version>
-                <optional>true</optional>
-            </dependency>
-            <dependency>
-                <groupId>org.mapstruct</groupId>
-                <artifactId>mapstruct-processor</artifactId>
-                <version>${mapstruct.version}</version>
-            </dependency>
-
-              <dependency>
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt-api</artifactId>
                 <version>${jjwt.version}</version>
@@ -326,83 +355,11 @@
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt-impl</artifactId>
                 <version>${jjwt.version}</version>
-                <scope>runtime</scope>
             </dependency>
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt-jackson</artifactId>
                 <version>${jjwt.version}</version>
-                <scope>runtime</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>io.micrometer</groupId>
-                <artifactId>micrometer-registry-prometheus</artifactId>
-                <version>${micrometer.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.dropwizard.metrics</groupId>
-                <artifactId>metrics-core</artifactId>
-                <version>${dropwizard-metrics.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-sleuth</artifactId>
-                <version>${sleuth.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.keycloak</groupId>
-                <artifactId>keycloak-spring-boot-starter</artifactId>
-                <version>${keycloak.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-                <version>${eureka.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-                <version>${eureka.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-                <version>${hystrix.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
-                <version>${hystrix.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
-                <version>${zuul.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
-                <version>${ribbon.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-zipkin</artifactId>
-                <version>${zipkin.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-actuator</artifactId>
-                <version>${spring-boot.version}</version>
             </dependency>
 
             <dependency>
@@ -420,24 +377,15 @@
                 <artifactId>springfox-spring-webflux</artifactId>
                 <version>${springfox.version}</version>
             </dependency>
-
-            <dependency>
-                <groupId>org.springframework.experimental</groupId>
-                <artifactId>spring-native</artifactId>
-                <version>${spring-native.version}</version>
-            </dependency>
-
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
                 <version>${spring-boot.version}</version>
-                <scope>test</scope>
             </dependency>
-
             <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>javax.servlet-api</artifactId>
-                <version>${javax-servlet-api.version}</version>
+                <groupId>jakarta.servlet</groupId>
+                <artifactId>jakarta.servlet-api</artifactId>
+                <version>${jakarta.servlet-api.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -447,62 +395,64 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>org.zalando</groupId>
-                <artifactId>logbook-spring-boot-starter</artifactId>
-                <version>${logbook-spring-boot-starter.version}</version>
+                <groupId>io.opentelemetry</groupId>
+                <artifactId>opentelemetry-bom</artifactId>
+                <version>${opentelemetry.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.vaadin</groupId>
+                <artifactId>vaadin-bom</artifactId>
+                <version>${vaadin.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-registry-prometheus</artifactId>
+                <version>${micrometer.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-test</artifactId>
+                <version>${micrometer.version}</version>
             </dependency>
             <dependency>
                 <groupId>net.logstash.logback</groupId>
                 <artifactId>logstash-logback-encoder</artifactId>
-                <version>${logstash.logback.encoder.version}</version>
+                <version>${logstash-logback-encoder.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.testcontainers</groupId>
                 <artifactId>junit-jupiter</artifactId>
                 <version>${testcontainers.version}</version>
-                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.testcontainers</groupId>
                 <artifactId>postgresql</artifactId>
                 <version>${testcontainers.version}</version>
-                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.testcontainers</groupId>
                 <artifactId>r2dbc</artifactId>
                 <version>${testcontainers.version}</version>
-                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.testcontainers</groupId>
                 <artifactId>mysql</artifactId>
                 <version>${testcontainers.version}</version>
-                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>com.tngtech.archunit</groupId>
                 <artifactId>archunit-junit5</artifactId>
                 <version>${archunit.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.google.code.findbugs</groupId>
-                <artifactId>annotations</artifactId>
-                <version>${findbugs.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.spotbugs</groupId>
-                <artifactId>spotbugs-annotations</artifactId>
-                <version>${spotbugs-annotations.version}</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.awaitility</groupId>
                 <artifactId>awaitility</artifactId>
                 <version>${awaitility.version}</version>
-                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -532,7 +482,7 @@
                                     <artifactItem>
                                         <groupId>${project.groupId}</groupId>
                                         <artifactId>${project.artifactId}</artifactId>
-                                        <version>${project.version}</version>
+                                        <version>${ujar.version}</version>
                                         <type>jar</type>
                                         <outputDirectory>${project.build.directory}/application
                                         </outputDirectory>
@@ -574,7 +524,7 @@
                         <dependency>
                             <groupId>org.ujar.codequality</groupId>
                             <artifactId>ujar-code-quality-checkstyle</artifactId>
-                            <version>${ujar.code-quality-checkstyle.version}</version>
+                            <version>${ujar.version}</version>
                         </dependency>
                     </dependencies>
                     <configuration>
@@ -620,9 +570,45 @@
                     <version>${liquibase.version}</version>
                 </plugin>
                 <plugin>
+                    <groupId>org.projectlombok</groupId>
+                    <artifactId>lombok-maven-plugin</artifactId>
+                    <version>${lombok-maven-plugin.version}</version>
+                    <configuration>
+                        <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+                        <addOutputDirectory>false</addOutputDirectory>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <phase>generate-sources</phase>
+                            <goals>
+                                <goal>delombok</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${maven-javadoc-plugin.version}</version>
+                    <configuration>
+                        <doclint>none</doclint>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>attach-javadocs</id>
+                            <configuration>
+                                <sourcepath>${project.basedir}/target/generated-sources/delombok</sourcepath>
+                            </configuration>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
                     <groupId>io.github.git-commit-id</groupId>
                     <artifactId>git-commit-id-maven-plugin</artifactId>
-                    <version>5.0.0</version>
+                    <version>${git-commit-id-plugin.version}</version>
                     <executions>
                         <execution>
                             <id>get-the-git-infos</id>
@@ -632,25 +618,20 @@
                             <phase>initialize</phase>
                         </execution>
                     </executions>
-                </plugin>
-                <plugin>
-                    <groupId>org.springframework.experimental</groupId>
-                    <artifactId>spring-aot-maven-plugin</artifactId>
-                    <version>${spring-native.version}</version>
-                    <executions>
-                        <execution>
-                            <id>test-generate</id>
-                            <goals>
-                                <goal>test-generate</goal>
-                            </goals>
-                        </execution>
-                        <execution>
-                            <id>generate</id>
-                            <goals>
-                                <goal>generate</goal>
-                            </goals>
-                        </execution>
-                    </executions>
+                    <configuration>
+                        <failOnNoGitDirectory>false</failOnNoGitDirectory>
+                        <failOnUnableToExtractRepoInfo>false</failOnUnableToExtractRepoInfo>
+                        <generateGitPropertiesFile>true</generateGitPropertiesFile>
+                        <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
+                        <commitIdGenerationMode>full</commitIdGenerationMode>
+                        <includeOnlyProperties>
+                            <includeOnlyProperty>^git.commit.id.abbrev$</includeOnlyProperty>
+                            <includeOnlyProperty>^git.commit.id.full$</includeOnlyProperty>
+                            <includeOnlyProperty>^git.branch$</includeOnlyProperty>
+                            <includeOnlyProperty>^git.build.version</includeOnlyProperty>
+                            <includeOnlyProperty>^git.build.time$</includeOnlyProperty>
+                        </includeOnlyProperties>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -661,34 +642,4 @@
             </resource>
         </resources>
     </build>
-    <repositories>
-        <repository>
-            <id>spring-releases</id>
-            <name>Spring Releases</name>
-            <url>https://repo.spring.io/release</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>confluent</id>
-            <url>https://packages.confluent.io/maven/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-          <pluginRepository>
-            <id>spring-releases</id>
-            <name>Spring Releases</name>
-            <url>https://repo.spring.io/release</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
 </project>
