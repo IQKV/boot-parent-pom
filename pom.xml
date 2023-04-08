@@ -41,9 +41,9 @@
 
         <ujar.version>23.0.0-SNAPSHOT</ujar.version>
 
-        <spring-boot.version>3.0.4</spring-boot.version>
-        <spring-cloud-dependencies.version>2022.0.1</spring-cloud-dependencies.version>
-        <opentelemetry.version>1.23.1</opentelemetry.version>
+        <spring-boot.version>3.0.5</spring-boot.version>
+        <spring-cloud-dependencies.version>2022.0.2</spring-cloud-dependencies.version>
+        <opentelemetry.version>1.24.0</opentelemetry.version>
         <spring-test.version>6.0.4</spring-test.version>
 
 
@@ -52,7 +52,7 @@
         <hibernate-validator.version>8.0.0.Final</hibernate-validator.version>
 
         <hibernate.version>6.1.7.Final</hibernate.version>
-        <postgresql.version>42.5.4</postgresql.version>
+        <postgresql.version>42.6.0</postgresql.version>
         <r2dbc-postgresql.version>0.8.13.RELEASE</r2dbc-postgresql.version>
         <mysql-connector.version>8.0.32</mysql-connector.version>
         <vladmihalcea.hibernate-types.version>2.21.1</vladmihalcea.hibernate-types.version>
@@ -60,8 +60,8 @@
         <javax-cache-api.version>1.1.1</javax-cache-api.version>
         <ehcache.version>3.10.8</ehcache.version>
 
-        <liquibase.version>4.19.1</liquibase.version>
-        <flyway.version>9.15.2</flyway.version>
+        <liquibase.version>4.20.0</liquibase.version>
+        <flyway.version>9.16.1</flyway.version>
 
         <jjwt.version>0.11.5</jjwt.version>
         <vaadin.version>24.0.0</vaadin.version>
@@ -71,24 +71,26 @@
         <archunit.version>1.0.1</archunit.version>
         <awaitility.version>4.2.0</awaitility.version>
 
-        <springdoc.version>2.0.2</springdoc.version>
-        <springfox.version>2.10.5</springfox.version>
-        <logstash-logback-encoder.version>7.2</logstash-logback-encoder.version>
+        <springdoc-webmvc.version>2.0.4</springdoc-webmvc.version>
+        <logstash-logback-encoder.version>7.3</logstash-logback-encoder.version>
 
-        <gaul.modernizer-maven-plugin.version>2.5.0</gaul.modernizer-maven-plugin.version>
-        <codehaus.versions-maven-plugin.version>2.8.1</codehaus.versions-maven-plugin.version>
-        <apache.maven-resources-plugin.version>3.3.0</apache.maven-resources-plugin.version>
-        <apache.maven-checkstyle-plugin.version>3.2.1</apache.maven-checkstyle-plugin.version>
+        <gaul.modernizer-maven-plugin.version>2.6.0</gaul.modernizer-maven-plugin.version>
+        <codehaus.versions-maven-plugin.version>2.15.0</codehaus.versions-maven-plugin.version>
+        <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
+        <maven-checkstyle-plugin.version>3.2.1</maven-checkstyle-plugin.version>
         <maven-javadoc-plugin.version>3.5.0</maven-javadoc-plugin.version>
+        <maven-deploy-plugin.version>3.1.1</maven-deploy-plugin.version>
         <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
         <puppycrawl.checkstyle.version>10.7.0</puppycrawl.checkstyle.version>
         <git-commit-id-plugin.version>5.0.0</git-commit-id-plugin.version>
+        <maven-surefire-plugin.version>3.0.0</maven-surefire-plugin.version>
+        <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
     </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.4</version>
+        <version>3.0.5</version>
         <relativePath/>
     </parent>
 
@@ -197,7 +199,7 @@
             <dependency>
                 <groupId>org.springdoc</groupId>
                 <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-                <version>${springdoc.version}</version>
+                <version>${springdoc-webmvc.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.postgresql</groupId>
@@ -363,21 +365,6 @@
             </dependency>
 
             <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
-                <version>${springfox.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
-                <version>${springfox.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-spring-webflux</artifactId>
-                <version>${springfox.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
                 <version>${spring-boot.version}</version>
@@ -470,38 +457,22 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <executions>
-                        <execution>
-                            <id>unpack</id>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>unpack</goal>
-                            </goals>
-                            <configuration>
-                                <artifactItems>
-                                    <artifactItem>
-                                        <groupId>${project.groupId}</groupId>
-                                        <artifactId>${project.artifactId}</artifactId>
-                                        <version>${ujar.version}</version>
-                                        <type>jar</type>
-                                        <outputDirectory>${project.build.directory}/application
-                                        </outputDirectory>
-                                    </artifactItem>
-                                </artifactItems>
-                            </configuration>
-                        </execution>
-                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>
-                    <version>${apache.maven-resources-plugin.version}</version>
+                    <version>${maven-resources-plugin.version}</version>
                     <configuration>
                         <delimiters>
                             <delimiter>@</delimiter>
                         </delimiters>
                         <useDefaultDelimiters>false</useDefaultDelimiters>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>${maven-deploy-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -514,7 +485,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
-                    <version>${apache.maven-checkstyle-plugin.version}</version>
+                    <version>${maven-checkstyle-plugin.version}</version>
                     <dependencies>
                         <dependency>
                             <groupId>com.puppycrawl.tools</groupId>
@@ -632,6 +603,96 @@
                             <includeOnlyProperty>^git.build.time$</includeOnlyProperty>
                         </includeOnlyProperties>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire-plugin.version}</version>
+                    <configuration>
+                        <!-- Force alphabetical order to have a reproducible build -->
+                        <runOrder>alphabetical</runOrder>
+                        <skipTests>true</skipTests>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>default-test</id>
+                            <phase>test</phase>
+                            <goals>
+                                <goal>test</goal>
+                            </goals>
+                            <configuration>
+                                <skipTests>false</skipTests>
+                                <includes>
+                                    <include>**/*Test.java</include>
+                                </includes>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>integration-tests</id>
+                            <phase>integration-test</phase>
+                            <goals>
+                                <goal>test</goal>
+                            </goals>
+                            <configuration>
+                                <skipTests>false</skipTests>
+                                <includes>
+                                    <include>**/*IT.*</include>
+                                    <include>**/*Tests.*</include>
+                                </includes>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${jacoco-maven-plugin.version}</version>
+                    <configuration>
+                        <excludes />
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>pre-unit-tests</id>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                            </goals>
+                            <configuration>
+                                <destFile>${project.basedir}/target/jacoco.exec</destFile>
+                            </configuration>
+                        </execution>
+                        <!-- Ensures that the code coverage report for unit tests is created after unit tests have been run -->
+                        <execution>
+                            <id>post-unit-test</id>
+                            <phase>test</phase>
+                            <goals>
+                                <goal>report</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>pre-integration-tests</id>
+                            <goals>
+                                <goal>prepare-agent-integration</goal>
+                            </goals>
+                            <configuration>
+                                <destFile>${project.basedir}/target/jacoco.exec</destFile>
+                            </configuration>
+                        </execution>
+                        <!-- Ensures that the code coverage report for integration tests is created after integration tests have been run -->
+                        <execution>
+                            <id>post-integration-tests</id>
+                            <phase>post-integration-test</phase>
+                            <goals>
+                                <goal>report-integration</goal>
+                            </goals>
+                        </execution>
+                        <!-- Threshold -->
+                        <execution>
+                            <id>coverage-check</id>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
             </plugins>
         </pluginManagement>
