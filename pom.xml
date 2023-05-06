@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.ujar.boot</groupId>
-    <artifactId>ujar-boot-parent-pom</artifactId>
+    <artifactId>boot-parent-pom</artifactId>
     <version>23.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>ujar-boot-parent-pom</name>
+    <name>boot-parent-pom</name>
     <description>Default configurations for complete dependency tree to quickly build Spring Boot project.</description>
     <licenses>
         <license>
@@ -33,7 +33,7 @@
     </developers>
 
     <properties>
-        <java.version>19</java.version>
+        <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -41,17 +41,17 @@
 
         <ujar.version>23.0.0-SNAPSHOT</ujar.version>
 
-        <spring-boot.version>3.0.5</spring-boot.version>
+        <spring-boot.version>3.0.6</spring-boot.version>
         <spring-cloud-dependencies.version>2022.0.2</spring-cloud-dependencies.version>
         <opentelemetry.version>1.24.0</opentelemetry.version>
-        <spring-test.version>6.0.4</spring-test.version>
+        <spring-test.version>6.0.8</spring-test.version>
 
 
         <jakarta.servlet-api.version>6.0.0</jakarta.servlet-api.version>
         <jakarta.validation-api.version>3.0.2</jakarta.validation-api.version>
         <hibernate-validator.version>8.0.0.Final</hibernate-validator.version>
 
-        <hibernate.version>6.1.7.Final</hibernate.version>
+        <hibernate.version>6.2.2.Final</hibernate.version>
         <postgresql.version>42.6.0</postgresql.version>
         <r2dbc-postgresql.version>0.8.13.RELEASE</r2dbc-postgresql.version>
         <mysql-connector.version>8.0.32</mysql-connector.version>
@@ -60,18 +60,18 @@
         <javax-cache-api.version>1.1.1</javax-cache-api.version>
         <ehcache.version>3.10.8</ehcache.version>
 
-        <liquibase.version>4.20.0</liquibase.version>
-        <flyway.version>9.16.1</flyway.version>
+        <liquibase.version>4.21.1</liquibase.version>
+        <flyway.version>9.17.0</flyway.version>
 
         <jjwt.version>0.11.5</jjwt.version>
         <vaadin.version>24.0.0</vaadin.version>
 
-        <testcontainers.version>1.17.6</testcontainers.version>
+        <testcontainers.version>1.18.0</testcontainers.version>
         <playtika-testcontainers.version>2.3.2</playtika-testcontainers.version>
         <archunit.version>1.0.1</archunit.version>
         <awaitility.version>4.2.0</awaitility.version>
 
-        <springdoc-webmvc.version>2.0.4</springdoc-webmvc.version>
+        <springdoc-webmvc.version>2.1.0</springdoc-webmvc.version>
         <logstash-logback-encoder.version>7.3</logstash-logback-encoder.version>
 
         <gaul.modernizer-maven-plugin.version>2.6.0</gaul.modernizer-maven-plugin.version>
@@ -81,16 +81,16 @@
         <maven-javadoc-plugin.version>3.5.0</maven-javadoc-plugin.version>
         <maven-deploy-plugin.version>3.1.1</maven-deploy-plugin.version>
         <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
-        <puppycrawl.checkstyle.version>10.7.0</puppycrawl.checkstyle.version>
+        <puppycrawl.checkstyle.version>10.10.0</puppycrawl.checkstyle.version>
         <git-commit-id-plugin.version>5.0.0</git-commit-id-plugin.version>
         <maven-surefire-plugin.version>3.0.0</maven-surefire-plugin.version>
-        <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
     </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.5</version>
+        <version>3.0.6</version>
         <relativePath/>
     </parent>
 
@@ -98,47 +98,47 @@
         <dependencies>
             <dependency>
                 <groupId>org.ujar.boot</groupId>
-                <artifactId>ujar-boot-build</artifactId>
+                <artifactId>boot-build</artifactId>
                 <version>${ujar.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.ujar.boot</groupId>
-                <artifactId>ujar-boot-cache</artifactId>
+                <artifactId>boot-cache</artifactId>
                 <version>${ujar.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.ujar.boot</groupId>
-                <artifactId>ujar-boot-kafka</artifactId>
+                <artifactId>boot-kafka</artifactId>
                 <version>${ujar.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.ujar.boot</groupId>
-                <artifactId>ujar-boot-restful</artifactId>
+                <artifactId>boot-restful</artifactId>
                 <version>${ujar.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.ujar.boot</groupId>
-                <artifactId>ujar-boot-starter-cache</artifactId>
+                <artifactId>boot-starter-cache</artifactId>
                 <version>${ujar.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.ujar.boot</groupId>
-                <artifactId>ujar-boot-starter-observability</artifactId>
+                <artifactId>boot-starter-observability</artifactId>
                 <version>${ujar.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.ujar.boot</groupId>
-                <artifactId>ujar-boot-starter-amqp</artifactId>
+                <artifactId>boot-starter-amqp</artifactId>
                 <version>${ujar.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.ujar.boot</groupId>
-                <artifactId>ujar-boot-starter-kafka</artifactId>
+                <artifactId>boot-starter-kafka</artifactId>
                 <version>${ujar.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.ujar.boot</groupId>
-                <artifactId>ujar-boot-starter-restful</artifactId>
+                <artifactId>boot-starter-restful</artifactId>
                 <version>${ujar.version}</version>
             </dependency>
             <dependency>
@@ -493,14 +493,14 @@
                             <version>${puppycrawl.checkstyle.version}</version>
                         </dependency>
                         <dependency>
-                            <groupId>org.ujar.codequality</groupId>
-                            <artifactId>ujar-code-quality-checkstyle</artifactId>
+                            <groupId>org.ujar.build</groupId>
+                            <artifactId>checkstyle-utils</artifactId>
                             <version>${ujar.version}</version>
                         </dependency>
                     </dependencies>
                     <configuration>
                         <sourceDirectories>${basedir}/src</sourceDirectories>
-                        <configLocation>ujar_checks.xml</configLocation>
+                        <configLocation>svc-common-checkstyle.xml</configLocation>
                         <includeTestSourceDirectory>true</includeTestSourceDirectory>
                     </configuration>
                     <executions>
@@ -575,6 +575,11 @@
                             </goals>
                         </execution>
                     </executions>
+                </plugin>
+                <plugin>
+                    <groupId>pl.project13.maven</groupId>
+                    <artifactId>git-commit-id-plugin</artifactId>
+                    <version>4.9.10</version>
                 </plugin>
                 <plugin>
                     <groupId>io.github.git-commit-id</groupId>

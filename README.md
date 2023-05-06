@@ -3,14 +3,14 @@
 Generic Maven 3 parent POM with lots of default configuration. It is pre-configured to handle the "org.ujar.*" software
 stack in a suitable way.
 
-The latest released version requires JDK 19 at build time.
+The latest released version requires JDK 17 at build time.
 
 To use it as your parent POM using the following snippet:
 
 ```xml
   <parent>
     <groupId>org.ujar.boot</groupId>
-    <artifactId>ujar-boot-parent-pom</artifactId>
+    <artifactId>boot-parent-pom</artifactId>
     <version>23.0.0-SNAPSHOT</version>
   </parent>
 ```
