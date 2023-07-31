@@ -61,7 +61,7 @@
         <ehcache.version>3.10.8</ehcache.version>
 
         <liquibase.version>4.23.0</liquibase.version>
-        <flyway.version>9.20.1</flyway.version>
+        <flyway.version>9.21.1</flyway.version>
 
         <jjwt.version>0.11.5</jjwt.version>
         <vaadin.version>24.1.4</vaadin.version>
