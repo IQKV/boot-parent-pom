@@ -72,7 +72,7 @@
         <opentelemetry.version>1.28.0</opentelemetry.version>
         <zipkin-reporter.version>2.16.4</zipkin-reporter.version>
         <logstash-logback-encoder.version>7.4</logstash-logback-encoder.version>
-        <logback.version>1.4.8</logback.version>
+        <logback.version>1.4.9</logback.version>
         <loki-logback-appender.version>1.4.1</loki-logback-appender.version>
 
         <testcontainers.version>1.18.3</testcontainers.version>
