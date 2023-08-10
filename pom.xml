@@ -81,7 +81,7 @@
         <awaitility.version>4.2.0</awaitility.version>
         <mockito.version>5.2.0</mockito.version>
 
-        <springdoc-webmvc.version>2.1.0</springdoc-webmvc.version>
+        <springdoc-webmvc.version>2.2.0</springdoc-webmvc.version>
 
         <gaul.modernizer-maven-plugin.version>2.6.0</gaul.modernizer-maven-plugin.version>
         <codehaus.versions-maven-plugin.version>2.16.0</codehaus.versions-maven-plugin.version>
