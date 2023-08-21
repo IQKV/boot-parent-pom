@@ -64,7 +64,7 @@
         <flyway.version>9.21.1</flyway.version>
 
         <jjwt.version>0.11.5</jjwt.version>
-        <vaadin.version>24.1.4</vaadin.version>
+        <vaadin.version>24.1.5</vaadin.version>
 
         <micrometer.version>1.11.2</micrometer.version>
         <micrometer-tracing.version>1.1.3</micrometer-tracing.version>
