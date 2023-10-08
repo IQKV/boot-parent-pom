@@ -66,7 +66,7 @@
         <jjwt.version>0.11.5</jjwt.version>
         <vaadin.version>24.1.9</vaadin.version>
 
-        <micrometer.version>1.11.3</micrometer.version>
+        <micrometer.version>1.11.4</micrometer.version>
         <micrometer-tracing.version>1.1.5</micrometer-tracing.version>
         <datasource-micrometer.version>1.0.2</datasource-micrometer.version>
         <opentelemetry.version>1.30.1</opentelemetry.version>
