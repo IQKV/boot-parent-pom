@@ -44,7 +44,7 @@
         <spring-boot.version>3.1.4</spring-boot.version>
         <spring-kafka.version>3.0.11</spring-kafka.version>
         <spring-cloud-dependencies.version>2022.0.4</spring-cloud-dependencies.version>
-        <spring-test.version>6.0.11</spring-test.version>
+        <spring-test.version>6.0.12</spring-test.version>
 
 
         <jakarta.servlet-api.version>6.0.0</jakarta.servlet-api.version>
