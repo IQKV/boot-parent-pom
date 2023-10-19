@@ -33,7 +33,7 @@
     </developers>
 
     <properties>
-        <java.version>17</java.version>
+        <java.version>21</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -44,7 +44,7 @@
         <spring-boot.version>3.1.4</spring-boot.version>
         <spring-kafka.version>3.0.11</spring-kafka.version>
         <spring-cloud-dependencies.version>2022.0.4</spring-cloud-dependencies.version>
-        <spring-test.version>6.0.12</spring-test.version>
+        <spring-test.version>6.0.13</spring-test.version>
 
 
         <jakarta.servlet-api.version>6.0.0</jakarta.servlet-api.version>
@@ -60,13 +60,13 @@
         <javax-cache-api.version>1.1.1</javax-cache-api.version>
         <ehcache.version>3.10.8</ehcache.version>
 
-        <liquibase.version>4.23.2</liquibase.version>
-        <flyway.version>9.22.2</flyway.version>
+        <liquibase.version>4.24.0</liquibase.version>
+        <flyway.version>9.22.3</flyway.version>
 
-        <jjwt.version>0.11.5</jjwt.version>
-        <vaadin.version>24.1.9</vaadin.version>
+        <jjwt.version>0.12.3</jjwt.version>
+        <vaadin.version>24.2.0</vaadin.version>
 
-        <micrometer.version>1.11.4</micrometer.version>
+        <micrometer.version>1.11.5</micrometer.version>
         <micrometer-tracing.version>1.1.5</micrometer-tracing.version>
         <datasource-micrometer.version>1.0.2</datasource-micrometer.version>
         <opentelemetry.version>1.30.1</opentelemetry.version>
@@ -74,9 +74,10 @@
         <logstash-logback-encoder.version>7.4</logstash-logback-encoder.version>
         <logback.version>1.4.11</logback.version>
         <loki-logback-appender.version>1.4.2</loki-logback-appender.version>
+        <lombok.version>1.18.30</lombok.version>
 
         <testcontainers.version>1.19.1</testcontainers.version>
-        <playtika-testcontainers.version>3.0.4</playtika-testcontainers.version>
+        <playtika-testcontainers.version>3.0.5</playtika-testcontainers.version>
         <archunit.version>1.1.0</archunit.version>
         <awaitility.version>4.2.0</awaitility.version>
         <mockito.version>5.2.0</mockito.version>
@@ -204,6 +205,11 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-test</artifactId>
                 <version>${spring-test.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springdoc</groupId>
@@ -625,6 +631,13 @@
                             </goals>
                         </execution>
                     </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
