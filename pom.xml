@@ -66,6 +66,8 @@
         <jjwt.version>0.12.3</jjwt.version>
         <vaadin.version>24.2.0</vaadin.version>
 
+        <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
+
         <micrometer.version>1.11.5</micrometer.version>
         <micrometer-tracing.version>1.1.5</micrometer-tracing.version>
         <datasource-micrometer.version>1.0.2</datasource-micrometer.version>
@@ -84,6 +86,7 @@
 
         <springdoc-webmvc.version>2.2.0</springdoc-webmvc.version>
 
+        <openapi-generator-maven-plugin.version>7.0.1</openapi-generator-maven-plugin.version>
         <gaul.modernizer-maven-plugin.version>2.6.0</gaul.modernizer-maven-plugin.version>
         <codehaus.versions-maven-plugin.version>2.16.1</codehaus.versions-maven-plugin.version>
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
@@ -315,6 +318,11 @@
                 <groupId>org.springframework.kafka</groupId>
                 <artifactId>spring-kafka</artifactId>
                 <version>${spring-kafka.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${org.mapstruct.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.micrometer</groupId>
@@ -659,6 +667,11 @@
                     </executions>
                 </plugin>
                 <plugin>
+                    <groupId>org.openapitools</groupId>
+                    <artifactId>openapi-generator-maven-plugin</artifactId>
+                    <version>${openapi-generator-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
                     <groupId>pl.project13.maven</groupId>
                     <artifactId>git-commit-id-plugin</artifactId>
                     <version>4.9.10</version>
@@ -735,7 +748,7 @@
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <version>${jacoco-maven-plugin.version}</version>
                     <configuration>
-                        <excludes />
+                        <excludes/>
                     </configuration>
                     <executions>
                         <execution>
