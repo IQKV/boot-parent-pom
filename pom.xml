@@ -95,7 +95,7 @@
         <maven-deploy-plugin.version>3.1.1</maven-deploy-plugin.version>
         <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
         <puppycrawl.checkstyle.version>10.12.3</puppycrawl.checkstyle.version>
-        <git-commit-id-plugin.version>6.0.0</git-commit-id-plugin.version>
+        <git-commit-id-plugin.version>7.0.0</git-commit-id-plugin.version>
         <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
         <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
     </properties>
