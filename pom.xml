@@ -64,7 +64,7 @@
         <flyway.version>9.22.3</flyway.version>
 
         <jjwt.version>0.12.3</jjwt.version>
-        <vaadin.version>24.2.0</vaadin.version>
+        <vaadin.version>24.2.1</vaadin.version>
 
         <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
 
