@@ -78,7 +78,7 @@ trigger :
     - push
     - tag
   ref :
-    - refs/heads/develop
+    - refs/heads/dev
     - refs/heads/prerelease*
     - refs/heads/*.*.x
     - refs/tags/*
@@ -107,7 +107,7 @@ steps :
     when :
       branch :
         include :
-          - "develop"
+          - "dev"
           - "prerelease/*"
           - "*.*.x"
 
@@ -172,7 +172,7 @@ trigger :
   event :
     - custom
   branch :
-    - "develop"
+    - "dev"
     - "*.*.x"
 
 volumes :
