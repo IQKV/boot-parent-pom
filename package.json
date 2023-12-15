@@ -1,5 +1,5 @@
 {
-    "name": "boot-parent-pom",
+    "name": "@know-how-spring-boot/boot-parent-pom",
     "version": "23.0.0",
     "description": "Provide an optional Git commit hooks.",
     "private": true,
