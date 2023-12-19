@@ -11,7 +11,7 @@ To use it as your parent POM using the following snippet:
   <parent>
     <groupId>org.iqkv.boot</groupId>
     <artifactId>boot-parent-pom</artifactId>
-    <version>23.0.0-SNAPSHOT</version>
+    <version>24.0.0-SNAPSHOT</version>
   </parent>
 ```
 
