@@ -63,7 +63,7 @@
         <javax-cache-api.version>1.1.1</javax-cache-api.version>
         <ehcache.version>3.10.8</ehcache.version>
 
-        <liquibase.version>4.25.0</liquibase.version>
+        <liquibase.version>4.25.1</liquibase.version>
         <flyway.version>10.3.0</flyway.version>
 
         <kafka-streams.version>3.6.1</kafka-streams.version>
