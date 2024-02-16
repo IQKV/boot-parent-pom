@@ -3,7 +3,7 @@
 Generic Maven 3 parent POM with lots of default configuration. It is pre-configured to handle the "org.iqkv.*" software
 stack in a suitable way.
 
-The latest released version requires JDK 17 at build time.
+The latest released version requires JDK 21 at build time.
 
 To use it as your parent POM using the following snippet:
 
