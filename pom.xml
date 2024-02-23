@@ -55,7 +55,7 @@
         <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
 
         <hibernate.version>6.4.2.Final</hibernate.version>
-        <postgresql.version>42.7.1</postgresql.version>
+        <postgresql.version>42.7.2</postgresql.version>
         <r2dbc-postgresql.version>0.8.13.RELEASE</r2dbc-postgresql.version>
         <mysql-connector.version>8.2.0</mysql-connector.version>
         <vladmihalcea.hibernate-types.version>2.21.1</vladmihalcea.hibernate-types.version>
