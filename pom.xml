@@ -42,7 +42,7 @@
         <iqkv.platform.version>24.0.0-SNAPSHOT</iqkv.platform.version>
 
 
-        <spring-boot.version>3.2.3</spring-boot.version>
+        <spring-boot.version>3.2.4</spring-boot.version>
         <spring-kafka.version>3.1.0</spring-kafka.version>
         <spring-kafka-test.version>3.1.1</spring-kafka-test.version>
 
@@ -109,7 +109,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.3</version>
+        <version>3.2.4</version>
         <relativePath/>
     </parent>
 
