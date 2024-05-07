@@ -82,7 +82,7 @@
         <lombok.version>1.18.30</lombok.version>
 
         <testcontainers.version>1.19.7</testcontainers.version>
-        <playtika-testcontainers.version>3.1.5</playtika-testcontainers.version>
+        <playtika-testcontainers.version>3.1.6</playtika-testcontainers.version>
         <archunit.version>1.2.1</archunit.version>
         <awaitility.version>4.2.0</awaitility.version>
         <mockito.version>5.2.0</mockito.version>
