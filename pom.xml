@@ -43,33 +43,33 @@
 
 
         <spring-boot.version>3.3.2</spring-boot.version>
-        <spring-kafka.version>3.2.1</spring-kafka.version>
+        <spring-kafka.version>3.2.2</spring-kafka.version>
 
-        <spring-cloud-dependencies.version>2023.0.0</spring-cloud-dependencies.version>
-        <spring-test.version>6.1.10</spring-test.version>
+        <spring-cloud-dependencies.version>2023.0.3</spring-cloud-dependencies.version>
+        <spring-test.version>6.1.12</spring-test.version>
 
 
         <jakarta.servlet-api.version>6.0.0</jakarta.servlet-api.version>
         <jakarta.validation-api.version>3.0.2</jakarta.validation-api.version>
         <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
 
-        <hibernate.version>6.5.0.Final</hibernate.version>
-        <postgresql.version>42.7.2</postgresql.version>
+        <hibernate.version>6.6.0.Final</hibernate.version>
+        <postgresql.version>42.7.3</postgresql.version>
         <r2dbc-postgresql.version>0.8.13.RELEASE</r2dbc-postgresql.version>
-        <mysql-connector.version>8.3.0</mysql-connector.version>
+        <mysql-connector.version>9.0.0</mysql-connector.version>
         <vladmihalcea.hibernate-types.version>2.21.1</vladmihalcea.hibernate-types.version>
 
         <javax-cache-api.version>1.1.1</javax-cache-api.version>
         <ehcache.version>3.10.8</ehcache.version>
 
-        <liquibase.version>4.25.1</liquibase.version>
-        <flyway.version>10.15.0</flyway.version>
+        <liquibase.version>4.29.1</liquibase.version>
+        <flyway.version>10.17.1</flyway.version>
 
-        <kafka-streams.version>3.6.1</kafka-streams.version>
+        <kafka-streams.version>3.8.0</kafka-streams.version>
         <jjwt.version>0.12.5</jjwt.version>
-        <vaadin.version>24.3.10</vaadin.version>
+        <vaadin.version>24.4.9</vaadin.version>
 
-        <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
+        <org.mapstruct.version>1.6.0</org.mapstruct.version>
 
         <micrometer.version>1.13.0</micrometer.version>
         <micrometer-tracing.version>1.3.1</micrometer-tracing.version>
@@ -81,14 +81,14 @@
         <loki-logback-appender.version>1.4.2</loki-logback-appender.version>
         <lombok.version>1.18.30</lombok.version>
 
-        <testcontainers.version>1.19.8</testcontainers.version>
+        <testcontainers.version>1.20.1</testcontainers.version>
         <playtika-testcontainers.version>3.1.7</playtika-testcontainers.version>
         <archunit.version>1.3.0</archunit.version>
-        <awaitility.version>4.2.0</awaitility.version>
+        <awaitility.version>4.2.2</awaitility.version>
         <testng.version>7.10.2</testng.version>
         <mockito.version>5.2.0</mockito.version>
 
-        <springdoc-webmvc.version>2.3.0</springdoc-webmvc.version>
+        <springdoc-webmvc.version>2.6.0</springdoc-webmvc.version>
         <springdoc-webflux.version>1.8.0</springdoc-webflux.version>
 
         <openapi-generator-maven-plugin.version>7.2.0</openapi-generator-maven-plugin.version>
