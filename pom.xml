@@ -65,7 +65,7 @@
         <liquibase.version>4.29.1</liquibase.version>
         <flyway.version>10.17.1</flyway.version>
 
-        <kafka-streams.version>3.8.0</kafka-streams.version>
+        <kafka-streams.version>3.7.1</kafka-streams.version>
         <jjwt.version>0.12.5</jjwt.version>
         <vaadin.version>24.4.9</vaadin.version>
 
