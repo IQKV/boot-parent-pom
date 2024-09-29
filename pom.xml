@@ -69,6 +69,7 @@
         <jjwt.version>0.12.5</jjwt.version>
         <vaadin.version>24.4.9</vaadin.version>
 
+        <jackson.version>2.18.0</jackson.version>
         <org.mapstruct.version>1.6.2</org.mapstruct.version>
 
         <micrometer.version>1.13.0</micrometer.version>
@@ -377,6 +378,11 @@
                 <groupId>org.apache.kafka</groupId>
                 <artifactId>kafka-streams-test-utils</artifactId>
                 <version>${kafka-streams.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-hibernate6</artifactId>
+                <version>${jackson.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.mapstruct</groupId>
