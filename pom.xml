@@ -120,7 +120,7 @@
         <dependencies>
             <dependency>
                 <groupId>com.iqkv.boot</groupId>
-                <artifactId>boot-build</artifactId>
+                <artifactId>boot-info</artifactId>
                 <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
