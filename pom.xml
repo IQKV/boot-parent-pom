@@ -54,7 +54,7 @@
 
         <hibernate.version>6.6.3.Final</hibernate.version>
         <postgresql.version>42.7.4</postgresql.version>
-        <r2dbc-postgresql.version>0.8.13.RELEASE</r2dbc-postgresql.version>
+        <r2dbc-postgresql.version>1.0.7.RELEASE</r2dbc-postgresql.version>
         <mysql-connector.version>9.0.0</mysql-connector.version>
         <vladmihalcea.hibernate-types.version>2.21.1</vladmihalcea.hibernate-types.version>
 
@@ -334,7 +334,7 @@
                 <version>${spring-boot.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.r2dbc</groupId>
+                <groupId>org.postgresql</groupId>
                 <artifactId>r2dbc-postgresql</artifactId>
                 <version>${r2dbc-postgresql.version}</version>
             </dependency>
