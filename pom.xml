@@ -106,7 +106,7 @@
         <git-commit-id-plugin.version>7.0.0</git-commit-id-plugin.version>
         <maven-surefire-plugin.version>3.2.3</maven-surefire-plugin.version>
         <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
-        <native-maven-plugin.version>0.9.28</native-maven-plugin.version>
+        <native-maven-plugin.version>0.10.3</native-maven-plugin.version>
     </properties>
 
     <parent>
