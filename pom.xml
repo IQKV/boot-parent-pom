@@ -65,7 +65,7 @@
         <flyway.version>11.0.0</flyway.version>
 
         <kafka-streams.version>3.9.0</kafka-streams.version>
-        <jjwt.version>0.12.5</jjwt.version>
+        <jjwt.version>0.12.6</jjwt.version>
         <vaadin.version>24.5.7</vaadin.version>
 
         <jackson.version>2.18.1</jackson.version>
