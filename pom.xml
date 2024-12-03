@@ -165,11 +165,6 @@
             </dependency>
             <dependency>
                 <groupId>com.iqkv.boot</groupId>
-                <artifactId>boot-starter-observability</artifactId>
-                <version>${iqkv.platform.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.iqkv.boot</groupId>
                 <artifactId>boot-starter-amqp</artifactId>
                 <version>${iqkv.platform.version}</version>
             </dependency>
