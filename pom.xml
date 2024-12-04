@@ -135,6 +135,11 @@
             </dependency>
             <dependency>
                 <groupId>com.iqkv.boot</groupId>
+                <artifactId>boot-security-errors</artifactId>
+                <version>${iqkv.platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.iqkv.boot</groupId>
                 <artifactId>boot-mail</artifactId>
                 <version>${iqkv.platform.version}</version>
             </dependency>
