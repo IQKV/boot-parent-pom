@@ -69,7 +69,7 @@
         <vaadin.version>24.5.7</vaadin.version>
 
         <jackson.version>2.18.1</jackson.version>
-        <org.mapstruct.version>1.6.2</org.mapstruct.version>
+        <org.mapstruct.version>1.6.3</org.mapstruct.version>
 
         <micrometer.version>1.14.1</micrometer.version>
         <micrometer-tracing.version>1.4.0</micrometer-tracing.version>
