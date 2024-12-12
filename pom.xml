@@ -62,7 +62,7 @@
         <ehcache.version>3.10.8</ehcache.version>
 
         <liquibase.version>4.30.0</liquibase.version>
-        <flyway.version>11.0.1</flyway.version>
+        <flyway.version>11.1.0</flyway.version>
 
         <kafka-streams.version>3.9.0</kafka-streams.version>
         <jjwt.version>0.12.6</jjwt.version>
