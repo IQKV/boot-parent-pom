@@ -76,7 +76,7 @@
         <datasource-micrometer.version>1.0.6</datasource-micrometer.version>
         <zipkin-reporter.version>3.4.3</zipkin-reporter.version>
         <logstash-logback-encoder.version>8.0</logstash-logback-encoder.version>
-        <logback.version>1.5.13</logback.version>
+        <logback.version>1.5.15</logback.version>
         <logback-classic.version>1.5.14</logback-classic.version>
         <loki-logback-appender.version>1.5.2</loki-logback-appender.version>
         <lombok.version>1.18.36</lombok.version>
