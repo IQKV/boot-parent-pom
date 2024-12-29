@@ -1,6 +1,6 @@
 # Spring-based parent POM.
 
-Generic Maven 3 parent POM with lots of default configuration. It is pre-configured to handle the "com.iqkv.*" software
+Generic Maven 3 parent POM with lots of default configuration. It is pre-configured to handle the "com.iqkv.\*" software
 stack in a suitable way.
 
 The latest released version requires JDK 21 at build time.
@@ -35,4 +35,4 @@ YY.MM.MICRO
 
 1. **YY** - short year - 6, 16, 106
 1. **MM** - short month - 1, 2 ... 11, 12
-1. **MICRO** -  "patch" segment
+1. **MICRO** - "patch" segment
