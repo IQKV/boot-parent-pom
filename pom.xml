@@ -86,7 +86,7 @@
         <archunit.version>1.3.0</archunit.version>
         <awaitility.version>4.2.2</awaitility.version>
         <testng.version>7.10.2</testng.version>
-        <mockito.version>5.14.2</mockito.version>
+        <mockito.version>5.15.2</mockito.version>
 
         <springdoc-webmvc.version>2.7.0</springdoc-webmvc.version>
         <springdoc-webflux.version>1.8.0</springdoc-webflux.version>
