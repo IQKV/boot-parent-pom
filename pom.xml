@@ -52,7 +52,7 @@
         <jakarta.validation-api.version>3.1.0</jakarta.validation-api.version>
         <hibernate-validator.version>8.0.2.Final</hibernate-validator.version>
 
-        <hibernate.version>6.6.4.Final</hibernate.version>
+        <hibernate.version>6.6.5.Final</hibernate.version>
         <postgresql.version>42.7.5</postgresql.version>
         <r2dbc-postgresql.version>1.0.7.RELEASE</r2dbc-postgresql.version>
         <mysql-connector.version>9.1.0</mysql-connector.version>
