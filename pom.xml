@@ -41,7 +41,7 @@
         <iqkv.platform.version>24.0.0-SNAPSHOT</iqkv.platform.version>
 
 
-        <spring-boot.version>3.4.1</spring-boot.version>
+        <spring-boot.version>3.4.2</spring-boot.version>
         <spring-kafka.version>3.3.2</spring-kafka.version>
 
         <spring-cloud-dependencies.version>2024.0.0</spring-cloud-dependencies.version>
