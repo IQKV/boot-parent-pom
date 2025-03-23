@@ -1,6 +1,6 @@
 # Spring-based parent POM.
 
-Generic Maven 3 parent POM with lots of default configuration. It is pre-configured to handle the "com.iqkv.\*" software
+Generic Maven 3 parent POM with lots of default configuration. It is pre-configured to handle the "com.daromir.\*" software
 stack in a suitable way.
 
 The latest released version requires JDK 21 at build time.
@@ -9,7 +9,7 @@ To use it as your parent POM using the following snippet:
 
 ```xml
   <parent>
-    <groupId>com.iqkv.boot</groupId>
+    <groupId>com.daromir.boot</groupId>
     <artifactId>boot-parent-pom</artifactId>
     <version>25.0.0-SNAPSHOT</version>
   </parent>
