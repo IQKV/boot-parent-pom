@@ -131,6 +131,11 @@
             </dependency>
             <dependency>
                 <groupId>com.daromir.boot</groupId>
+                <artifactId>boot-http</artifactId>
+                <version>${daromir.platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.daromir.boot</groupId>
                 <artifactId>boot-security</artifactId>
                 <version>${daromir.platform.version}</version>
             </dependency>
