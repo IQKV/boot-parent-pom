@@ -92,6 +92,7 @@
         <springdoc-webflux-ui.version>1.8.0</springdoc-webflux-ui.version>
         <spring-modulith.version>1.3.4</spring-modulith.version>
         <cucumber-bom.version>7.21.1</cucumber-bom.version>
+        <commons-beanutils.version>7.10.1</commons-beanutils.version>
 
         <openapi-generator-maven-plugin.version>7.12.0</openapi-generator-maven-plugin.version>
         <gaul.modernizer-maven-plugin.version>3.1.0</gaul.modernizer-maven-plugin.version>
@@ -278,6 +279,11 @@
                 <groupId>org.springdoc</groupId>
                 <artifactId>springdoc-openapi-starter-webflux-ui</artifactId>
                 <version>${springdoc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>${commons-beanutils.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.postgresql</groupId>
