@@ -85,6 +85,7 @@
         <playtika-testcontainers.version>3.1.11</playtika-testcontainers.version>
         <archunit.version>1.4.0</archunit.version>
         <awaitility.version>4.3.0</awaitility.version>
+        <blockhound-junit-platform.version>1.0.11.RELEASE</blockhound-junit-platform.version>
         <testng.version>7.11.0</testng.version>
         <mockito.version>5.16.1</mockito.version>
 
@@ -632,6 +633,11 @@
                 <groupId>com.tngtech.archunit</groupId>
                 <artifactId>archunit-junit5-engine</artifactId>
                 <version>${archunit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.projectreactor.tools</groupId>
+                <artifactId>blockhound-junit-platform</artifactId>
+                <version>${blockhound-junit-platform.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
