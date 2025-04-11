@@ -1,4 +1,4 @@
-# Spring-based parent POM.
+# ✨ Spring-based parent POM.
 
 Generic Maven 3 parent POM with lots of default configuration. It is pre-configured to handle the "com.daromir.\*" software
 stack in a suitable way.
