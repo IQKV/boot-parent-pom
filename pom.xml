@@ -71,7 +71,7 @@
         <jackson.version>2.18.3</jackson.version>
         <org.mapstruct.version>1.6.3</org.mapstruct.version>
 
-        <micrometer.version>1.14.5</micrometer.version>
+        <micrometer.version>1.14.6</micrometer.version>
         <micrometer-tracing.version>1.4.5</micrometer-tracing.version>
         <datasource-micrometer.version>1.1.0</datasource-micrometer.version>
         <zipkin-reporter.version>3.5.0</zipkin-reporter.version>
