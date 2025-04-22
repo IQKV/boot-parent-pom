@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.daromir.boot</groupId>
+    <groupId>expert.takes.boot</groupId>
     <artifactId>boot-parent-pom</artifactId>
     <version>25.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -38,7 +38,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <daromir.platform.version>25.0.0-SNAPSHOT</daromir.platform.version>
+        <expertness.platform.version>25.0.0-SNAPSHOT</expertness.platform.version>
 
 
         <spring-boot.version>3.4.4</spring-boot.version>
@@ -122,74 +122,74 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.daromir.boot</groupId>
+                <groupId>expert.takes.boot</groupId>
                 <artifactId>boot-info</artifactId>
-                <version>${daromir.platform.version}</version>
+                <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.daromir.boot</groupId>
+                <groupId>expert.takes.boot</groupId>
                 <artifactId>boot-cache</artifactId>
-                <version>${daromir.platform.version}</version>
+                <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.daromir.boot</groupId>
+                <groupId>expert.takes.boot</groupId>
                 <artifactId>boot-http</artifactId>
-                <version>${daromir.platform.version}</version>
+                <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.daromir.boot</groupId>
+                <groupId>expert.takes.boot</groupId>
                 <artifactId>boot-security</artifactId>
-                <version>${daromir.platform.version}</version>
+                <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.daromir.boot</groupId>
+                <groupId>expert.takes.boot</groupId>
                 <artifactId>boot-security-errors</artifactId>
-                <version>${daromir.platform.version}</version>
+                <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.daromir.boot</groupId>
+                <groupId>expert.takes.boot</groupId>
                 <artifactId>boot-mail</artifactId>
-                <version>${daromir.platform.version}</version>
+                <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.daromir.boot</groupId>
+                <groupId>expert.takes.boot</groupId>
                 <artifactId>boot-kafka</artifactId>
-                <version>${daromir.platform.version}</version>
+                <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.daromir.boot</groupId>
+                <groupId>expert.takes.boot</groupId>
                 <artifactId>boot-mvc-rest</artifactId>
-                <version>${daromir.platform.version}</version>
+                <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.daromir.boot</groupId>
+                <groupId>expert.takes.boot</groupId>
                 <artifactId>boot-starter-security</artifactId>
-                <version>${daromir.platform.version}</version>
+                <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.daromir.boot</groupId>
+                <groupId>expert.takes.boot</groupId>
                 <artifactId>boot-starter-mail</artifactId>
-                <version>${daromir.platform.version}</version>
+                <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.daromir.boot</groupId>
+                <groupId>expert.takes.boot</groupId>
                 <artifactId>boot-starter-cache</artifactId>
-                <version>${daromir.platform.version}</version>
+                <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.daromir.boot</groupId>
+                <groupId>expert.takes.boot</groupId>
                 <artifactId>boot-starter-amqp</artifactId>
-                <version>${daromir.platform.version}</version>
+                <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.daromir.boot</groupId>
+                <groupId>expert.takes.boot</groupId>
                 <artifactId>boot-starter-kafka</artifactId>
-                <version>${daromir.platform.version}</version>
+                <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.daromir.boot</groupId>
+                <groupId>expert.takes.boot</groupId>
                 <artifactId>boot-starter-mvc-rest</artifactId>
-                <version>${daromir.platform.version}</version>
+                <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -699,9 +699,9 @@
                             <version>${puppycrawl.checkstyle.version}</version>
                         </dependency>
                         <dependency>
-                            <groupId>com.daromir.checkstyle</groupId>
+                            <groupId>expert.takes.checkstyle</groupId>
                             <artifactId>checkstyle-config</artifactId>
-                            <version>${daromir.platform.version}</version>
+                            <version>${expertness.platform.version}</version>
                         </dependency>
                     </dependencies>
                     <configuration>

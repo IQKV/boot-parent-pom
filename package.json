@@ -1,5 +1,5 @@
 {
-  "name": "@daromir/boot-parent-pom",
+  "name": "@expertness/boot-parent-pom",
   "version": "25.0.0",
   "description": "Provide an optional Git commit hooks.",
   "private": true,
