@@ -42,7 +42,8 @@
 
 
         <spring-boot.version>3.4.5</spring-boot.version>
-        <spring-kafka.version>3.3.4</spring-kafka.version>
+        <spring-kafka.version>3.3.5</spring-kafka.version>
+
 
         <spring-cloud-dependencies.version>2024.0.1</spring-cloud-dependencies.version>
         <spring-test.version>6.2.6</spring-test.version>
