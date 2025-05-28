@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>expertness</groupId>
+    <groupId>com.iqkv</groupId>
     <artifactId>boot-parent-pom</artifactId>
     <version>25.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -41,7 +41,7 @@
         <expertness.platform.version>25.0.0-SNAPSHOT</expertness.platform.version>
 
 
-        <spring-boot.version>3.5.0</spring-boot.version>
+        <spring-boot.version>3.4.6</spring-boot.version>
         <spring-kafka.version>3.3.6</spring-kafka.version>
 
 
@@ -116,79 +116,79 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.0</version>
+        <version>3.4.6</version>
         <relativePath/>
     </parent>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>expertness</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-info</artifactId>
                 <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>expertness</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-cache</artifactId>
                 <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>expertness</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-http</artifactId>
                 <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>expertness</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-security</artifactId>
                 <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>expertness</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-security-errors</artifactId>
                 <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>expertness</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-mail</artifactId>
                 <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>expertness</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-kafka</artifactId>
                 <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>expertness</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-mvc-rest</artifactId>
                 <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>expertness</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-starter-security</artifactId>
                 <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>expertness</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-starter-mail</artifactId>
                 <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>expertness</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-starter-cache</artifactId>
                 <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>expertness</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-starter-amqp</artifactId>
                 <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>expertness</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-starter-kafka</artifactId>
                 <version>${expertness.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>expertness</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-starter-mvc-rest</artifactId>
                 <version>${expertness.platform.version}</version>
             </dependency>
@@ -700,7 +700,7 @@
                             <version>${puppycrawl.checkstyle.version}</version>
                         </dependency>
                         <dependency>
-                            <groupId>expertness</groupId>
+                            <groupId>com.iqkv</groupId>
                             <artifactId>checkstyle-config</artifactId>
                             <version>${expertness.platform.version}</version>
                         </dependency>
