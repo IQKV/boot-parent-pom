@@ -94,7 +94,7 @@
         <springdoc-webflux-ui.version>1.8.0</springdoc-webflux-ui.version>
         <spring-modulith.version>1.4.0</spring-modulith.version>
         <cucumber-bom.version>7.22.2</cucumber-bom.version>
-        <commons-beanutils.version>1.10.1</commons-beanutils.version>
+        <commons-beanutils.version>1.11.0</commons-beanutils.version>
 
         <openapi-generator-maven-plugin.version>7.13.0</openapi-generator-maven-plugin.version>
         <gaul.modernizer-maven-plugin.version>3.1.0</gaul.modernizer-maven-plugin.version>
