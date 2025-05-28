@@ -38,7 +38,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <expertness.platform.version>25.0.0-SNAPSHOT</expertness.platform.version>
+        <iqkv.platform.version>25.0.0-SNAPSHOT</iqkv.platform.version>
 
 
         <spring-boot.version>3.4.6</spring-boot.version>
@@ -125,72 +125,72 @@
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-info</artifactId>
-                <version>${expertness.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-cache</artifactId>
-                <version>${expertness.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-http</artifactId>
-                <version>${expertness.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-security</artifactId>
-                <version>${expertness.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-security-errors</artifactId>
-                <version>${expertness.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-mail</artifactId>
-                <version>${expertness.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-kafka</artifactId>
-                <version>${expertness.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-mvc-rest</artifactId>
-                <version>${expertness.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-starter-security</artifactId>
-                <version>${expertness.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-starter-mail</artifactId>
-                <version>${expertness.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-starter-cache</artifactId>
-                <version>${expertness.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-starter-amqp</artifactId>
-                <version>${expertness.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-starter-kafka</artifactId>
-                <version>${expertness.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-starter-mvc-rest</artifactId>
-                <version>${expertness.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -702,7 +702,7 @@
                         <dependency>
                             <groupId>com.iqkv</groupId>
                             <artifactId>checkstyle-config</artifactId>
-                            <version>${expertness.platform.version}</version>
+                            <version>${iqkv.platform.version}</version>
                         </dependency>
                     </dependencies>
                     <configuration>
