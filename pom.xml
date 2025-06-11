@@ -79,7 +79,7 @@
         <logstash-logback-encoder.version>8.1</logstash-logback-encoder.version>
         <logback.version>1.5.18</logback.version>
         <logback-classic.version>1.5.18</logback-classic.version>
-        <loki-logback-appender.version>1.6.0</loki-logback-appender.version>
+        <loki-logback-appender.version>2.0.0</loki-logback-appender.version>
         <lombok.version>1.18.38</lombok.version>
 
         <testcontainers.version>1.21.1</testcontainers.version>
