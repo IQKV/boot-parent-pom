@@ -87,6 +87,7 @@
         <archunit.version>1.4.1</archunit.version>
         <awaitility.version>4.3.0</awaitility.version>
         <blockhound-junit-platform.version>1.0.13.RELEASE</blockhound-junit-platform.version>
+        <junit.jupiter-params.version>5.12.2</junit.jupiter-params.version>
         <testng.version>7.11.0</testng.version>
         <mockito.version>5.18.0</mockito.version>
 
@@ -534,6 +535,11 @@
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt-jackson</artifactId>
                 <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-params</artifactId>
+                <version>${junit.jupiter-params.version}</version>
             </dependency>
 
             <dependency>
