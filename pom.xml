@@ -95,6 +95,8 @@
         <springdoc-webflux-ui.version>1.8.0</springdoc-webflux-ui.version>
         <spring-modulith.version>1.4.0</spring-modulith.version>
         <cucumber-bom.version>7.23.0</cucumber-bom.version>
+        <pitest.version>7.23.0</pitest.version>
+        <pact.version>4.6.17</pact.version>
         <commons-beanutils.version>1.11.0</commons-beanutils.version>
 
         <openapi-generator-maven-plugin.version>7.13.0</openapi-generator-maven-plugin.version>
@@ -579,6 +581,18 @@
                 <version>${cucumber-bom.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-parent</artifactId>
+                <version>${pitest.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>au.com.dius.pact</groupId>
+                <artifactId>provider</artifactId>
+                <version>${pact.version}</version>
             </dependency>
 
             <dependency>
