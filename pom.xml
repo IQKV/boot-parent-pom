@@ -83,7 +83,7 @@
         <lombok.version>1.18.38</lombok.version>
 
         <testcontainers.version>1.21.2</testcontainers.version>
-        <playtika-testcontainers.version>3.1.14</playtika-testcontainers.version>
+        <playtika-testcontainers.version>3.1.15</playtika-testcontainers.version>
         <archunit.version>1.4.1</archunit.version>
         <awaitility.version>4.3.0</awaitility.version>
         <blockhound-junit-platform.version>1.0.13.RELEASE</blockhound-junit-platform.version>
