@@ -74,7 +74,7 @@
 
         <micrometer.version>1.15.1</micrometer.version>
         <micrometer-tracing.version>1.5.1</micrometer-tracing.version>
-        <datasource-micrometer.version>1.1.1</datasource-micrometer.version>
+        <datasource-micrometer.version>1.1.2</datasource-micrometer.version>
         <zipkin-reporter.version>3.5.1</zipkin-reporter.version>
         <logstash-logback-encoder.version>8.1</logstash-logback-encoder.version>
         <logback.version>1.5.18</logback.version>
