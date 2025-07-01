@@ -82,7 +82,7 @@
         <loki-logback-appender.version>2.0.0</loki-logback-appender.version>
         <lombok.version>1.18.38</lombok.version>
 
-        <testcontainers.version>1.21.2</testcontainers.version>
+        <testcontainers.version>1.21.3</testcontainers.version>
         <playtika-testcontainers.version>3.1.15</playtika-testcontainers.version>
         <archunit.version>1.4.1</archunit.version>
         <awaitility.version>4.3.0</awaitility.version>
