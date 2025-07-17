@@ -46,7 +46,7 @@
 
 
         <spring-cloud-dependencies.version>2025.0.0</spring-cloud-dependencies.version>
-        <spring-test.version>6.2.8</spring-test.version>
+        <spring-test.version>6.2.9</spring-test.version>
 
 
         <jakarta.servlet-api.version>6.1.0</jakarta.servlet-api.version>
