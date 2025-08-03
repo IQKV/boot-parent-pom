@@ -17,7 +17,7 @@ To use it as your parent POM using the following snippet:
 
 ## Code conventions
 
-The code follows [Google Code Conventions](https://google.github.io/styleguide/javaguide.html). Code quality is measured by:
+The code adheres to the [Google Code Conventions](https://google.github.io/styleguide/javaguide.html). Code quality is measured by:
 
 - [SonarQube](https://docs.sonarsource.com/)
 - [PMD](https://pmd.github.io/)
