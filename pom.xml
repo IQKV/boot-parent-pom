@@ -73,7 +73,7 @@
         <org.mapstruct.version>1.6.3</org.mapstruct.version>
 
         <micrometer.version>1.15.2</micrometer.version>
-        <micrometer-tracing.version>1.5.2</micrometer-tracing.version>
+        <micrometer-tracing.version>1.5.3</micrometer-tracing.version>
         <datasource-micrometer.version>1.1.2</datasource-micrometer.version>
         <zipkin-reporter.version>3.5.1</zipkin-reporter.version>
         <logstash-logback-encoder.version>8.1</logstash-logback-encoder.version>
