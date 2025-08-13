@@ -67,7 +67,7 @@
 
         <kafka-streams.version>4.0.0</kafka-streams.version>
         <jjwt.version>0.12.6</jjwt.version>
-        <vaadin.version>24.8.5</vaadin.version>
+        <vaadin.version>24.8.6</vaadin.version>
 
         <jackson.version>2.19.2</jackson.version>
         <org.mapstruct.version>1.6.3</org.mapstruct.version>
