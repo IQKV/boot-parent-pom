@@ -95,7 +95,7 @@
         <springdoc-webflux-ui.version>1.8.0</springdoc-webflux-ui.version>
         <spring-modulith.version>1.4.2</spring-modulith.version>
         <cucumber-bom.version>7.27.2</cucumber-bom.version>
-        <pitest.version>1.20.1</pitest.version>
+        <pitest.version>1.20.2</pitest.version>
         <pact.version>4.6.17</pact.version>
         <commons-beanutils.version>1.11.0</commons-beanutils.version>
 
