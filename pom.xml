@@ -100,7 +100,7 @@
         <commons-beanutils.version>1.11.0</commons-beanutils.version>
 
         <openapi-generator-maven-plugin.version>7.14.0</openapi-generator-maven-plugin.version>
-        <gaul.modernizer-maven-plugin.version>3.1.0</gaul.modernizer-maven-plugin.version>
+        <gaul.modernizer-maven-plugin.version>3.2.0</gaul.modernizer-maven-plugin.version>
         <codehaus.versions-maven-plugin.version>2.18.0</codehaus.versions-maven-plugin.version>
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
         <maven-checkstyle-plugin.version>3.6.0</maven-checkstyle-plugin.version>
