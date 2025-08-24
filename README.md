@@ -1,7 +1,7 @@
 # ✨ Spring-based parent POM.
 
 Generic Maven 3 parent POM with lots of default configuration. It is pre-configured to handle the "com.iqkv.\*" software
-stack in a suitable way.
+stack suitably.
 
 The latest released version requires JDK 21 at build time.
 
