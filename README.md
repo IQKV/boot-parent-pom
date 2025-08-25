@@ -33,11 +33,13 @@ Add this parent POM to your Maven project:
 This parent POM enforces high code quality through multiple integrated tools:
 
 ### Code Style
+
 - **[Google Java Style Guide](https://google.github.io/styleguide/javaguide.html)**: Consistent formatting and conventions
 - **[Prettier](https://prettier.io/)**: Automated code formatting
 - **[EditorConfig](https://editorconfig.org/)**: Cross-editor consistency
 
 ### Static Analysis
+
 - **[SonarQube](https://docs.sonarsource.com/)**: Comprehensive code quality analysis
 - **[PMD](https://pmd.github.io/)**: Source code analyzer for common programming flaws
 - **[Checkstyle](https://checkstyle.sourceforge.io/)**: Coding standard compliance
@@ -45,6 +47,7 @@ This parent POM enforces high code quality through multiple integrated tools:
 - **[Qulice](https://www.qulice.com/)**: Aggregated quality control
 
 ### Git Hooks
+
 - **[Husky](https://typicode.github.io/husky/)**: Git hooks management
 - **[Commitlint](https://commitlint.js.org/)**: Conventional commit message validation
 - **[lint-staged](https://github.com/okonet/lint-staged)**: Run linters on staged files
@@ -70,5 +73,5 @@ This project is licensed under the terms specified in the [LICENSE](LICENSE) fil
 
 ---
 
-*This parent POM is part of the IQKV ecosystem, designed to provide consistent and high-quality Java application development.*
+_This parent POM is part of the IQKV ecosystem, designed to provide consistent and high-quality Java application development._
 `
