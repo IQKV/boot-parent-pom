@@ -69,7 +69,7 @@
         <jjwt.version>0.13.0</jjwt.version>
         <vaadin.version>24.8.7</vaadin.version>
 
-        <jackson.version>2.19.2</jackson.version>
+        <jackson.version>2.20.0</jackson.version>
         <org.mapstruct.version>1.6.3</org.mapstruct.version>
 
         <micrometer.version>1.15.3</micrometer.version>
