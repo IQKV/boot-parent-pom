@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.iqkv</groupId>
+    <groupId>com.github.dimdnk</groupId>
     <artifactId>boot-parent-pom</artifactId>
     <version>25.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -38,7 +38,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <iqkv.platform.version>25.0.0-SNAPSHOT</iqkv.platform.version>
+        <dimdnk.platform.version>25.0.0-SNAPSHOT</dimdnk.platform.version>
 
 
         <spring-boot.version>3.5.5</spring-boot.version>
@@ -126,74 +126,74 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.iqkv</groupId>
+                <groupId>com.github.dimdnk</groupId>
                 <artifactId>boot-info</artifactId>
-                <version>${iqkv.platform.version}</version>
+                <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.iqkv</groupId>
+                <groupId>com.github.dimdnk</groupId>
                 <artifactId>boot-cache</artifactId>
-                <version>${iqkv.platform.version}</version>
+                <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.iqkv</groupId>
+                <groupId>com.github.dimdnk</groupId>
                 <artifactId>boot-http</artifactId>
-                <version>${iqkv.platform.version}</version>
+                <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.iqkv</groupId>
+                <groupId>com.github.dimdnk</groupId>
                 <artifactId>boot-security</artifactId>
-                <version>${iqkv.platform.version}</version>
+                <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.iqkv</groupId>
+                <groupId>com.github.dimdnk</groupId>
                 <artifactId>boot-security-errors</artifactId>
-                <version>${iqkv.platform.version}</version>
+                <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.iqkv</groupId>
+                <groupId>com.github.dimdnk</groupId>
                 <artifactId>boot-mail</artifactId>
-                <version>${iqkv.platform.version}</version>
+                <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.iqkv</groupId>
+                <groupId>com.github.dimdnk</groupId>
                 <artifactId>boot-kafka</artifactId>
-                <version>${iqkv.platform.version}</version>
+                <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.iqkv</groupId>
+                <groupId>com.github.dimdnk</groupId>
                 <artifactId>boot-mvc-rest</artifactId>
-                <version>${iqkv.platform.version}</version>
+                <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.iqkv</groupId>
+                <groupId>com.github.dimdnk</groupId>
                 <artifactId>boot-starter-security</artifactId>
-                <version>${iqkv.platform.version}</version>
+                <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.iqkv</groupId>
+                <groupId>com.github.dimdnk</groupId>
                 <artifactId>boot-starter-mail</artifactId>
-                <version>${iqkv.platform.version}</version>
+                <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.iqkv</groupId>
+                <groupId>com.github.dimdnk</groupId>
                 <artifactId>boot-starter-cache</artifactId>
-                <version>${iqkv.platform.version}</version>
+                <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.iqkv</groupId>
+                <groupId>com.github.dimdnk</groupId>
                 <artifactId>boot-starter-amqp</artifactId>
-                <version>${iqkv.platform.version}</version>
+                <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.iqkv</groupId>
+                <groupId>com.github.dimdnk</groupId>
                 <artifactId>boot-starter-kafka</artifactId>
-                <version>${iqkv.platform.version}</version>
+                <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.iqkv</groupId>
+                <groupId>com.github.dimdnk</groupId>
                 <artifactId>boot-starter-mvc-rest</artifactId>
-                <version>${iqkv.platform.version}</version>
+                <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -720,9 +720,9 @@
                             <version>${puppycrawl.checkstyle.version}</version>
                         </dependency>
                         <dependency>
-                            <groupId>com.iqkv</groupId>
+                            <groupId>com.github.dimdnk</groupId>
                             <artifactId>checkstyle-config</artifactId>
-                            <version>${iqkv.platform.version}</version>
+                            <version>${dimdnk.platform.version}</version>
                         </dependency>
                     </dependencies>
                     <configuration>
