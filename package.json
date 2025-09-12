@@ -40,7 +40,7 @@
     "release-it-pnpm": "^4.6.6",
     "sort-package-json": "^3.4.0",
     "stylelint": "^16.24.0",
-    "stylelint-config-standard-scss": "^15.0.0"
+    "stylelint-config-standard-scss": "^16.0.0"
   },
   "engines": {
     "node": ">=22.15.0"
