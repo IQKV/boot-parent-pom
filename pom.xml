@@ -41,7 +41,7 @@
         <dimdnk.platform.version>25.0.0-SNAPSHOT</dimdnk.platform.version>
 
 
-        <spring-boot.version>3.5.5</spring-boot.version>
+        <spring-boot.version>3.5.6</spring-boot.version>
         <spring-kafka.version>3.3.10</spring-kafka.version>
 
 
