@@ -27,8 +27,8 @@ importers:
         specifier: 9.1.7
         version: 9.1.7
       lint-staged:
-        specifier: ^16.1.6
-        version: 16.1.6
+        specifier: ^16.2.0
+        version: 16.2.0
       prettier:
         specifier: 3.6.2
         version: 3.6.2
@@ -498,8 +498,8 @@ packages:
     resolution: {integrity: sha512-gKXj5ALrKWQLsYG9jlTRmR/xKluxHV+Z9QEwNIgCfM1/uwPMCuzVVnh5mwTd+OuBZcwSIMbqssNWRm1lE51QaQ==}
     engines: {node: '>=8'}
 
-  ansi-escapes@7.0.0:
-    resolution: {integrity: sha512-GdYO7a61mR0fOlAsvC9/rIHf7L96sBc6dEWzeOu+KAea5bZyQRPIpojrVoI4AXGJS/ycu/fBTdLrUkA4ODrvjw==}
+  ansi-escapes@7.1.0:
+    resolution: {integrity: sha512-YdhtCd19sKRKfAAUsrcC1wzm4JuzJoiX4pOJqIoW2qmKj5WzG/dL8uUJ0361zaXtHqK7gEhOwtAtz7t3Yq3X5g==}
     engines: {node: '>=18'}
 
   ansi-regex@5.0.1:
@@ -518,8 +518,8 @@ packages:
     resolution: {integrity: sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==}
     engines: {node: '>=8'}
 
-  ansi-styles@6.2.1:
-    resolution: {integrity: sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==}
+  ansi-styles@6.2.3:
+    resolution: {integrity: sha512-4Dj6M28JB+oAH8kFkTLUo+a2jwOFkuqb3yucU0CANcRRUbxS0cP0nZYCGjcc3BNXwRIsUVmDGgzawme7zvJHvg==}
     engines: {node: '>=12'}
 
   ansis@4.1.0:
@@ -708,9 +708,9 @@ packages:
     resolution: {integrity: sha512-Xh+cRh7dzk9n7gYE+M1Lusy3yg5ADy9m6zOHqmcu9kSkWpo7ySWVUS3dXleR3konJOEOdHzsKjWkGed6g2eJuA==}
     engines: {node: '>=18.20'}
 
-  cli-truncate@4.0.0:
-    resolution: {integrity: sha512-nPdaFdQ0h/GEigbPClz11D0v/ZJEwxmeVZGeMo3Z5StPtUTkA9o1lD6QwoirYiSDzbcwn2XcjwmCp68W1IS4TA==}
-    engines: {node: '>=18'}
+  cli-truncate@5.1.0:
+    resolution: {integrity: sha512-7JDGG+4Zp0CsknDCedl0DYdaeOhc46QNpXi3NLQblkZpXXgA6LncLDUUyvrjSvZeF3VRQa+KiMGomazQrC1V8g==}
+    engines: {node: '>=20'}
 
   cli-width@3.0.0:
     resolution: {integrity: sha512-FxqpkPPwu1HjuN93Omfm4h8uIanXofW0RxVEW3k5RKx+mJJYSthzNhp32Kzxxy3YAEZ/Dc/EWN1vZRY0+kOhbw==}
@@ -747,8 +747,8 @@ packages:
   colorette@2.0.20:
     resolution: {integrity: sha512-IfEDxwoWIjkeXL1eXcDiow4UbKjhLdq6/EuSVR9GMN7KVH3r9gQ83e73hsz1Nd1T3ijd5xv1wcWRYO+D6kCI2w==}
 
-  commander@14.0.0:
-    resolution: {integrity: sha512-2uM9rYjPvyq39NwLRqaiLtWHyDC1FvryJDa2ATTVims5YAS4PupsEQsDvP14FqhFr0P49CYDugi59xaxJlTXRA==}
+  commander@14.0.1:
+    resolution: {integrity: sha512-2JkV3gUZUVrbNA+1sjBOYLsMZ5cEEl8GTFP2a4AVz5hvasAMCQ1D2l2le/cX+pV4N6ZU17zjUahLpIXRrnWL8A==}
     engines: {node: '>=20'}
 
   commitizen@4.3.1:
@@ -1395,10 +1395,6 @@ packages:
     resolution: {integrity: sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==}
     engines: {node: '>=8'}
 
-  is-fullwidth-code-point@4.0.0:
-    resolution: {integrity: sha512-O4L094N2/dZ7xqVdrXhh9r1KODPJpFms8B5sGdJLPy664AgvXsreZUyCQQNItZRDlYug4xStLjNp/sz3HvBowQ==}
-    engines: {node: '>=12'}
-
   is-fullwidth-code-point@5.1.0:
     resolution: {integrity: sha512-5XHYaSyiqADb4RnZ1Bdad6cPp8Toise4TzEjcOYDHZkTCbKgiUl7WTUCpNWHuxmDt91wnsZBc9xinNzopv3JMQ==}
     engines: {node: '>=18'}
@@ -1535,20 +1531,16 @@ packages:
   kolorist@1.8.0:
     resolution: {integrity: sha512-Y+60/zizpJ3HRH8DCss+q95yr6145JXZo46OTpFvDZWLfRCE4qChOyk1b26nMaNpfHHgxagk9dXT5OP0Tfe+dQ==}
 
-  lilconfig@3.1.3:
-    resolution: {integrity: sha512-/vlFKAoH5Cgt3Ie+JLhRbwOsCQePABiU3tJ1egGvyQ+33R/vcwM2Zl2QR/LzjsBeItPt3oSVXapn+m4nQDvpzw==}
-    engines: {node: '>=14'}
-
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
-  lint-staged@16.1.6:
-    resolution: {integrity: sha512-U4kuulU3CKIytlkLlaHcGgKscNfJPNTiDF2avIUGFCv7K95/DCYQ7Ra62ydeRWmgQGg9zJYw2dzdbztwJlqrow==}
+  lint-staged@16.2.0:
+    resolution: {integrity: sha512-spdYSOCQ2MdZ9CM1/bu/kDmaYGsrpNOeu1InFFV8uhv14x6YIubGxbCpSmGILFoxkiheNQPDXSg5Sbb5ZuVnug==}
     engines: {node: '>=20.17'}
     hasBin: true
 
-  listr2@9.0.3:
-    resolution: {integrity: sha512-0aeh5HHHgmq1KRdMMDHfhMWQmIT/m7nRDTlxlFqni2Sp0had9baqsjJRvDGdlvgd6NmPE0nPloOipiQJGFtTHQ==}
+  listr2@9.0.4:
+    resolution: {integrity: sha512-1wd/kpAdKRLwv7/3OKC8zZ5U8e/fajCfWMxacUvB79S5nLrYGPtUI/8chMQhn3LQjsRVErTb9i1ECAwW0ZIHnQ==}
     engines: {node: '>=20.0.0'}
 
   locate-path@7.2.0:
@@ -1739,8 +1731,8 @@ packages:
     resolution: {integrity: sha512-WWdIxpyjEn+FhQJQQv9aQAYlHoNVdzIzUySNV1gHUPDSdZJ3yZn7pAAbQcV7B56Mvu881q9FZV+0Vx2xC44VWA==}
     engines: {node: ^18.17.0 || >=20.5.0}
 
-  nano-spawn@1.0.2:
-    resolution: {integrity: sha512-21t+ozMQDAL/UGgQVBbZ/xXvNO10++ZPuTmKRO8k9V3AClVRht49ahtDjfY8l1q6nSHOrE5ASfthzH3ol6R/hg==}
+  nano-spawn@1.0.3:
+    resolution: {integrity: sha512-jtpsQDetTnvS2Ts1fiRdci5rx0VYws5jGyC+4IYOTnIQ/wwdf6JdomlHBwqC3bJYOvaKu0C2GSZ1A60anrYpaA==}
     engines: {node: '>=20.17'}
 
   nanoid@3.3.11:
@@ -2134,12 +2126,8 @@ packages:
     resolution: {integrity: sha512-qMCMfhY040cVHT43K9BFygqYbUPFZKHOg7K73mtTWJRb8pyP3fzf4Ixd5SzdEJQ6MRUg/WBnOLxghZtKKurENQ==}
     engines: {node: '>=10'}
 
-  slice-ansi@5.0.0:
-    resolution: {integrity: sha512-FC+lgizVPfie0kkhqUScwRu1O/lF6NOgJmlCgK+/LYxDCTk8sGelYaHDhFcDN+Sn3Cv+3VSa4Byeo+IMCzpMgQ==}
-    engines: {node: '>=12'}
-
-  slice-ansi@7.1.0:
-    resolution: {integrity: sha512-bSiSngZ/jWeX93BqeIAbImyTbEihizcwNjFoRUIY/T1wWQsfsm2Vw1agPKylXvQTU7iASGdHhyqRlqQzfz+Htg==}
+  slice-ansi@7.1.2:
+    resolution: {integrity: sha512-iOBWFgUX7caIZiuutICxVgX1SdxwAVFFKwt1EvMYYec/NWO5meOJ6K5uQxhrYBdQJne4KxiqZc+KptFOWFSI9w==}
     engines: {node: '>=18'}
 
   smart-buffer@4.2.0:
@@ -2443,8 +2431,8 @@ packages:
     resolution: {integrity: sha512-si7QWI6zUMq56bESFvagtmzMdGOtoxfR+Sez11Mobfc7tm+VkUckk9bW2UeffTGVUbOksxmSw0AA2gs8g71NCQ==}
     engines: {node: '>=12'}
 
-  wrap-ansi@9.0.0:
-    resolution: {integrity: sha512-G8ura3S+3Z2G+mkgNRq8dqaFZAuxfsxpBB8OCTGRTCtp+l/v9nbFNmCUP1BZMts3G1142MsZfn6eeUKrr4PD1Q==}
+  wrap-ansi@9.0.2:
+    resolution: {integrity: sha512-42AtmgqjV+X1VpdOfyTGOYRi0/zsoLqtXQckTmqTeybT+BDIbM/Guxo7x3pE2vtpr1ok6xRqM9OpBe+Jyoqyww==}
     engines: {node: '>=18'}
 
   wrappy@1.0.2:
@@ -2962,7 +2950,7 @@ snapshots:
     dependencies:
       type-fest: 0.21.3
 
-  ansi-escapes@7.0.0:
+  ansi-escapes@7.1.0:
     dependencies:
       environment: 1.1.0
 
@@ -2978,7 +2966,7 @@ snapshots:
     dependencies:
       color-convert: 2.0.1
 
-  ansi-styles@6.2.1: {}
+  ansi-styles@6.2.3: {}
 
   ansis@4.1.0: {}
 
@@ -3204,10 +3192,10 @@ snapshots:
 
   cli-spinners@3.2.1: {}
 
-  cli-truncate@4.0.0:
+  cli-truncate@5.1.0:
     dependencies:
-      slice-ansi: 5.0.0
-      string-width: 7.2.0
+      slice-ansi: 7.1.2
+      string-width: 8.1.0
 
   cli-width@3.0.0: {}
 
@@ -3237,7 +3225,7 @@ snapshots:
 
   colorette@2.0.20: {}
 
-  commander@14.0.0: {}
+  commander@14.0.1: {}
 
   commitizen@4.3.1(@types/node@24.0.12)(typescript@5.8.3):
     dependencies:
@@ -3921,8 +3909,6 @@ snapshots:
 
   is-fullwidth-code-point@3.0.0: {}
 
-  is-fullwidth-code-point@4.0.0: {}
-
   is-fullwidth-code-point@5.1.0:
     dependencies:
       get-east-asian-width: 1.4.0
@@ -4029,33 +4015,26 @@ snapshots:
 
   kolorist@1.8.0: {}
 
-  lilconfig@3.1.3: {}
-
   lines-and-columns@1.2.4: {}
 
-  lint-staged@16.1.6:
+  lint-staged@16.2.0:
     dependencies:
-      chalk: 5.6.0
-      commander: 14.0.0
-      debug: 4.4.1
-      lilconfig: 3.1.3
-      listr2: 9.0.3
+      commander: 14.0.1
+      listr2: 9.0.4
       micromatch: 4.0.8
-      nano-spawn: 1.0.2
+      nano-spawn: 1.0.3
       pidtree: 0.6.0
       string-argv: 0.3.2
       yaml: 2.8.1
-    transitivePeerDependencies:
-      - supports-color
 
-  listr2@9.0.3:
+  listr2@9.0.4:
     dependencies:
-      cli-truncate: 4.0.0
+      cli-truncate: 5.1.0
       colorette: 2.0.20
       eventemitter3: 5.0.1
       log-update: 6.1.0
       rfdc: 1.4.1
-      wrap-ansi: 9.0.0
+      wrap-ansi: 9.0.2
 
   locate-path@7.2.0:
     dependencies:
@@ -4107,11 +4086,11 @@ snapshots:
 
   log-update@6.1.0:
     dependencies:
-      ansi-escapes: 7.0.0
+      ansi-escapes: 7.1.0
       cli-cursor: 5.0.0
-      slice-ansi: 7.1.0
+      slice-ansi: 7.1.2
       strip-ansi: 7.1.2
-      wrap-ansi: 9.0.0
+      wrap-ansi: 9.0.2
 
   longest@2.0.1: {}
 
@@ -4198,7 +4177,7 @@ snapshots:
 
   mute-stream@2.0.0: {}
 
-  nano-spawn@1.0.2: {}
+  nano-spawn@1.0.3: {}
 
   nanoid@3.3.11: {}
 
@@ -4619,14 +4598,9 @@ snapshots:
       astral-regex: 2.0.0
       is-fullwidth-code-point: 3.0.0
 
-  slice-ansi@5.0.0:
+  slice-ansi@7.1.2:
     dependencies:
-      ansi-styles: 6.2.1
-      is-fullwidth-code-point: 4.0.0
-
-  slice-ansi@7.1.0:
-    dependencies:
-      ansi-styles: 6.2.1
+      ansi-styles: 6.2.3
       is-fullwidth-code-point: 5.1.0
 
   smart-buffer@4.2.0: {}
@@ -4945,13 +4919,13 @@ snapshots:
 
   wrap-ansi@8.1.0:
     dependencies:
-      ansi-styles: 6.2.1
+      ansi-styles: 6.2.3
       string-width: 5.1.2
       strip-ansi: 7.1.2
 
-  wrap-ansi@9.0.0:
+  wrap-ansi@9.0.2:
     dependencies:
-      ansi-styles: 6.2.1
+      ansi-styles: 6.2.3
       string-width: 7.2.0
       strip-ansi: 7.1.2
 
