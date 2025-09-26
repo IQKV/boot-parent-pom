@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.dimdnk</groupId>
+    <groupId>com.iqkv</groupId>
     <artifactId>boot-parent-pom</artifactId>
-    <version>25.0.0-SNAPSHOT</version>
+    <version>0.25.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>boot-parent-pom</name>
@@ -32,13 +32,13 @@
     </developers>
 
     <properties>
-        <java.version>21</java.version>
+        <java.version>25</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <dimdnk.platform.version>25.0.0-SNAPSHOT</dimdnk.platform.version>
+        <dimdnk.platform.version>0.25.0-SNAPSHOT</dimdnk.platform.version>
 
 
         <spring-boot.version>3.5.6</spring-boot.version>
@@ -126,72 +126,72 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.github.dimdnk</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-info</artifactId>
                 <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.dimdnk</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-cache</artifactId>
                 <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.dimdnk</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-http</artifactId>
                 <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.dimdnk</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-security</artifactId>
                 <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.dimdnk</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-security-errors</artifactId>
                 <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.dimdnk</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-mail</artifactId>
                 <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.dimdnk</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-kafka</artifactId>
                 <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.dimdnk</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-mvc-rest</artifactId>
                 <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.dimdnk</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-starter-security</artifactId>
                 <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.dimdnk</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-starter-mail</artifactId>
                 <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.dimdnk</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-starter-cache</artifactId>
                 <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.dimdnk</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-starter-amqp</artifactId>
                 <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.dimdnk</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-starter-kafka</artifactId>
                 <version>${dimdnk.platform.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.dimdnk</groupId>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-starter-mvc-rest</artifactId>
                 <version>${dimdnk.platform.version}</version>
             </dependency>
@@ -720,7 +720,7 @@
                             <version>${puppycrawl.checkstyle.version}</version>
                         </dependency>
                         <dependency>
-                            <groupId>com.github.dimdnk</groupId>
+                            <groupId>com.iqkv</groupId>
                             <artifactId>checkstyle-config</artifactId>
                             <version>${dimdnk.platform.version}</version>
                         </dependency>

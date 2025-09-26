@@ -1,11 +1,11 @@
 # ✨ Spring Boot Parent POM
 
-A comprehensive Maven parent POM designed specifically for Spring Boot applications in the `com.github.dimdnk.*` ecosystem. This parent POM provides sensible defaults, standardized configurations, and integrated quality tools to streamline Java development.
+A comprehensive Maven parent POM designed specifically for Spring Boot applications in the `com.iqkv.*` ecosystem. This parent POM provides sensible defaults, standardized configurations, and integrated quality tools to streamline Java development.
 
 ## 🚀 Features
 
 - **Spring Boot Integration**: Optimized for Spring Boot applications
-- **Java 21 Support**: Built for modern Java development
+- **Java 25 Support**: Built for modern Java development
 - **Code Quality**: Integrated with industry-standard quality tools
 - **Standardized Configuration**: Consistent build configuration across projects
 - **Development Tools**: Pre-configured formatters, linters, and commit hooks
@@ -16,9 +16,9 @@ Add this parent POM to your Maven project:
 
 ```xml
 <parent>
-  <groupId>com.github.dimdnk.boot</groupId>
+  <groupId>com.iqkv</groupId>
   <artifactId>boot-parent-pom</artifactId>
-  <version>25.0.0-SNAPSHOT</version>
+  <version>0.25.0-SNAPSHOT</version>
 </parent>
 ```
 
@@ -56,7 +56,7 @@ This parent POM enforces high code quality through multiple integrated tools:
 
 The project includes development automation tools:
 
-- **Prettier**: Code formatting (`pnpm format`)
+- **Prettier**: Code formatting (`pnpm prettier:write`)
 - **Release-it**: Automated releases with conventional changelog
 - **Commit validation**: Ensures conventional commit format
 
