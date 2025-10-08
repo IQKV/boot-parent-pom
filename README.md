@@ -73,5 +73,5 @@ This project is licensed under the terms specified in the [LICENSE](LICENSE) fil
 
 ---
 
-_This parent POM is part of the KnowHowToDev ecosystem, designed to provide consistent and high-quality Java application development._
+_This parent POM is part of the IQKV Foundation ecosystem, designed to provide consistent and high-quality Java application development._
 `
