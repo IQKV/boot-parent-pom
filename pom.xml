@@ -38,7 +38,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <dimdnk.platform.version>0.25.0-SNAPSHOT</dimdnk.platform.version>
+        <iqkv.platform.version>0.25.0-SNAPSHOT</iqkv.platform.version>
 
 
         <spring-boot.version>3.5.6</spring-boot.version>
@@ -71,6 +71,7 @@
 
         <jackson.version>2.19.2</jackson.version>
         <org.mapstruct.version>1.6.3</org.mapstruct.version>
+        <resilience4j.version>2.2.0</resilience4j.version>
 
         <micrometer.version>1.15.4</micrometer.version>
         <micrometer-tracing.version>1.5.4</micrometer-tracing.version>
@@ -128,72 +129,72 @@
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-info</artifactId>
-                <version>${dimdnk.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-cache</artifactId>
-                <version>${dimdnk.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-http</artifactId>
-                <version>${dimdnk.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-security</artifactId>
-                <version>${dimdnk.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-security-errors</artifactId>
-                <version>${dimdnk.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-mail</artifactId>
-                <version>${dimdnk.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-kafka</artifactId>
-                <version>${dimdnk.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-mvc-rest</artifactId>
-                <version>${dimdnk.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-starter-security</artifactId>
-                <version>${dimdnk.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-starter-mail</artifactId>
-                <version>${dimdnk.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-starter-cache</artifactId>
-                <version>${dimdnk.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-starter-amqp</artifactId>
-                <version>${dimdnk.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-starter-kafka</artifactId>
-                <version>${dimdnk.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>boot-starter-mvc-rest</artifactId>
-                <version>${dimdnk.platform.version}</version>
+                <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -419,6 +420,11 @@
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct</artifactId>
                 <version>${org.mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.resilience4j</groupId>
+                <artifactId>resilience4j-spring-boot3</artifactId>
+                <version>${resilience4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.micrometer</groupId>
@@ -722,7 +728,7 @@
                         <dependency>
                             <groupId>com.iqkv</groupId>
                             <artifactId>checkstyle-config</artifactId>
-                            <version>${dimdnk.platform.version}</version>
+                            <version>${iqkv.platform.version}</version>
                         </dependency>
                     </dependencies>
                     <configuration>
