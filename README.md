@@ -1,6 +1,7 @@
 # ✨ Spring Boot Parent POM
 
-A comprehensive Maven parent POM designed specifically for Spring Boot applications in the `com.iqkv.*` ecosystem. This parent POM provides sensible defaults, standardized configurations, and integrated quality tools to streamline Java development.
+A comprehensive Maven parent POM designed specifically for Spring Boot applications in the `com.iqkv.*` ecosystem. This parent POM provides sensible defaults, standardized configurations,
+and integrated quality tools to streamline Java development.
 
 ## 🚀 Features
 
