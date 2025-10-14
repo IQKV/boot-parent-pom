@@ -4,8 +4,7 @@ A comprehensive Maven parent POM designed specifically for Spring Boot applicati
 
 ## 🚀 Features
 
-- **Spring Boot Integration**: Optimized for Spring Boot applications
-- **Java 25 Support**: Built for modern Java development
+- **Spring Boot 3 dependency tree**: Optimized for Spring Boot applications
 - **Code Quality**: Integrated with industry-standard quality tools
 - **Standardized Configuration**: Consistent build configuration across projects
 - **Development Tools**: Pre-configured formatters, linters, and commit hooks
