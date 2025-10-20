@@ -68,7 +68,7 @@
         <spring-cloud-stream.version>4.3.0</spring-cloud-stream.version>
         <kafka-streams.version>4.1.0</kafka-streams.version>
         <jjwt.version>0.13.0</jjwt.version>
-        <vaadin.version>24.9.2</vaadin.version>
+        <vaadin.version>24.9.3</vaadin.version>
 
         <jackson.version>2.19.2</jackson.version>
         <org.mapstruct.version>1.6.3</org.mapstruct.version>
