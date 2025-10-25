@@ -81,7 +81,7 @@
         <zipkin-reporter.version>3.5.1</zipkin-reporter.version>
         <logstash-logback-encoder.version>8.1</logstash-logback-encoder.version>
         <logback.version>1.5.20</logback.version>
-        <logback-classic.version>1.5.19</logback-classic.version>
+        <logback-classic.version>1.5.20</logback-classic.version>
         <loki-logback-appender.version>1.6.0</loki-logback-appender.version>
         <lombok.version>1.18.42</lombok.version>
 
