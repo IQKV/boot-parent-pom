@@ -146,7 +146,7 @@
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
-                <artifactId>boot-security</artifactId>
+                <artifactId>boot-security-oauth2-jose</artifactId>
                 <version>${iqkv.platform.version}</version>
             </dependency>
             <dependency>
