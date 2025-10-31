@@ -70,7 +70,7 @@
         <jjwt.version>0.13.0</jjwt.version>
         <vaadin.version>24.9.4</vaadin.version>
 
-        <jackson.version>2.19.2</jackson.version>
+        <jackson.version>2.20.1</jackson.version>
         <org.mapstruct.version>1.6.3</org.mapstruct.version>
         <resilience4j.version>2.3.0</resilience4j.version>
 
