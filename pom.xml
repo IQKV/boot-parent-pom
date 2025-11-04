@@ -131,6 +131,11 @@
         <dependencies>
             <dependency>
                 <groupId>com.iqkv</groupId>
+                <artifactId>misc-util</artifactId>
+                <version>${iqkv.platform.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.iqkv</groupId>
                 <artifactId>boot-info</artifactId>
                 <version>${iqkv.platform.version}</version>
             </dependency>
