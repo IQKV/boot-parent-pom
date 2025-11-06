@@ -81,6 +81,7 @@
         <zipkin-reporter.version>3.5.1</zipkin-reporter.version>
         <logstash-logback-encoder.version>8.1</logstash-logback-encoder.version>
         <logback.version>1.5.20</logback.version>
+        <logback-jackson.version>0.1.5</logback-jackson.version>
         <logback-classic.version>1.5.20</logback-classic.version>
         <loki-logback-appender.version>1.6.0</loki-logback-appender.version>
         <lombok.version>1.18.42</lombok.version>
@@ -268,6 +269,11 @@
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-core</artifactId>
                 <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback.contrib</groupId>
+                <artifactId>logback-jackson</artifactId>
+                <version>${logback-jackson.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.projectlombok</groupId>
