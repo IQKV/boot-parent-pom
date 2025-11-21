@@ -41,7 +41,7 @@
         <iqkv.platform.version>0.25.0-SNAPSHOT</iqkv.platform.version>
 
 
-        <spring-boot.version>3.5.7</spring-boot.version>
+        <spring-boot.version>4.0.0</spring-boot.version>
         <spring-kafka.version>3.3.10</spring-kafka.version>
 
 
