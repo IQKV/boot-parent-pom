@@ -65,7 +65,7 @@
         <liquibase.version>5.0.1</liquibase.version>
         <flyway.version>11.17.1</flyway.version>
 
-        <spring-cloud-stream.version>4.3.0</spring-cloud-stream.version>
+        <spring-cloud-stream.version>5.0.0</spring-cloud-stream.version>
         <kafka-streams.version>4.1.1</kafka-streams.version>
         <jjwt.version>0.13.0</jjwt.version>
         <vaadin.version>24.9.5</vaadin.version>
