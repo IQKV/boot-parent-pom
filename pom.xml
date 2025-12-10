@@ -93,7 +93,7 @@
         <blockhound-junit-platform.version>1.0.15.RELEASE</blockhound-junit-platform.version>
         <junit.jupiter-params.version>5.12.2</junit.jupiter-params.version>
         <testng.version>7.11.0</testng.version>
-        <mockito.version>5.20.0</mockito.version>
+        <mockito.version>5.21.0</mockito.version>
 
         <springdoc.version>2.8.14</springdoc.version>
         <embedded-redis.version>0.7.3</embedded-redis.version>
