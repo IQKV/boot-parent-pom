@@ -105,7 +105,7 @@
         <pact.version>4.6.18</pact.version>
         <commons-beanutils.version>1.11.0</commons-beanutils.version>
 
-        <openapi-generator-maven-plugin.version>7.17.0</openapi-generator-maven-plugin.version>
+        <openapi-generator-maven-plugin.version>7.18.0</openapi-generator-maven-plugin.version>
         <gaul.modernizer-maven-plugin.version>3.2.0</gaul.modernizer-maven-plugin.version>
         <codehaus.versions-maven-plugin.version>2.20.1</codehaus.versions-maven-plugin.version>
         <maven-resources-plugin.version>3.4.0</maven-resources-plugin.version>
