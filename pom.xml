@@ -382,6 +382,11 @@
                 <version>${vladmihalcea.hibernate-types.version}</version>
             </dependency>
             <dependency>
+                <groupId>io.hypersistence</groupId>
+                <artifactId>hypersistence-utils-hibernate-63</artifactId>
+                <version>3.14.1</version>
+             </dependency>
+            <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-webflux</artifactId>
                 <version>${spring-boot.version}</version>
