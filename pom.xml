@@ -95,7 +95,7 @@
         <testng.version>7.11.0</testng.version>
         <mockito.version>5.21.0</mockito.version>
 
-        <springdoc.version>2.8.14</springdoc.version>
+        <springdoc.version>3.0.1</springdoc.version>
         <embedded-redis.version>0.7.3</embedded-redis.version>
         <spring-cloud-starter-sleuth.version>3.1.11</spring-cloud-starter-sleuth.version>
         <springdoc-webflux-ui.version>1.8.0</springdoc-webflux-ui.version>
