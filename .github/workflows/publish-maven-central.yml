@@ -1,0 +1,86 @@
+name: "Publish to Maven Central"
+
+on:
+  release:
+    types: [created]
+    branches: [main]
+
+jobs:
+  publish:
+    name: "Publish to Maven Central"
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/')
+
+    steps:
+      - name: "Checkout Repository"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: "Set up JDK 21"
+        uses: actions/setup-java@v4
+        with:
+          java-version: "21"
+          distribution: "temurin"
+          server-id: ossrh
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          gpg-passphrase: GPG_PASSPHRASE
+
+      - name: "Cache Maven Dependencies"
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+
+      - name: "Configure Git User"
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+
+      - name: "Extract Version from Tag"
+        id: extract_version
+        run: |
+          if [[ $GITHUB_REF == refs/tags/* ]]; then
+            VERSION=${GITHUB_REF#refs/tags/}
+            echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+            echo "Extracted version: $VERSION"
+          else
+            echo "Not a tag release, skipping version extraction"
+            exit 1
+          fi
+
+      - name: "Update POM Version"
+        run: |
+          mvn versions:set -DnewVersion=${{ steps.extract_version.outputs.VERSION }} -DgenerateBackupPoms=false
+
+      - name: "Verify Build"
+        run: mvn clean verify
+
+      - name: "Deploy to OSSRH"
+        run: mvn clean deploy -P release
+        env:
+          MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+
+      - name: "Create GitHub Release Assets"
+        run: |
+          mkdir -p release-assets
+          cp target/*.jar release-assets/ || true
+          cp target/*.pom release-assets/ || true
+          cp target/*-sources.jar release-assets/ || true
+          cp target/*-javadoc.jar release-assets/ || true
+
+      - name: "Upload Release Assets"
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./release-assets/
+          asset_name: release-artifacts
+          asset_content_type: application/zip
+        continue-on-error: true
