@@ -1,33 +1,61 @@
 name: "Publish to Maven Central"
 
+# ========================================
+# MAVEN CENTRAL PUBLISHING WORKFLOW
+# ========================================
+#
+# IMPORTANT: This workflow ONLY runs for releases created from the 'main' branch.
+#
+# Usage Requirements:
+# 1. Create a GitHub release from the 'main' branch
+# 2. The release can have any tag name (e.g., v1.0.0, 1.0.0, release-1.0.0)
+# 3. The workflow will automatically convert SNAPSHOT versions to release versions
+# 4. Artifacts will be published to OSSRH (Maven Central Repository)
+#
+# Security Note:
+# - Only releases from 'main' branch are published to prevent accidental releases
+# - Feature branches, pull requests, and other branches are ignored
+# - This ensures only approved, merged code reaches Maven Central
+#
+# Prerequisites:
+# - Configure GitHub secrets: OSSRH_USERNAME, OSSRH_TOKEN, GPG_PRIVATE_KEY, GPG_PASSPHRASE
+# - Ensure POM.xml has proper Maven Central metadata
+# - Upload GPG public key to key servers for artifact verification
+#
+# Trigger: Runs when a GitHub release is created from the main branch ONLY
 on:
   release:
     types: [created]
-    branches: [main]
 
 jobs:
   publish:
     name: "Publish to Maven Central"
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/')
+    # CRITICAL SECURITY CHECK: Only run if the release was created from the main branch
+    # This prevents accidental publishing from feature branches or pull requests
+    if: github.event.release.target_commitish == 'main'
 
     steps:
+      # Step 1: Get the source code from the repository
       - name: "Checkout Repository"
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0 # Fetch full history for proper versioning
 
+      # Step 2: Set up Java 21 with Maven Central publishing configuration
+      # This configures GPG signing and OSSRH server credentials
       - name: "Set up JDK 21"
         uses: actions/setup-java@v4
         with:
           java-version: "21"
           distribution: "temurin"
-          server-id: ossrh
-          server-username: MAVEN_USERNAME
-          server-password: MAVEN_PASSWORD
-          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
-          gpg-passphrase: GPG_PASSPHRASE
+          server-id: ossrh # Must match distributionManagement in pom.xml
+          server-username: MAVEN_USERNAME # Environment variable for OSSRH username
+          server-password: MAVEN_PASSWORD # Environment variable for OSSRH password
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }} # GPG key for artifact signing
+          gpg-passphrase: GPG_PASSPHRASE # Environment variable for GPG passphrase
 
+      # Step 3: Cache Maven dependencies to speed up builds
       - name: "Cache Maven Dependencies"
         uses: actions/cache@v4
         with:
@@ -35,45 +63,114 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
+      # Step 4: Configure Git for potential version commits
       - name: "Configure Git User"
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
 
-      - name: "Extract Version from Tag"
+      # Step 5: Extract version from POM and convert SNAPSHOT to release version
+      # This handles the automatic conversion from development to release version
+      - name: "Extract and Prepare Release Version"
         id: extract_version
         run: |
-          if [[ $GITHUB_REF == refs/tags/* ]]; then
-            VERSION=${GITHUB_REF#refs/tags/}
-            echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
-            echo "Extracted version: $VERSION"
-          else
-            echo "Not a tag release, skipping version extraction"
+          # Get the current version from the POM file
+          CURRENT_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+          if [[ -z "$CURRENT_VERSION" ]]; then
+            echo "Error: Could not extract version from POM"
             exit 1
           fi
 
-      - name: "Update POM Version"
-        run: |
-          mvn versions:set -DnewVersion=${{ steps.extract_version.outputs.VERSION }} -DgenerateBackupPoms=false
+          echo "Current POM version: $CURRENT_VERSION"
 
+          # Convert SNAPSHOT to release version by removing the -SNAPSHOT suffix
+          # Example: 1.0.0-SNAPSHOT becomes 1.0.0
+          if [[ "$CURRENT_VERSION" == *"-SNAPSHOT" ]]; then
+            RELEASE_VERSION=${CURRENT_VERSION%-SNAPSHOT}
+            echo "Converting SNAPSHOT version to release version"
+            echo "SNAPSHOT: $CURRENT_VERSION -> Release: $RELEASE_VERSION"
+          else
+            # If it's already a release version, use it as-is
+            RELEASE_VERSION="$CURRENT_VERSION"
+            echo "Using existing release version: $RELEASE_VERSION"
+          fi
+
+          # Export versions for use in subsequent steps
+          echo "VERSION=$RELEASE_VERSION" >> $GITHUB_OUTPUT
+          echo "ORIGINAL_VERSION=$CURRENT_VERSION" >> $GITHUB_OUTPUT
+          echo "Final release version: $RELEASE_VERSION"
+
+      # Step 6: Validate the release version format
+      # Ensures the version follows semantic versioning conventions
+      - name: "Validate Release Version"
+        run: |
+          VERSION="${{ steps.extract_version.outputs.VERSION }}"
+          ORIGINAL_VERSION="${{ steps.extract_version.outputs.ORIGINAL_VERSION }}"
+
+          echo "Original version: $ORIGINAL_VERSION"
+          echo "Release version: $VERSION"
+
+          # Basic semantic version validation (X.Y.Z or X.Y.Z-suffix)
+          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-.*)?$ ]]; then
+            echo "Warning: Version '$VERSION' doesn't follow semantic versioning format"
+            echo "Expected format: X.Y.Z or X.Y.Z-suffix"
+          fi
+
+          echo "✅ Release version validated: $VERSION"
+
+      # Step 7: Update POM to use the release version
+      # This temporarily modifies the POM for the build process
+      - name: "Update POM to Release Version"
+        run: |
+          VERSION="${{ steps.extract_version.outputs.VERSION }}"
+          ORIGINAL_VERSION="${{ steps.extract_version.outputs.ORIGINAL_VERSION }}"
+
+          # Only update if the version changed (SNAPSHOT -> release)
+          if [[ "$ORIGINAL_VERSION" != "$VERSION" ]]; then
+            echo "Updating POM version from $ORIGINAL_VERSION to $VERSION"
+            mvn versions:set -DnewVersion="$VERSION" -DgenerateBackupPoms=false
+            
+            # Verify the version was set correctly
+            NEW_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+            echo "POM version updated to: $NEW_VERSION"
+            
+            if [[ "$NEW_VERSION" != "$VERSION" ]]; then
+              echo "Error: Version update failed. Expected: $VERSION, Got: $NEW_VERSION"
+              exit 1
+            fi
+          else
+            echo "POM already has release version: $VERSION"
+          fi
+
+      # Step 8: Build and verify the project
+      # Ensures everything compiles and tests pass before publishing
       - name: "Verify Build"
         run: mvn clean verify
 
+      # Step 9: Deploy to OSSRH (Maven Central)
+      # Uses the 'release' profile which includes sources, javadoc, and GPG signing
       - name: "Deploy to OSSRH"
         run: mvn clean deploy -P release
         env:
+          # OSSRH credentials from GitHub secrets
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
+          # GPG signing passphrase from GitHub secrets
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
 
+      # Step 10: Prepare release artifacts for GitHub
+      # Collects all generated JAR files for upload to the GitHub release
       - name: "Create GitHub Release Assets"
         run: |
           mkdir -p release-assets
+          # Copy main JAR, sources, and javadoc JARs if they exist
           cp target/*.jar release-assets/ || true
           cp target/*.pom release-assets/ || true
           cp target/*-sources.jar release-assets/ || true
           cp target/*-javadoc.jar release-assets/ || true
 
+      # Step 11: Upload artifacts to GitHub release (optional)
+      # Attaches the built artifacts to the GitHub release for easy download
       - name: "Upload Release Assets"
         uses: actions/upload-release-asset@v1
         env:
@@ -83,4 +180,4 @@ jobs:
           asset_path: ./release-assets/
           asset_name: release-artifacts
           asset_content_type: application/zip
-        continue-on-error: true
+        continue-on-error: true # Don't fail the workflow if asset upload fails
