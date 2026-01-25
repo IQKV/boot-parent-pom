@@ -35,7 +35,7 @@
     <scm>
         <connection>scm:git:git://github.com/IQKV/boot-parent-pom.git</connection>
         <developerConnection>scm:git:ssh://github.com:IQKV/boot-parent-pom.git</developerConnection>
-        <url>https://github.com/IQKV/boot-parent-pom/tree/main</url>
+        <url>https://github.com/IQKV/boot-parent-pom/tree/dev</url>
     </scm>
 
     <distributionManagement>
@@ -764,7 +764,7 @@
     </dependencyManagement>
     <profiles>
         <profile>
-            <id>release</id>
+            <id>maven-central</id>
             <build>
                 <plugins>
                     <plugin>

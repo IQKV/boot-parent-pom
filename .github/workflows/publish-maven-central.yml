@@ -4,16 +4,16 @@ name: "Publish to Maven Central"
 # MAVEN CENTRAL PUBLISHING WORKFLOW
 # ========================================
 #
-# IMPORTANT: This workflow ONLY runs for releases created from the 'main' branch.
+# IMPORTANT: This workflow ONLY runs for releases created from the 'maven-central' branch.
 #
 # Usage Requirements:
-# 1. Create a GitHub release from the 'main' branch
+# 1. Create a GitHub release from the 'maven-central' branch
 # 2. The release can have any tag name (e.g., v1.0.0, 1.0.0, release-1.0.0)
 # 3. The workflow will automatically convert SNAPSHOT versions to release versions
 # 4. Artifacts will be published to OSSRH (Maven Central Repository)
 #
 # Security Note:
-# - Only releases from 'main' branch are published to prevent accidental releases
+# - Only releases from 'maven-central' branch are published to prevent accidental releases
 # - Feature branches, pull requests, and other branches are ignored
 # - This ensures only approved, merged code reaches Maven Central
 #
@@ -22,7 +22,7 @@ name: "Publish to Maven Central"
 # - Ensure POM.xml has proper Maven Central metadata
 # - Upload GPG public key to key servers for artifact verification
 #
-# Trigger: Runs when a GitHub release is created from the main branch ONLY
+# Trigger: Runs when a GitHub release is created from the maven-central branch ONLY
 on:
   release:
     types: [created]
@@ -31,9 +31,9 @@ jobs:
   publish:
     name: "Publish to Maven Central"
     runs-on: ubuntu-latest
-    # CRITICAL SECURITY CHECK: Only run if the release was created from the main branch
+    # CRITICAL SECURITY CHECK: Only run if the release was created from the maven-central branch
     # This prevents accidental publishing from feature branches or pull requests
-    if: github.event.release.target_commitish == 'main'
+    if: github.event.release.target_commitish == 'maven-central'
 
     steps:
       # Step 1: Get the source code from the repository
@@ -148,9 +148,9 @@ jobs:
         run: mvn clean verify
 
       # Step 9: Deploy to OSSRH (Maven Central)
-      # Uses the 'release' profile which includes sources, javadoc, and GPG signing
+      # Uses the 'maven-central' profile which includes sources, javadoc, and GPG signing
       - name: "Deploy to OSSRH"
-        run: mvn clean deploy -P release
+        run: mvn clean deploy -P maven-central
         env:
           # OSSRH credentials from GitHub secrets
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
@@ -163,7 +163,7 @@ jobs:
       - name: "Create GitHub Release Assets"
         run: |
           mkdir -p release-assets
-          # Copy main JAR, sources, and javadoc JARs if they exist
+          # Copy JAR, sources, and javadoc JARs if they exist
           cp target/*.jar release-assets/ || true
           cp target/*.pom release-assets/ || true
           cp target/*-sources.jar release-assets/ || true
