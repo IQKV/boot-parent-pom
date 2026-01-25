@@ -56,7 +56,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <iqkv.checkstyle.version>0.25.0-SNAPSHOT</iqkv.checkstyle.version>
+        <iqkv.checkstyle.version>0.24.0</iqkv.checkstyle.version>
         <iqkv.platform.version>0.25.0-SNAPSHOT</iqkv.platform.version>
 
 
