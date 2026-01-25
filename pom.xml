@@ -56,6 +56,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
+        <iqkv.checkstyle.version>0.25.0-SNAPSHOT</iqkv.checkstyle.version>
         <iqkv.platform.version>0.25.0-SNAPSHOT</iqkv.platform.version>
 
 
@@ -900,7 +901,7 @@
                         <dependency>
                             <groupId>com.iqkv</groupId>
                             <artifactId>checkstyle-config</artifactId>
-                            <version>${iqkv.platform.version}</version>
+                            <version>${iqkv.checkstyle.version}</version>
                         </dependency>
                     </dependencies>
                     <configuration>
