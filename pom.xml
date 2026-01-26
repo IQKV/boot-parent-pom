@@ -102,7 +102,7 @@
         <logback.version>1.5.25</logback.version>
         <logback-jackson.version>0.1.5</logback-jackson.version>
         <logback-classic.version>1.5.25</logback-classic.version>
-        <loki-logback-appender.version>1.6.0</loki-logback-appender.version>
+        <loki-logback-appender.version>2.0.3</loki-logback-appender.version>
         <lombok.version>1.18.42</lombok.version>
 
         <testcontainers.version>1.21.4</testcontainers.version>
