@@ -92,6 +92,8 @@
         <jackson.version>2.21.0</jackson.version>
         <org.mapstruct.version>1.6.3</org.mapstruct.version>
         <resilience4j.version>2.3.0</resilience4j.version>
+        <apache-tika.version>2.9.1</apache-tika.version>
+        <minio.version>8.5.7</minio.version>
 
         <micrometer.version>1.16.2</micrometer.version>
         <micrometer-tracing.version>1.6.2</micrometer-tracing.version>
@@ -336,6 +338,16 @@
                 <groupId>commons-beanutils</groupId>
                 <artifactId>commons-beanutils</artifactId>
                 <version>${commons-beanutils.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>${minio.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tika</groupId>
+                <artifactId>tika-core</artifactId>
+                <version>${apache-tika.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.postgresql</groupId>
