@@ -92,7 +92,7 @@
         <jackson.version>2.21.0</jackson.version>
         <org.mapstruct.version>1.6.3</org.mapstruct.version>
         <resilience4j.version>2.3.0</resilience4j.version>
-        <apache-tika.version>3.2.2</apache-tika.version>
+        <apache-tika.version>3.2.3</apache-tika.version>
         <minio.version>8.6.0</minio.version>
 
         <micrometer.version>1.16.2</micrometer.version>
