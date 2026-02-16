@@ -29,11 +29,11 @@
     }
   },
   "devDependencies": {
-    "@commitlint/cli": "^20.3.1",
-    "@commitlint/config-conventional": "^20.3.1",
-    "@release-it/conventional-changelog": "^10.0.4",
+    "@commitlint/cli": "^20.4.1",
+    "@commitlint/config-conventional": "^20.4.1",
+    "@release-it/conventional-changelog": "^10.0.5",
     "cz-conventional-changelog": "^3.3.0",
-    "glob": "^13.0.0",
+    "glob": "^13.0.3",
     "husky": "9.1.7",
     "lint-staged": "^16.2.7",
     "prettier": "3.8.1",
@@ -42,13 +42,8 @@
     "release-it": "^19.2.4",
     "release-it-pnpm": "^4.6.6",
     "sort-package-json": "^3.6.1",
-<<<<<<< HEAD
-    "stylelint": "^16.26.1",
-    "stylelint-config-standard-scss": "^16.0.0"
-=======
-    "stylelint": "^17.0.0",
+    "stylelint": "^17.3.0",
     "stylelint-config-standard-scss": "^17.0.0"
->>>>>>> 01d4d0b (chore: upgrade stylelint)
   },
   "engines": {
     "node": ">=22.15.0"
