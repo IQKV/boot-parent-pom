@@ -46,8 +46,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <iqkv.checkstyle.version>0.25.0-SNAPSHOT</iqkv.checkstyle.version>
-        <iqkv.platform.version>0.25.0-SNAPSHOT</iqkv.platform.version>
+        <iqkv.checkstyle.version>0.24.0</iqkv.checkstyle.version>
 
         <spring-boot.version>3.5.7</spring-boot.version>
         <spring-kafka.version>3.3.10</spring-kafka.version>
@@ -152,77 +151,7 @@
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>misc-util</artifactId>
-                <version>${iqkv.platform.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.iqkv</groupId>
-                <artifactId>boot-info</artifactId>
-                <version>${iqkv.platform.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.iqkv</groupId>
-                <artifactId>boot-cache</artifactId>
-                <version>${iqkv.platform.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.iqkv</groupId>
-                <artifactId>boot-http</artifactId>
-                <version>${iqkv.platform.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.iqkv</groupId>
-                <artifactId>boot-security-oauth2-jose</artifactId>
-                <version>${iqkv.platform.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.iqkv</groupId>
-                <artifactId>boot-security-errors</artifactId>
-                <version>${iqkv.platform.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.iqkv</groupId>
-                <artifactId>boot-mail</artifactId>
-                <version>${iqkv.platform.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.iqkv</groupId>
-                <artifactId>boot-kafka</artifactId>
-                <version>${iqkv.platform.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.iqkv</groupId>
-                <artifactId>boot-mvc-rest</artifactId>
-                <version>${iqkv.platform.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.iqkv</groupId>
-                <artifactId>boot-starter-security-oauth2-jose</artifactId>
-                <version>${iqkv.platform.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.iqkv</groupId>
-                <artifactId>boot-starter-mail</artifactId>
-                <version>${iqkv.platform.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.iqkv</groupId>
-                <artifactId>boot-starter-cache</artifactId>
-                <version>${iqkv.platform.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.iqkv</groupId>
-                <artifactId>boot-starter-amqp</artifactId>
-                <version>${iqkv.platform.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.iqkv</groupId>
-                <artifactId>boot-starter-kafka</artifactId>
-                <version>${iqkv.platform.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.iqkv</groupId>
-                <artifactId>boot-starter-mvc-rest</artifactId>
-                <version>${iqkv.platform.version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
