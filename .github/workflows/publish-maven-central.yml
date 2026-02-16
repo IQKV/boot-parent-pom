@@ -121,11 +121,11 @@ jobs:
           if [[ "$ORIGINAL_VERSION" != "$VERSION" ]]; then
             echo "Updating POM version from $ORIGINAL_VERSION to $VERSION"
             mvn versions:set -DnewVersion="$VERSION" -DgenerateBackupPoms=false
-          
+
             # Verify the version was set correctly
             NEW_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
             echo "POM version updated to: $NEW_VERSION"
-          
+
             if [[ "$NEW_VERSION" != "$VERSION" ]]; then
               echo "Error: Version update failed. Expected: $VERSION, Got: $NEW_VERSION"
               exit 1
