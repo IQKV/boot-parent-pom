@@ -10,6 +10,7 @@
 
     <name>boot-parent-pom</name>
     <description>Default configurations for a complete dependency tree to quickly build a Spring Boot project.</description>
+    <url>https://github.com/IQKV/boot-parent-pom</url>
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
