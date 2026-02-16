@@ -133,6 +133,11 @@
         <jacoco-maven-plugin.version>0.8.14</jacoco-maven-plugin.version>
         <native-maven-plugin.version>0.11.4</native-maven-plugin.version>
         <qulice-maven-plugin.version>0.25.1</qulice-maven-plugin.version>
+        <hypersistence-utils.version>3.15.2</hypersistence-utils.version>
+        <jqwik.version>1.9.3</jqwik.version>
+        <stripe-java.version>31.3.0</stripe-java.version>
+        <paypal-server-sdk.version>2.2.0</paypal-server-sdk.version>
+        <pl.project13.git-commit-id-plugin.version>4.9.10</pl.project13.git-commit-id-plugin.version>
     </properties>
 
     <parent>
@@ -407,7 +412,7 @@
             <dependency>
                 <groupId>io.hypersistence</groupId>
                 <artifactId>hypersistence-utils-hibernate-63</artifactId>
-                <version>3.15.2</version>
+                <version>${hypersistence-utils.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -682,21 +687,21 @@
             <dependency>
                 <groupId>net.jqwik</groupId>
                 <artifactId>jqwik</artifactId>
-                <version>1.9.3</version>
+                <version>${jqwik.version}</version>
             </dependency>
 
             <!-- Stripe Java SDK -->
             <dependency>
                 <groupId>com.stripe</groupId>
                 <artifactId>stripe-java</artifactId>
-                <version>31.3.0</version>
+                <version>${stripe-java.version}</version>
             </dependency>
 
             <!-- PayPal Java SDK -->
             <dependency>
                 <groupId>com.paypal.sdk</groupId>
                 <artifactId>paypal-server-sdk</artifactId>
-                <version>2.2.0</version>
+                <version>${paypal-server-sdk.version}</version>
             </dependency>
 
 
@@ -968,7 +973,7 @@
                 <plugin>
                     <groupId>pl.project13.maven</groupId>
                     <artifactId>git-commit-id-plugin</artifactId>
-                    <version>4.9.10</version>
+                    <version>${pl.project13.git-commit-id-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>io.github.git-commit-id</groupId>
