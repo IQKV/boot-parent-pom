@@ -38,17 +38,6 @@
         <url>https://github.com/IQKV/boot-parent-pom/tree/dev</url>
     </scm>
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
-
     <properties>
         <java.version>21</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -58,7 +47,6 @@
 
         <iqkv.checkstyle.version>0.25.0-SNAPSHOT</iqkv.checkstyle.version>
         <iqkv.platform.version>0.25.0-SNAPSHOT</iqkv.platform.version>
-
 
         <spring-boot.version>3.5.7</spring-boot.version>
         <spring-kafka.version>3.3.10</spring-kafka.version>
@@ -135,6 +123,7 @@
         <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
         <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
+        <maven-central-publish-plugin.version>0.10.0</maven-central-publish-plugin.version>
         <sonar-maven-plugin.version>5.5.0.6356</sonar-maven-plugin.version>
         <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
         <puppycrawl.checkstyle.version>13.2.0</puppycrawl.checkstyle.version>
@@ -280,8 +269,8 @@
                 <version>${spring-boot.version}</version>
             </dependency>
             <dependency>
-                 <groupId>org.springframework.cloud</groupId>
-                 <artifactId>spring-cloud-starter-sleuth</artifactId>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-sleuth</artifactId>
                 <version>${spring-cloud-starter-sleuth.version}</version>
             </dependency>
             <dependency>
@@ -418,7 +407,7 @@
                 <groupId>io.hypersistence</groupId>
                 <artifactId>hypersistence-utils-hibernate-63</artifactId>
                 <version>3.15.2</version>
-             </dependency>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-webflux</artifactId>
@@ -695,14 +684,14 @@
                 <version>1.9.3</version>
             </dependency>
 
-             <!-- Stripe Java SDK -->
+            <!-- Stripe Java SDK -->
             <dependency>
                 <groupId>com.stripe</groupId>
                 <artifactId>stripe-java</artifactId>
                 <version>31.3.0</version>
             </dependency>
 
-             <!-- PayPal Java SDK -->
+            <!-- PayPal Java SDK -->
             <dependency>
                 <groupId>com.paypal.sdk</groupId>
                 <artifactId>paypal-server-sdk</artifactId>
@@ -783,31 +772,13 @@
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-source-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>attach-sources</id>
-                                <goals>
-                                    <goal>jar-no-fork</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>attach-javadocs</id>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                            </execution>
-                        </executions>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <extensions>true</extensions>
                         <configuration>
-                            <doclint>none</doclint>
-                            <failOnError>false</failOnError>
+                            <publishingServerId>central</publishingServerId>
+                            <autoPublish>true</autoPublish>
+                            <waitUntil>published</waitUntil>
                         </configuration>
                     </plugin>
                     <plugin>
@@ -828,16 +799,6 @@
                                 </configuration>
                             </execution>
                         </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <extensions>true</extensions>
-                        <configuration>
-                            <serverId>ossrh</serverId>
-                            <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                        </configuration>
                     </plugin>
                 </plugins>
             </build>
@@ -886,6 +847,11 @@
                     <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
                     <version>${nexus-staging-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.sonatype.central</groupId>
+                    <artifactId>central-publishing-maven-plugin</artifactId>
+                    <version>${maven-central-publish-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
