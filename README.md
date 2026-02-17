@@ -18,7 +18,7 @@ Add this parent POM to your Maven project:
 <parent>
   <groupId>com.iqkv</groupId>
   <artifactId>boot-parent-pom</artifactId>
-  <version>0.25.0-SNAPSHOT</version>
+  <version>0.24.0</version>
 </parent>
 ```
 
