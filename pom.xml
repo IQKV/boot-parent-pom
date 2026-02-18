@@ -48,11 +48,11 @@
 
         <iqkv.checkstyle.version>0.24.0</iqkv.checkstyle.version>
 
-        <spring-boot.version>3.5.7</spring-boot.version>
-        <spring-kafka.version>3.3.10</spring-kafka.version>
+        <spring-boot.version>4.0.2</spring-boot.version>
+        <spring-kafka.version>4.0.3</spring-kafka.version>
 
 
-        <spring-cloud-dependencies.version>2025.0.0</spring-cloud-dependencies.version>
+        <spring-cloud-dependencies.version>2025.1.1</spring-cloud-dependencies.version>
         <spring-test.version>6.2.12</spring-test.version>
 
 
@@ -60,7 +60,7 @@
         <jakarta.validation-api.version>3.1.1</jakarta.validation-api.version>
         <hibernate-validator.version>9.1.0.Final</hibernate-validator.version>
 
-        <hibernate.version>6.6.42.Final</hibernate.version>
+        <hibernate.version>7.2.4.Final</hibernate.version>
         <postgresql.version>42.7.10</postgresql.version>
         <r2dbc-postgresql.version>1.1.1.RELEASE</r2dbc-postgresql.version>
         <mysql-connector.version>9.6.0</mysql-connector.version>
@@ -73,7 +73,7 @@
         <flyway.version>11.20.3</flyway.version>
 
         <spring-cloud-stream.version>4.3.0</spring-cloud-stream.version>
-        <kafka-streams.version>4.2.0</kafka-streams.version>
+        <kafka-streams.version>4.1.1</kafka-streams.version>
         <jjwt.version>0.13.0</jjwt.version>
         <vaadin.version>24.9.7</vaadin.version>
 
@@ -85,14 +85,14 @@
 
         <micrometer.version>1.16.3</micrometer.version>
         <micrometer-tracing.version>1.6.3</micrometer-tracing.version>
-        <datasource-micrometer.version>1.2.0</datasource-micrometer.version>
+        <datasource-micrometer.version>2.1.1</datasource-micrometer.version>
         <opentelemetry.version>1.43.0</opentelemetry.version>
         <zipkin-reporter.version>3.5.1</zipkin-reporter.version>
         <logstash-logback-encoder.version>8.1</logstash-logback-encoder.version>
         <logback.version>1.5.32</logback.version>
         <logback-jackson.version>0.1.5</logback-jackson.version>
         <logback-classic.version>1.5.32</logback-classic.version>
-        <loki-logback-appender.version>1.6.0</loki-logback-appender.version>
+        <loki-logback-appender.version>2.0.3</loki-logback-appender.version>
         <lombok.version>1.18.42</lombok.version>
 
         <testcontainers.version>1.21.4</testcontainers.version>
@@ -100,7 +100,7 @@
         <archunit.version>1.4.1</archunit.version>
         <awaitility.version>4.3.0</awaitility.version>
         <blockhound-junit-platform.version>1.0.16.RELEASE</blockhound-junit-platform.version>
-        <junit.jupiter-params.version>5.12.2</junit.jupiter-params.version>
+        <junit.jupiter-params.version>6.0.3</junit.jupiter-params.version>
         <testng.version>7.12.0</testng.version>
         <mockito.version>5.21.0</mockito.version>
 
@@ -142,7 +142,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.7</version>
+        <version>4.0.2</version>
         <relativePath/>
     </parent>
 
