@@ -415,6 +415,11 @@
             </dependency>
             <dependency>
                 <groupId>io.github.resilience4j</groupId>
+                <artifactId>resilience4j-spring-boot4</artifactId>
+                <version>2.3.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.resilience4j</groupId>
                 <artifactId>resilience4j-spring6</artifactId>
                 <version>${resilience4j.version}</version>
             </dependency>
