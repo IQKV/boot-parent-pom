@@ -5,7 +5,7 @@ and integrated quality tools to streamline Java development.
 
 ## 🚀 Features
 
-- **Spring Boot 3 dependency tree**: Optimized for Spring Boot applications
+- **Spring Boot 4 dependency tree**: Optimized for Spring Boot applications
 - **Code Quality**: Integrated with industry-standard quality tools
 - **Standardized Configuration**: Consistent build configuration across projects
 - **Development Tools**: Pre-configured formatters, linters, and commit hooks
