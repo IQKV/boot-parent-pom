@@ -69,7 +69,7 @@
         <javax-cache-api.version>1.1.1</javax-cache-api.version>
         <ehcache.version>3.11.1</ehcache.version>
 
-        <liquibase.version>5.0.1</liquibase.version>
+        <liquibase.version>5.0.2</liquibase.version>
         <flyway.version>12.0.3</flyway.version>
 
         <spring-cloud-stream.version>4.3.0</spring-cloud-stream.version>
