@@ -7,8 +7,8 @@
   "author": "Dima Denisenko",
   "type": "module",
   "scripts": {
-    "formatter:check": "prettier . --check --ignore-unknown",
-    "formatter:write": "prettier . --write",
+    "formatter:check": "oxfmt --check",
+    "formatter:write": "oxfmt --write",
     "lint": "pnpm lint:stylelint && pnpm formatter:check",
     "lint:stylelint": "stylelint \"**/*.css\" --aei",
     "node_modules:cleanup": "rm -rf node_modules",
