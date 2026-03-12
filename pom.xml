@@ -151,7 +151,7 @@
         <dependencies>
             <dependency>
                 <groupId>com.iqkv</groupId>
-                <artifactId>misc-util</artifactId>
+                <artifactId>foundation-misc-util</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
