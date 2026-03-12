@@ -35,7 +35,7 @@ This parent POM enforces high code quality through multiple integrated tools:
 ### Code Style
 
 - **[Google Java Style Guide](https://google.github.io/styleguide/javaguide.html)**: Consistent formatting and conventions
-- **[Prettier](https://prettier.io/)**: Automated code formatting
+- **[oxfmt](https://oxc.rs/)**: Automated code formatting
 - **[EditorConfig](https://editorconfig.org/)**: Cross-editor consistency
 
 ### Static Analysis
