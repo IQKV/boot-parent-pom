@@ -56,7 +56,7 @@ This parent POM enforces high code quality through multiple integrated tools:
 
 The project includes development automation tools:
 
-- **Prettier**: Code formatting (`pnpm formatter:write`)
+- **oxfmt**: Code formatting (`pnpm formatter:write`)
 - **Release-it**: Automated releases with conventional changelog
 - **Commit validation**: Ensures conventional commit format
 
