@@ -137,6 +137,8 @@
         <jqwik.version>1.9.3</jqwik.version>
         <stripe-java.version>31.4.1</stripe-java.version>
         <paypal-server-sdk.version>2.2.0</paypal-server-sdk.version>
+        <shedlock.version>7.7.0</shedlock.version>
+        <nanoid.version>2.0.0</nanoid.version>
         <pl.project13.git-commit-id-plugin.version>4.9.10</pl.project13.git-commit-id-plugin.version>
     </properties>
 
@@ -403,6 +405,24 @@
                 <groupId>com.fasterxml.jackson.datatype</groupId>
                 <artifactId>jackson-datatype-hibernate6</artifactId>
                 <version>${jackson.version}</version>
+            </dependency>
+            <!-- Scheduling: ShedLock -->
+            <dependency>
+                <groupId>net.javacrumbs.shedlock</groupId>
+                <artifactId>shedlock-spring</artifactId>
+                <version>${shedlock.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.javacrumbs.shedlock</groupId>
+                <artifactId>shedlock-provider-jdbc-template</artifactId>
+                <version>${shedlock.version}</version>
+            </dependency>
+
+            <!-- NanoID (tenantKey generation) -->
+            <dependency>
+                <groupId>com.aventrix.jnanoid</groupId>
+                <artifactId>jnanoid</artifactId>
+                <version>${nanoid.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.mapstruct</groupId>
