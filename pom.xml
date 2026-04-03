@@ -139,7 +139,6 @@
         <paypal-server-sdk.version>2.2.0</paypal-server-sdk.version>
         <shedlock.version>7.7.0</shedlock.version>
         <nanoid.version>2.0.0</nanoid.version>
-        <pl.project13.git-commit-id-plugin.version>4.9.10</pl.project13.git-commit-id-plugin.version>
     </properties>
 
     <parent>
@@ -949,11 +948,6 @@
                     <groupId>org.openapitools</groupId>
                     <artifactId>openapi-generator-maven-plugin</artifactId>
                     <version>${openapi-generator-maven-plugin.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>pl.project13.maven</groupId>
-                    <artifactId>git-commit-id-plugin</artifactId>
-                    <version>${pl.project13.git-commit-id-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>io.github.git-commit-id</groupId>
