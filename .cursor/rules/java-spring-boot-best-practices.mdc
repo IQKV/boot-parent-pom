@@ -24,7 +24,7 @@ Naming Conventions
 Java and Spring Boot Usage
 
 - Use Java 25 or later features when applicable (e.g., records, sealed classes, pattern matching).
-- Leverage Spring Boot 3.x features and best practices.
+- Leverage Spring Boot 4.x features and best practices.
 - Use Spring Data JPA for database operations when applicable.
 - Implement proper validation using Bean Validation (e.g., @Valid, custom validators).
 
