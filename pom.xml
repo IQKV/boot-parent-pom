@@ -69,7 +69,7 @@
         <ehcache.version>3.12.0</ehcache.version>
 
         <liquibase.version>5.0.2</liquibase.version>
-        <flyway.version>12.4.0</flyway.version>
+        <flyway.version>12.5.0</flyway.version>
 
         <spring-cloud-stream.version>4.3.0</spring-cloud-stream.version>
         <kafka-streams.version>4.2.0</kafka-streams.version>
@@ -107,7 +107,7 @@
         <embedded-redis.version>0.7.3</embedded-redis.version>
         <spring-cloud-starter-sleuth.version>3.1.11</spring-cloud-starter-sleuth.version>
         <springdoc-webflux-ui.version>1.8.0</springdoc-webflux-ui.version>
-        <spring-modulith.version>2.1.0-M4</spring-modulith.version>
+        <spring-modulith.version>2.1.0-RC1</spring-modulith.version>
         <cucumber-bom.version>7.34.3</cucumber-bom.version>
         <pitest.version>1.23.1</pitest.version>
         <pact.version>4.6.18</pact.version>
@@ -126,15 +126,15 @@
         <maven-central-publish-plugin.version>0.10.0</maven-central-publish-plugin.version>
         <sonar-maven-plugin.version>5.6.0.6792</sonar-maven-plugin.version>
         <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
-        <puppycrawl.checkstyle.version>13.4.0</puppycrawl.checkstyle.version>
+        <puppycrawl.checkstyle.version>13.4.1</puppycrawl.checkstyle.version>
         <git-commit-id-plugin.version>10.0.0</git-commit-id-plugin.version>
         <maven-surefire-plugin.version>3.5.5</maven-surefire-plugin.version>
         <jacoco-maven-plugin.version>0.8.14</jacoco-maven-plugin.version>
         <native-maven-plugin.version>1.1.0</native-maven-plugin.version>
-        <qulice-maven-plugin.version>0.26.0</qulice-maven-plugin.version>
+        <qulice-maven-plugin.version>0.27.5</qulice-maven-plugin.version>
         <hypersistence-utils.version>3.15.2</hypersistence-utils.version>
         <jqwik.version>1.9.3</jqwik.version>
-        <stripe-java.version>31.4.1</stripe-java.version>
+        <stripe-java.version>32.1.0</stripe-java.version>
         <paypal-server-sdk.version>2.2.0</paypal-server-sdk.version>
         <shedlock.version>7.7.0</shedlock.version>
         <nanoid.version>2.0.0</nanoid.version>
