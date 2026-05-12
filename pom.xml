@@ -69,7 +69,7 @@
         <ehcache.version>3.12.0</ehcache.version>
 
         <liquibase.version>5.0.2</liquibase.version>
-        <flyway.version>12.6.0</flyway.version>
+        <flyway.version>12.6.1</flyway.version>
 
         <spring-cloud-stream.version>4.3.0</spring-cloud-stream.version>
         <kafka-streams.version>4.2.0</kafka-streams.version>
