@@ -72,7 +72,7 @@
         <flyway.version>12.6.1</flyway.version>
 
         <spring-cloud-stream.version>4.3.0</spring-cloud-stream.version>
-        <kafka-streams.version>4.2.0</kafka-streams.version>
+        <kafka-streams.version>4.3.0</kafka-streams.version>
         <jjwt.version>0.13.0</jjwt.version>
         <vaadin.version>25.1.5</vaadin.version>
 
