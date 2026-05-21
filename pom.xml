@@ -5,7 +5,7 @@
 
     <groupId>com.iqkv</groupId>
     <artifactId>boot-parent-pom</artifactId>
-    <version>0.24.8-SNAPSHOT</version>
+    <version>0.24.9-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>boot-parent-pom</name>
@@ -68,11 +68,11 @@
         <javax-cache-api.version>1.1.1</javax-cache-api.version>
         <ehcache.version>3.12.0</ehcache.version>
 
-        <liquibase.version>5.0.2</liquibase.version>
-        <flyway.version>12.6.0</flyway.version>
+        <liquibase.version>5.0.3</liquibase.version>
+        <flyway.version>12.6.2</flyway.version>
 
         <spring-cloud-stream.version>4.3.0</spring-cloud-stream.version>
-        <kafka-streams.version>4.2.0</kafka-streams.version>
+        <kafka-streams.version>4.3.0</kafka-streams.version>
         <jjwt.version>0.13.0</jjwt.version>
         <vaadin.version>25.1.5</vaadin.version>
 
@@ -80,7 +80,7 @@
         <org.mapstruct.version>1.6.3</org.mapstruct.version>
         <resilience4j.version>2.4.0</resilience4j.version>
         <apache-tika.version>3.3.0</apache-tika.version>
-        <minio.version>8.6.0</minio.version>
+        <minio.version>9.0.1</minio.version>
 
         <micrometer.version>1.16.5</micrometer.version>
         <micrometer-tracing.version>1.6.5</micrometer-tracing.version>
@@ -99,7 +99,7 @@
         <archunit.version>1.4.2</archunit.version>
         <awaitility.version>4.3.0</awaitility.version>
         <blockhound-junit-platform.version>1.0.16.RELEASE</blockhound-junit-platform.version>
-        <junit.jupiter-params.version>6.0.3</junit.jupiter-params.version>
+        <junit.jupiter-params.version>6.1.0</junit.jupiter-params.version>
         <testng.version>7.12.0</testng.version>
         <mockito.version>5.23.0</mockito.version>
 
@@ -109,12 +109,12 @@
         <springdoc-webflux-ui.version>1.8.0</springdoc-webflux-ui.version>
         <spring-modulith.version>2.1.0-RC1</spring-modulith.version>
         <cucumber-bom.version>7.34.3</cucumber-bom.version>
-        <pitest.version>1.23.1</pitest.version>
+        <pitest.version>1.24.1</pitest.version>
         <pact.version>4.6.18</pact.version>
         <commons-beanutils.version>1.11.0</commons-beanutils.version>
 
         <openapi-generator-maven-plugin.version>7.22.0</openapi-generator-maven-plugin.version>
-        <gaul.modernizer-maven-plugin.version>3.3.0</gaul.modernizer-maven-plugin.version>
+        <gaul.modernizer-maven-plugin.version>3.4.0</gaul.modernizer-maven-plugin.version>
         <codehaus.versions-maven-plugin.version>2.21.0</codehaus.versions-maven-plugin.version>
         <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
         <maven-resources-plugin.version>3.5.0</maven-resources-plugin.version>
