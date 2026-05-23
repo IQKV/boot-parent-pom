@@ -45,6 +45,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <iqkv.checkstyle.version>0.24.0</iqkv.checkstyle.version>
+        <iqkv.foundation-misc-util.version>0.24.0</iqkv.foundation-misc-util.version>
+        <iqkv.foundation-audit.version>0.24.0</iqkv.foundation-audit.version>
 
         <spring-boot.version>4.0.6</spring-boot.version>
         <spring-kafka.version>4.0.5</spring-kafka.version>
@@ -152,7 +154,17 @@
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>foundation-misc-util</artifactId>
-                <version>${project.version}</version>
+                <version>${iqkv.foundation-misc-util.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.iqkv</groupId>
+                <artifactId>foundation-audit-spi</artifactId>
+                <version>${iqkv.foundation-audit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.iqkv</groupId>
+                <artifactId>foundation-audit-model</artifactId>
+                <version>${iqkv.foundation-audit.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
