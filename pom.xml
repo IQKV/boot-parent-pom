@@ -5,7 +5,7 @@
 
     <groupId>com.iqkv</groupId>
     <artifactId>boot-parent-pom</artifactId>
-    <version>0.24.9-SNAPSHOT</version>
+    <version>0.24.10-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>boot-parent-pom</name>
@@ -45,6 +45,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <iqkv.checkstyle.version>0.24.0</iqkv.checkstyle.version>
+        <iqkv.foundation-misc-util.version>0.24.0</iqkv.foundation-misc-util.version>
+        <iqkv.foundation-audit.version>0.24.0</iqkv.foundation-audit.version>
 
         <spring-boot.version>4.0.6</spring-boot.version>
         <spring-kafka.version>4.0.5</spring-kafka.version>
@@ -109,7 +111,7 @@
         <springdoc-webflux-ui.version>1.8.0</springdoc-webflux-ui.version>
         <spring-modulith.version>2.1.0-RC1</spring-modulith.version>
         <cucumber-bom.version>7.34.3</cucumber-bom.version>
-        <pitest.version>1.24.1</pitest.version>
+        <pitest.version>1.25.0</pitest.version>
         <pact.version>4.6.18</pact.version>
         <commons-beanutils.version>1.11.0</commons-beanutils.version>
 
@@ -152,7 +154,17 @@
             <dependency>
                 <groupId>com.iqkv</groupId>
                 <artifactId>foundation-misc-util</artifactId>
-                <version>${project.version}</version>
+                <version>${iqkv.foundation-misc-util.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.iqkv</groupId>
+                <artifactId>foundation-audit-spi</artifactId>
+                <version>${iqkv.foundation-audit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.iqkv</groupId>
+                <artifactId>foundation-audit-model</artifactId>
+                <version>${iqkv.foundation-audit.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
