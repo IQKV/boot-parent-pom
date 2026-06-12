@@ -52,7 +52,7 @@
         <spring-kafka.version>4.1.0</spring-kafka.version>
 
 
-        <spring-cloud-dependencies.version>2025.1.1</spring-cloud-dependencies.version>
+        <spring-cloud-dependencies.version>2025.1.2</spring-cloud-dependencies.version>
         <spring-test.version>7.0.8</spring-test.version>
 
 
