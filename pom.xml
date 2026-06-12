@@ -82,7 +82,7 @@
         <org.mapstruct.version>1.6.3</org.mapstruct.version>
         <resilience4j.version>2.4.0</resilience4j.version>
         <apache-tika.version>3.3.1</apache-tika.version>
-        <minio.version>9.0.2</minio.version>
+        <minio.version>9.0.3</minio.version>
 
         <micrometer.version>1.17.0</micrometer.version>
         <micrometer-tracing.version>1.7.0</micrometer-tracing.version>
