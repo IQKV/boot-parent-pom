@@ -5,7 +5,7 @@
 
     <groupId>com.iqkv</groupId>
     <artifactId>boot-parent-pom</artifactId>
-    <version>0.24.10-SNAPSHOT</version>
+    <version>0.24.11-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>boot-parent-pom</name>
@@ -48,12 +48,12 @@
         <iqkv.foundation-misc-util.version>0.24.0</iqkv.foundation-misc-util.version>
         <iqkv.foundation-audit.version>0.24.0</iqkv.foundation-audit.version>
 
-        <spring-boot.version>4.0.6</spring-boot.version>
-        <spring-kafka.version>4.0.5</spring-kafka.version>
+        <spring-boot.version>4.1.0</spring-boot.version>
+        <spring-kafka.version>4.1.0</spring-kafka.version>
 
 
         <spring-cloud-dependencies.version>2025.1.1</spring-cloud-dependencies.version>
-        <spring-test.version>7.0.7</spring-test.version>
+        <spring-test.version>7.0.8</spring-test.version>
 
 
         <jakarta.servlet-api.version>6.1.0</jakarta.servlet-api.version>
@@ -71,36 +71,36 @@
         <ehcache.version>3.12.0</ehcache.version>
 
         <liquibase.version>5.0.3</liquibase.version>
-        <flyway.version>12.6.2</flyway.version>
+        <flyway.version>12.8.1</flyway.version>
 
         <spring-cloud-stream.version>4.3.0</spring-cloud-stream.version>
         <kafka-streams.version>4.3.0</kafka-streams.version>
         <jjwt.version>0.13.0</jjwt.version>
-        <vaadin.version>25.1.5</vaadin.version>
+        <vaadin.version>25.1.7</vaadin.version>
 
-        <jackson.version>2.21.3</jackson.version>
+        <jackson.version>2.22.0</jackson.version>
         <org.mapstruct.version>1.6.3</org.mapstruct.version>
         <resilience4j.version>2.4.0</resilience4j.version>
-        <apache-tika.version>3.3.0</apache-tika.version>
-        <minio.version>9.0.1</minio.version>
+        <apache-tika.version>3.3.1</apache-tika.version>
+        <minio.version>9.0.2</minio.version>
 
-        <micrometer.version>1.16.5</micrometer.version>
-        <micrometer-tracing.version>1.6.5</micrometer-tracing.version>
+        <micrometer.version>1.17.0</micrometer.version>
+        <micrometer-tracing.version>1.7.0</micrometer-tracing.version>
         <datasource-micrometer.version>2.2.1</datasource-micrometer.version>
         <opentelemetry.version>1.43.0</opentelemetry.version>
         <zipkin-reporter.version>3.5.3</zipkin-reporter.version>
         <logstash-logback-encoder.version>8.1</logstash-logback-encoder.version>
-        <logback.version>1.5.32</logback.version>
+        <logback.version>1.5.34</logback.version>
         <logback-jackson.version>0.1.5</logback-jackson.version>
-        <logback-classic.version>1.5.32</logback-classic.version>
+        <logback-classic.version>1.5.34</logback-classic.version>
         <loki-logback-appender.version>2.0.3</loki-logback-appender.version>
         <lombok.version>1.18.46</lombok.version>
 
         <testcontainers.version>1.21.4</testcontainers.version>
-        <playtika-testcontainers.version>4.0.0</playtika-testcontainers.version>
+        <playtika-testcontainers.version>4.0.2</playtika-testcontainers.version>
         <archunit.version>1.4.2</archunit.version>
         <awaitility.version>4.3.0</awaitility.version>
-        <blockhound-junit-platform.version>1.0.16.RELEASE</blockhound-junit-platform.version>
+        <blockhound-junit-platform.version>1.0.17.RELEASE</blockhound-junit-platform.version>
         <junit.jupiter-params.version>6.1.0</junit.jupiter-params.version>
         <testng.version>7.12.0</testng.version>
         <mockito.version>5.23.0</mockito.version>
@@ -109,13 +109,13 @@
         <embedded-redis.version>0.7.3</embedded-redis.version>
         <spring-cloud-starter-sleuth.version>3.1.11</spring-cloud-starter-sleuth.version>
         <springdoc-webflux-ui.version>1.8.0</springdoc-webflux-ui.version>
-        <spring-modulith.version>2.1.0-RC1</spring-modulith.version>
+        <spring-modulith.version>2.1.0</spring-modulith.version>
         <cucumber-bom.version>7.34.3</cucumber-bom.version>
-        <pitest.version>1.25.0</pitest.version>
+        <pitest.version>1.25.4</pitest.version>
         <pact.version>4.6.18</pact.version>
         <commons-beanutils.version>1.11.0</commons-beanutils.version>
 
-        <openapi-generator-maven-plugin.version>7.22.0</openapi-generator-maven-plugin.version>
+        <openapi-generator-maven-plugin.version>7.23.0</openapi-generator-maven-plugin.version>
         <gaul.modernizer-maven-plugin.version>3.4.0</gaul.modernizer-maven-plugin.version>
         <codehaus.versions-maven-plugin.version>2.21.0</codehaus.versions-maven-plugin.version>
         <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
@@ -126,18 +126,18 @@
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
         <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
         <maven-central-publish-plugin.version>0.10.0</maven-central-publish-plugin.version>
-        <sonar-maven-plugin.version>5.6.0.6792</sonar-maven-plugin.version>
+        <sonar-maven-plugin.version>5.7.0.6970</sonar-maven-plugin.version>
         <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
-        <puppycrawl.checkstyle.version>13.4.2</puppycrawl.checkstyle.version>
+        <puppycrawl.checkstyle.version>13.5.0</puppycrawl.checkstyle.version>
         <git-commit-id-plugin.version>10.0.0</git-commit-id-plugin.version>
-        <maven-surefire-plugin.version>3.5.5</maven-surefire-plugin.version>
-        <jacoco-maven-plugin.version>0.8.14</jacoco-maven-plugin.version>
-        <native-maven-plugin.version>1.1.0</native-maven-plugin.version>
+        <maven-surefire-plugin.version>3.5.6</maven-surefire-plugin.version>
+        <jacoco-maven-plugin.version>0.8.15</jacoco-maven-plugin.version>
+        <native-maven-plugin.version>1.1.2</native-maven-plugin.version>
         <qulice-maven-plugin.version>0.27.6</qulice-maven-plugin.version>
-        <hypersistence-utils.version>3.15.2</hypersistence-utils.version>
-        <jqwik.version>1.9.3</jqwik.version>
-        <stripe-java.version>32.1.0</stripe-java.version>
-        <paypal-server-sdk.version>2.2.0</paypal-server-sdk.version>
+        <hypersistence-utils.version>3.15.3</hypersistence-utils.version>
+        <jqwik.version>1.10.1</jqwik.version>
+        <stripe-java.version>33.0.0</stripe-java.version>
+        <paypal-server-sdk.version>2.3.0</paypal-server-sdk.version>
         <shedlock.version>7.7.0</shedlock.version>
         <nanoid.version>2.0.0</nanoid.version>
     </properties>
@@ -145,7 +145,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>4.0.6</version>
+        <version>4.1.0</version>
         <relativePath/>
     </parent>
 
