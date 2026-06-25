@@ -136,7 +136,7 @@
         <qulice-maven-plugin.version>0.27.6</qulice-maven-plugin.version>
         <hypersistence-utils.version>3.15.3</hypersistence-utils.version>
         <jqwik.version>1.10.1</jqwik.version>
-        <stripe-java.version>33.0.0</stripe-java.version>
+        <stripe-java.version>33.1.0</stripe-java.version>
         <paypal-server-sdk.version>2.3.0</paypal-server-sdk.version>
         <shedlock.version>7.7.0</shedlock.version>
         <nanoid.version>2.0.0</nanoid.version>
