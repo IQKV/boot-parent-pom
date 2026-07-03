@@ -47,6 +47,7 @@
         <iqkv.checkstyle.version>0.24.0</iqkv.checkstyle.version>
         <iqkv.foundation-misc-util.version>0.24.0</iqkv.foundation-misc-util.version>
         <iqkv.foundation-audit.version>0.24.0</iqkv.foundation-audit.version>
+        <iqkv.foundation-tenancy.version>0.24.0</iqkv.foundation-tenancy.version>
         <iqkv.foundation-entitlement-plan-resolver-mvc.version>0.24.0</iqkv.foundation-entitlement-plan-resolver-mvc.version>
 
         <spring-boot.version>4.1.0</spring-boot.version>
@@ -161,6 +162,11 @@
                 <groupId>com.iqkv</groupId>
                 <artifactId>foundation-audit-spi</artifactId>
                 <version>${iqkv.foundation-audit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.iqkv</groupId>
+                <artifactId>foundation-tenancy</artifactId>
+                <version>${iqkv.foundation-tenancy.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
