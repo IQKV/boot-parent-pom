@@ -47,11 +47,12 @@
         <iqkv.checkstyle.version>0.24.0</iqkv.checkstyle.version>
         <iqkv.foundation-misc-util.version>0.24.0</iqkv.foundation-misc-util.version>
         <iqkv.foundation-audit.version>0.24.0</iqkv.foundation-audit.version>
-        <iqkv.foundation-tenancy.version>0.24.2</iqkv.foundation-tenancy.version>
+        <iqkv.foundation-tenancy.version>0.24.3</iqkv.foundation-tenancy.version>
         <iqkv.foundation-entitlement-plan-resolver-mvc.version>0.24.2</iqkv.foundation-entitlement-plan-resolver-mvc.version>
 
         <spring-boot.version>4.1.0</spring-boot.version>
         <spring-kafka.version>4.1.0</spring-kafka.version>
+        <spring-ai.version>2.0.0</spring-ai.version>
 
 
         <spring-cloud-dependencies.version>2025.1.2</spring-cloud-dependencies.version>
@@ -627,6 +628,13 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-stream-dependencies</artifactId>
                 <version>${spring-cloud-stream.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.ai</groupId>
+                <artifactId>spring-ai-bom</artifactId>
+                <version>${spring-ai.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
