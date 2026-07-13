@@ -24,7 +24,7 @@ Add this parent POM to your Maven project:
 
 ## 📋 Requirements
 
-- **Build Time**: JDK 21 or higher
+- **Build Time**: JDK 25 or higher
 - **Maven**: 3.6+ recommended
 - **Node.js**: Required for development tooling (formatting, linting)
 
