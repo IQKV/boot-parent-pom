@@ -62,7 +62,7 @@
         <jakarta.servlet-api.version>6.1.0</jakarta.servlet-api.version>
         <jakarta.validation-api.version>3.1.1</jakarta.validation-api.version>
         <hibernate-validator.version>9.1.2.Final</hibernate-validator.version>
-        <mybatis-spring-boot.version>4.0.1</mybatis-spring-boot.version>
+        <mybatis-spring-boot.version>4.1.0</mybatis-spring-boot.version>
 
         <hibernate.version>7.2.4.Final</hibernate.version>
         <postgresql.version>42.7.13</postgresql.version>
