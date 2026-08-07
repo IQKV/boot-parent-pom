@@ -101,7 +101,7 @@
 
         <testcontainers.version>1.21.4</testcontainers.version>
         <playtika-testcontainers.version>4.0.4</playtika-testcontainers.version>
-        <archunit.version>1.4.2</archunit.version>
+        <archunit.version>1.5.0</archunit.version>
         <awaitility.version>4.3.0</awaitility.version>
         <blockhound-junit-platform.version>1.0.17.RELEASE</blockhound-junit-platform.version>
         <junit.jupiter-params.version>6.1.2</junit.jupiter-params.version>
