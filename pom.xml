@@ -55,7 +55,7 @@
         <spring-ai.version>2.0.0</spring-ai.version>
 
 
-        <spring-cloud-dependencies.version>2025.1.2</spring-cloud-dependencies.version>
+        <spring-cloud-dependencies.version>2025.1.3</spring-cloud-dependencies.version>
         <spring-test.version>7.0.9</spring-test.version>
 
 
