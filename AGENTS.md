@@ -22,6 +22,7 @@ boot-parent-pom/
 ```
 
 The `pom.xml` defines:
+
 - `<properties>` — all version pins (`spring-boot.version`, `hibernate.version`, `testcontainers.version`, etc.)
 - `<dependencyManagement>` — full dependency BOM imported by child services
 - `<pluginManagement>` — Checkstyle, Surefire, JaCoCo, Compiler, Deploy, Javadoc plugin configs
@@ -38,17 +39,20 @@ The `pom.xml` defines:
 ## Rules for Changing This POM
 
 ### Version bumps
+
 - Always pin to an exact version — no ranges (`[1.0,)`, `LATEST`, `RELEASE`).
 - Prefer bumps that are already part of a Spring Boot BOM (e.g., `spring-boot-dependencies`) over manual overrides — less drift.
 - When overriding a version already managed by `spring-boot-dependencies`, add a comment explaining why.
 - Check child service compatibility before merging: a major version bump to Hibernate, Liquibase, or Spring Security typically requires code changes in every service.
 
 ### Adding a new dependency to `<dependencyManagement>`
+
 - Only add dependencies that are used by two or more child services. Single-service dependencies stay in that service's own POM.
 - Specify `<scope>` explicitly when it is not `compile`.
 - Never add a dependency that duplicates one already provided by an imported BOM without a documented reason.
 
 ### Plugin management
+
 - Plugin version changes apply to every child build. Test against at least one service before committing.
 - Checkstyle config version (`iqkv.checkstyle.version`) must stay in sync with `com.iqkv:checkstyle-config` releases.
 
@@ -95,6 +99,7 @@ Format: `type(scope): subject`
   - ❌ `fix(jackson): downgrade jackson to 2.16.2`
 
 Examples:
+
 - `chore(spring-boot): bump to 4.1.1`
 - `chore(testcontainers): bump to 1.21.4`
 - `feat(deps): add spring-modulith BOM to dependency management`
