@@ -5,7 +5,7 @@
 
     <groupId>com.iqkv</groupId>
     <artifactId>boot-parent-pom</artifactId>
-    <version>0.24.31-SNAPSHOT</version>
+    <version>0.24.32-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>boot-parent-pom</name>
@@ -63,7 +63,7 @@
         <jakarta.validation-api.version>3.1.1</jakarta.validation-api.version>
         <hibernate-validator.version>9.1.4.Final</hibernate-validator.version>
         <mybatis-spring-boot.version>4.1.0</mybatis-spring-boot.version>
-        <resend.version>4.27.0</resend.version>
+        <resend.version>4.28.0</resend.version>
 
         <hibernate.version>7.2.4.Final</hibernate.version>
         <postgresql.version>42.7.13</postgresql.version>
@@ -75,7 +75,7 @@
         <ehcache.version>3.12.0</ehcache.version>
 
         <liquibase.version>5.0.4</liquibase.version>
-        <flyway.version>13.8.1</flyway.version>
+        <flyway.version>13.9.0</flyway.version>
 
         <spring-cloud-stream.version>5.0.3</spring-cloud-stream.version>
         <kafka-streams.version>4.3.1</kafka-streams.version>
@@ -95,9 +95,9 @@
         <opentelemetry.version>1.43.0</opentelemetry.version>
         <zipkin-reporter.version>3.5.3</zipkin-reporter.version>
         <logstash-logback-encoder.version>8.1</logstash-logback-encoder.version>
-        <logback.version>1.6.4</logback.version>
+        <logback.version>1.6.5</logback.version>
         <logback-jackson.version>0.1.5</logback-jackson.version>
-        <logback-classic.version>1.6.4</logback-classic.version>
+        <logback-classic.version>1.6.5</logback-classic.version>
         <loki-logback-appender.version>2.1.0</loki-logback-appender.version>
         <lombok.version>1.18.48</lombok.version>
 
@@ -141,7 +141,7 @@
         <qulice-maven-plugin.version>0.36.0</qulice-maven-plugin.version>
         <hypersistence-utils.version>3.16.0</hypersistence-utils.version>
         <jqwik.version>1.10.1</jqwik.version>
-        <stripe-java.version>33.4.2</stripe-java.version>
+        <stripe-java.version>34.0.0</stripe-java.version>
         <paypal-server-sdk.version>2.4.0</paypal-server-sdk.version>
         <shedlock.version>7.10.1</shedlock.version>
         <nanoid.version>2.0.0</nanoid.version>
