@@ -104,7 +104,7 @@ jobs:
           CENTRAL_TOKEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           CENTRAL_TOKEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-        run: mvn ${MAVEN_ARGS} clean deploy -P maven-central
+        run: mvn ${MAVEN_ARGS} clean deploy -P maven-central -Dmaven.install.skip=true
         continue-on-error: true
 
       - name: "Inspect bundle contents"
