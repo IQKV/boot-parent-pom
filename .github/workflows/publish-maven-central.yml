@@ -96,11 +96,11 @@ jobs:
             echo "POM already has release version: $VERSION"
           fi
 
-      # Build and verify before publishing
-      - name: "Verify Build"
-        run: mvn ${MAVEN_ARGS} clean verify
-
-      # Deploy to Maven Central
+      # Build, verify, and deploy to Maven Central in a single Maven invocation.
+      # Running verify and deploy separately causes the central-publishing-maven-plugin
+      # (in extension mode) to create target/central-publishing/central-bundle.zip during
+      # verify; a subsequent clean deploy then uploads that stale zip instead of the
+      # freshly staged one, producing the "does NOT have a .pom file" validation failure.
       # CENTRAL_TOKEN_USERNAME / CENTRAL_TOKEN_PASSWORD are read by setup-java's generated settings.xml
       # MAVEN_GPG_PASSPHRASE is read by maven-gpg-plugin (passphrase env var set in setup-java above)
       - name: "Deploy to Maven Central"
