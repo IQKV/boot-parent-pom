@@ -19,12 +19,15 @@ jobs:
         with:
           fetch-depth: 0 # Fetch full history for proper versioning
 
-      # Set up Java 25
+      # Set up Java 25 with Maven Central publishing configuration
+      # This configures GPG signing and OSSRH server credentials
       - name: "Set up JDK 25"
         uses: actions/setup-java@v6
         with:
           java-version: "25"
           distribution: "corretto"
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }} # GPG key for artifact signing
+          gpg-passphrase: MAVEN_GPG_PASSPHRASE # Environment variable for GPG passphrase
 
       # Cache Maven dependencies to speed up builds
       - name: "Cache Maven Dependencies"
@@ -34,7 +37,23 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-
+      - name: Configure Maven Settings
+        run: |
+          mkdir -p ~/.m2
+          cat > ~/.m2/settings.xml <<EOF
+          <settings>
+            <servers>
+              <server>
+                <id>central</id>
+                <username>\${env.MAVEN_USERNAME}</username>
+                <password>\${env.MAVEN_PASSWORD}</password>
+              </server>
+            </servers>
+          </settings>
+          EOF
+        env:
+          MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
 
       # Configure Git for potential version commits
       - name: "Configure Git User"
@@ -120,16 +139,11 @@ jobs:
       - name: "Verify Build"
         run: mvn clean verify
 
-      # Step 9: Deploy to Maven Central
-      # WasiqB/maven-publish-action handles settings.xml generation, GPG import, and deploy.
-      # server_id must match publishingServerId in the maven-central profile (pom.xml).
+      # Deploy to Maven Central
+      # Uses the 'maven-central' profile which includes sources, javadoc, and GPG signing
       - name: "Deploy to Maven Central"
-        uses: WasiqB/maven-publish-action@v1
-        with:
-          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-          gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
-          nexus_username: ${{ secrets.OSSRH_USERNAME }}
-          nexus_password: ${{ secrets.OSSRH_TOKEN }}
-          server_id: central
-          maven_profiles: maven-central
-          maven_goals_phases: clean deploy
+        run: mvn clean deploy -P maven-central
+        env:
+          MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
