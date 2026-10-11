@@ -43,12 +43,13 @@ jobs:
           git config --global user.name "GitHub Action"
 
       # Extract version from POM and convert SNAPSHOT to release version
+      # MAVEN_ARGS overridden locally to drop -V: the version banner would pollute -DforceStdout output
       - name: "Extract and Prepare Release Version"
         id: extract_version
         env:
-          MAVEN_ARGS: -B --no-transfer-progress
+          MAVEN_ARGS: -B -q --no-transfer-progress
         run: |
-          CURRENT_VERSION=$(mvn -q help:evaluate -Dexpression=project.version -DforceStdout)
+          CURRENT_VERSION=$(mvn help:evaluate -Dexpression=project.version -DforceStdout | tail -n1)
           if [[ -z "$CURRENT_VERSION" ]]; then
             echo "Error: Could not extract version from POM"
             exit 1
@@ -84,7 +85,8 @@ jobs:
 
           if [[ "$ORIGINAL_VERSION" != "$VERSION" ]]; then
             mvn ${MAVEN_ARGS} versions:set -DnewVersion="$VERSION" -DgenerateBackupPoms=false
-            NEW_VERSION=$(mvn -q -B help:evaluate -Dexpression=project.version -DforceStdout)
+            # -q and tail -n1 to avoid any banner lines polluting the captured version
+            NEW_VERSION=$(mvn -B -q --no-transfer-progress help:evaluate -Dexpression=project.version -DforceStdout | tail -n1)
             if [[ "$NEW_VERSION" != "$VERSION" ]]; then
               echo "Error: Version update failed. Expected: $VERSION, Got: $NEW_VERSION"
               exit 1
