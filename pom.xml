@@ -802,6 +802,9 @@
                             <publishingServerId>central</publishingServerId>
                             <autoPublish>true</autoPublish>
                             <waitUntil>published</waitUntil>
+                            <!-- Isolated staging dir prevents maven-metadata-local.xml and
+                                 _remote.repositories from being written here by the install plugin -->
+                            <stagingDirectory>${project.build.directory}/central-staging-publish</stagingDirectory>
                         </configuration>
                     </plugin>
                     <plugin>
