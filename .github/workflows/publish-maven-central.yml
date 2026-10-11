@@ -128,8 +128,8 @@ jobs:
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
-          server_username: ${{ secrets.OSSRH_USERNAME }}
-          server_password: ${{ secrets.OSSRH_TOKEN }}
+          nexus_username: ${{ secrets.OSSRH_USERNAME }}
+          nexus_password: ${{ secrets.OSSRH_TOKEN }}
           server_id: central
           maven_profiles: maven-central
           maven_goals_phases: clean deploy
