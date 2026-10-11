@@ -5,7 +5,7 @@
 
     <groupId>com.iqkv</groupId>
     <artifactId>boot-parent-pom</artifactId>
-    <version>0.24.33-SNAPSHOT</version>
+    <version>0.24.34-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>boot-parent-pom</name>
@@ -39,19 +39,6 @@
         <url>https://github.com/IQKV/boot-parent-pom/tree/dev</url>
     </scm>
 
-    <!--
-        central-publishing-maven-plugin uses extensions=true and intercepts the deploy phase
-        directly, so no distributionManagement URL is required. The explicit entry here
-        overrides any URL inherited from spring-boot-starter-parent so the plugin does not
-        attempt to deploy to the Spring release repository.
-    -->
-    <distributionManagement>
-        <repository>
-            <id>central</id>
-            <url>https://central.sonatype.com/</url>
-        </repository>
-    </distributionManagement>
-
     <properties>
         <java.version>25</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -61,7 +48,7 @@
         <iqkv.foundation-misc-util.version>0.24.0</iqkv.foundation-misc-util.version>
         <iqkv.foundation-audit.version>0.24.0</iqkv.foundation-audit.version>
         <iqkv.foundation-tenancy.version>0.24.9</iqkv.foundation-tenancy.version>
-        <iqkv.foundation-entitlement-plan-resolver-mvc.version>0.24.3</iqkv.foundation-entitlement-plan-resolver-mvc.version>
+        <iqkv.foundation-entitlement-plan-resolver-mvc.version>0.24.4</iqkv.foundation-entitlement-plan-resolver-mvc.version>
 
         <spring-boot.version>4.1.1</spring-boot.version>
         <spring-kafka.version>4.1.1</spring-kafka.version>
@@ -143,7 +130,7 @@
         <maven-deploy-plugin.version>3.2.0</maven-deploy-plugin.version>
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
         <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
-        <central-publishing-maven-plugin.version>0.11.0</central-publishing-maven-plugin.version>
+        <central-publishing-maven-plugin.version>1.3.0</central-publishing-maven-plugin.version>
         <sonar-maven-plugin.version>5.8.0.7211</sonar-maven-plugin.version>
         <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
         <puppycrawl.checkstyle.version>14.3.0</puppycrawl.checkstyle.version>
@@ -795,7 +782,7 @@
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>org.sonatype.central</groupId>
+                        <groupId>io.github.mavenplugins</groupId>
                         <artifactId>central-publishing-maven-plugin</artifactId>
                         <extensions>true</extensions>
                         <configuration>
@@ -897,7 +884,7 @@
                     <version>${nexus-staging-maven-plugin.version}</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.sonatype.central</groupId>
+                    <groupId>io.github.mavenplugins</groupId>
                     <artifactId>central-publishing-maven-plugin</artifactId>
                     <version>${central-publishing-maven-plugin.version}</version>
                 </plugin>
