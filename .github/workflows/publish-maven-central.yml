@@ -86,16 +86,76 @@ jobs:
             echo "POM already has release version: $VERSION"
           fi
 
-      # Deploy to Maven Central.
-      # -Dmaven.install.skip=true prevents the install plugin from writing maven-metadata-local.xml
-      # and _remote.repositories into the staging directory.
-      # stagingDirectory in the maven-central profile points at an isolated directory
-      # (central-staging-publish) so nothing else pollutes it.
-      # CENTRAL_TOKEN_USERNAME / CENTRAL_TOKEN_PASSWORD are read from env by setup-java's settings.xml.
-      # MAVEN_GPG_PASSPHRASE is read by maven-gpg-plugin via the gpg-passphrase name set in setup-java.
-      - name: "Deploy to Maven Central"
+      # Sign the POM with GPG (maven-gpg-plugin verify phase), then build the bundle manually.
+      # We bypass central-publishing-maven-plugin's bundling entirely because it includes
+      # maven-metadata-local.xml and _remote.repositories in the zip, which Central rejects.
+      # Instead: sign → generate checksums → zip only the exact required files → upload via API.
+      - name: "Sign POM"
+        env:
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+        run: mvn ${MAVEN_ARGS} clean verify -P maven-central -Dmaven.install.skip=true
+
+      - name: "Build and upload bundle manually"
         env:
           CENTRAL_TOKEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           CENTRAL_TOKEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
-          MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-        run: mvn ${MAVEN_ARGS} clean deploy -P maven-central -Dmaven.install.skip=true
+        run: |
+          set -euo pipefail
+          VERSION="${{ steps.extract_version.outputs.VERSION }}"
+          GROUP_PATH="com/iqkv/boot-parent-pom"
+          ARTIFACT="boot-parent-pom"
+          STAGING="target/manual-staging/${GROUP_PATH}/${VERSION}"
+
+          mkdir -p "${STAGING}"
+
+          # Copy the signed POM and its signature
+          cp pom.xml "${STAGING}/${ARTIFACT}-${VERSION}.pom"
+          cp "target/${ARTIFACT}-${VERSION}.pom.asc" "${STAGING}/${ARTIFACT}-${VERSION}.pom.asc"
+
+          # Generate required checksums
+          md5sum    "${STAGING}/${ARTIFACT}-${VERSION}.pom" | awk '{print $1}' > "${STAGING}/${ARTIFACT}-${VERSION}.pom.md5"
+          sha1sum   "${STAGING}/${ARTIFACT}-${VERSION}.pom" | awk '{print $1}' > "${STAGING}/${ARTIFACT}-${VERSION}.pom.sha1"
+          sha256sum "${STAGING}/${ARTIFACT}-${VERSION}.pom" | awk '{print $1}' > "${STAGING}/${ARTIFACT}-${VERSION}.pom.sha256"
+          sha512sum "${STAGING}/${ARTIFACT}-${VERSION}.pom" | awk '{print $1}' > "${STAGING}/${ARTIFACT}-${VERSION}.pom.sha512"
+
+          echo "Bundle contents:"
+          find "target/manual-staging" -type f | sort
+
+          # Create the zip with only the required files (no metadata files)
+          cd target/manual-staging
+          zip -r "../central-bundle.zip" .
+          cd -
+
+          echo "Zip contents:"
+          unzip -l target/central-bundle.zip
+
+          # Upload to Central Portal
+          RESPONSE=$(curl --silent --show-error --fail-with-body \
+            --request POST \
+            --header "Authorization: Bearer $(echo -n "${CENTRAL_TOKEN_USERNAME}:${CENTRAL_TOKEN_PASSWORD}" | base64 -w0)" \
+            --form "bundle=@target/central-bundle.zip" \
+            "https://central.sonatype.com/api/v1/publisher/upload?publishingType=AUTOMATIC")
+
+          echo "Upload response: ${RESPONSE}"
+          DEPLOYMENT_ID="${RESPONSE}"
+          echo "Deployment ID: ${DEPLOYMENT_ID}"
+
+          # Poll until published
+          for i in $(seq 1 60); do
+            sleep 30
+            STATUS=$(curl --silent --fail \
+              --header "Authorization: Bearer $(echo -n "${CENTRAL_TOKEN_USERNAME}:${CENTRAL_TOKEN_PASSWORD}" | base64 -w0)" \
+              "https://central.sonatype.com/api/v1/publisher/status?id=${DEPLOYMENT_ID}" | \
+              python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('deploymentState','UNKNOWN'))")
+            echo "[$i/60] Deployment ${DEPLOYMENT_ID} state: ${STATUS}"
+            if [[ "${STATUS}" == "PUBLISHED" ]]; then
+              echo "✅ Successfully published to Maven Central"
+              exit 0
+            fi
+            if [[ "${STATUS}" == "FAILED" ]]; then
+              echo "❌ Deployment failed"
+              exit 1
+            fi
+          done
+          echo "❌ Timed out waiting for deployment to complete"
+          exit 1
