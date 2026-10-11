@@ -39,6 +39,19 @@
         <url>https://github.com/IQKV/boot-parent-pom/tree/dev</url>
     </scm>
 
+    <!--
+        central-publishing-maven-plugin uses extensions=true and intercepts the deploy phase
+        directly, so no distributionManagement URL is required. The explicit entry here
+        overrides any URL inherited from spring-boot-starter-parent so the plugin does not
+        attempt to deploy to the Spring release repository.
+    -->
+    <distributionManagement>
+        <repository>
+            <id>central</id>
+            <url>https://central.sonatype.com/</url>
+        </repository>
+    </distributionManagement>
+
     <properties>
         <java.version>25</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -130,7 +143,7 @@
         <maven-deploy-plugin.version>3.2.0</maven-deploy-plugin.version>
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
         <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
-        <central-publishing-maven-plugin.version>0.7.0</central-publishing-maven-plugin.version>
+        <central-publishing-maven-plugin.version>0.11.0</central-publishing-maven-plugin.version>
         <sonar-maven-plugin.version>5.8.0.7211</sonar-maven-plugin.version>
         <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
         <puppycrawl.checkstyle.version>14.3.0</puppycrawl.checkstyle.version>
