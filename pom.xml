@@ -802,6 +802,13 @@
                             <publishingServerId>central</publishingServerId>
                             <autoPublish>true</autoPublish>
                             <waitUntil>published</waitUntil>
+                            <!--
+                                Prevents the plugin from attempting to stage artifacts that are
+                                already deployed (e.g. spring-boot-starter-parent inherited via <parent>),
+                                which would otherwise create phantom directory entries in the bundle
+                                without a .pom file and fail Central's "does NOT have a .pom file" check.
+                            -->
+                            <excludeAlreadyDeployedComponents>true</excludeAlreadyDeployedComponents>
                         </configuration>
                     </plugin>
                     <plugin>
