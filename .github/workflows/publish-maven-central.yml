@@ -96,16 +96,32 @@ jobs:
             echo "POM already has release version: $VERSION"
           fi
 
-      # Build, verify, and deploy to Maven Central in a single Maven invocation.
-      # Running verify and deploy separately causes the central-publishing-maven-plugin
-      # (in extension mode) to create target/central-publishing/central-bundle.zip during
-      # verify; a subsequent clean deploy then uploads that stale zip instead of the
-      # freshly staged one, producing the "does NOT have a .pom file" validation failure.
-      # CENTRAL_TOKEN_USERNAME / CENTRAL_TOKEN_PASSWORD are read by setup-java's generated settings.xml
-      # MAVEN_GPG_PASSPHRASE is read by maven-gpg-plugin (passphrase env var set in setup-java above)
-      - name: "Deploy to Maven Central"
+      # Build, sign, stage and inspect the bundle before uploading.
+      # skipPublishing=true creates the bundle without uploading so we can verify contents.
+      - name: "Stage artifacts"
         env:
           CENTRAL_TOKEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           CENTRAL_TOKEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-        run: mvn ${MAVEN_ARGS} clean deploy -P maven-central
+        run: mvn ${MAVEN_ARGS} clean deploy -P maven-central -DskipPublishing=true
+
+      - name: "Inspect bundle contents"
+        run: |
+          echo "=== central-staging tree ==="
+          find target/central-staging -type f | sort
+          echo ""
+          echo "=== central-bundle.zip contents ==="
+          ZIP=$(find target -name "central-bundle.zip" | head -1)
+          if [[ -n "$ZIP" ]]; then
+            unzip -l "$ZIP"
+          else
+            echo "ERROR: no central-bundle.zip found"
+            exit 1
+          fi
+
+      - name: "Publish bundle to Maven Central"
+        env:
+          CENTRAL_TOKEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          CENTRAL_TOKEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+        run: mvn ${MAVEN_ARGS} central-publishing:publish-bundle -P maven-central
