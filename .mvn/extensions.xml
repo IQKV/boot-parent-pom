@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extensions xmlns="http://maven.apache.org/EXTENSIONS/1.0.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://maven.apache.org/EXTENSIONS/1.0.0
+                                http://maven.apache.org/xsd/core-extensions-1.0.0.xsd">
+
+    <!--
+        Njord core extension: enables local artifact staging and non-invasive publishing.
+        Must stay in sync with the njord plugin version in pom.xml (njord.version property).
+        Used by the maven-central profile: artifacts are staged locally during deploy
+        then pushed to Sonatype Central Portal via: mvn njord:publish -Dpublisher=sonatype-cp
+    -->
+    <extension>
+        <groupId>eu.maveniverse.maven.njord</groupId>
+        <artifactId>extension3</artifactId>
+        <version>0.9.10</version>
+    </extension>
+
+</extensions>

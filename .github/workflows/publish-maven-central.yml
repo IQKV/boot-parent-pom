@@ -44,9 +44,14 @@ jobs:
           <settings>
             <servers>
               <server>
-                <id>central</id>
+                <!-- Njord sonatype-cp publisher server ID (must match njord.publisher=sonatype-cp) -->
+                <id>sonatype-central-portal</id>
                 <username>\${env.MAVEN_USERNAME}</username>
                 <password>\${env.MAVEN_PASSWORD}</password>
+                <configuration>
+                  <njord.publisher>sonatype-cp</njord.publisher>
+                  <njord.releaseUrl>njord:template:release-sca</njord.releaseUrl>
+                </configuration>
               </server>
             </servers>
           </settings>
@@ -139,13 +144,17 @@ jobs:
       - name: "Verify Build"
         run: mvn clean verify
 
-      # Step 9: Deploy to OSSRH (Maven Central)
-      # Uses the 'maven-central' profile which includes sources, javadoc, and GPG signing
-      - name: "Deploy to OSSRH"
-        run: mvn clean deploy -P maven-central
+      # Step 9: Stage artifacts locally, then publish to Maven Central via njord
+      # -DaltDeploymentRepository redirects deploy to a local njord staging store.
+      # GPG signing and sources/javadoc attachment happen as usual inside the maven-central profile.
+      # The separate njord:publish goal pushes the staged store to Sonatype Central Portal.
+      - name: "Stage artifacts locally"
+        run: mvn clean deploy -P maven-central -DaltDeploymentRepository=njord::njord:release
         env:
-          # OSSRH credentials from GitHub secrets
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+
+      - name: "Publish to Maven Central via njord"
+        run: mvn njord:publish -Dpublisher=sonatype-cp
+        env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
-          # GPG signing passphrase from GitHub secrets
-          MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
