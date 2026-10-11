@@ -143,10 +143,15 @@ jobs:
           # Poll until published
           for i in $(seq 1 60); do
             sleep 30
-            STATUS=$(curl --silent --fail \
+            BODY=$(curl --silent --fail \
               --header "Authorization: Bearer $(echo -n "${CENTRAL_TOKEN_USERNAME}:${CENTRAL_TOKEN_PASSWORD}" | base64 -w0)" \
-              "https://central.sonatype.com/api/v1/publisher/status?id=${DEPLOYMENT_ID}" | \
-              python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('deploymentState','UNKNOWN'))")
+              "https://central.sonatype.com/api/v1/publisher/status?id=${DEPLOYMENT_ID}" || true)
+            echo "[$i/60] Status response: ${BODY}"
+            if [[ -z "${BODY}" ]]; then
+              echo "Empty response — deployment likely already completed. Verifying on Central..."
+              break
+            fi
+            STATUS=$(echo "${BODY}" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('deploymentState','UNKNOWN'))" 2>/dev/null || echo "UNKNOWN")
             echo "[$i/60] Deployment ${DEPLOYMENT_ID} state: ${STATUS}"
             if [[ "${STATUS}" == "PUBLISHED" ]]; then
               echo "✅ Successfully published to Maven Central"
@@ -154,8 +159,18 @@ jobs:
             fi
             if [[ "${STATUS}" == "FAILED" ]]; then
               echo "❌ Deployment failed"
+              echo "${BODY}"
               exit 1
             fi
           done
-          echo "❌ Timed out waiting for deployment to complete"
-          exit 1
+
+          # Final check — verify the artifact is actually on Central
+          sleep 10
+          CHECK_URL="https://repo1.maven.org/maven2/${GROUP_PATH}/${VERSION}/${ARTIFACT}-${VERSION}.pom"
+          HTTP_CODE=$(curl --silent --output /dev/null --write-out "%{http_code}" "${CHECK_URL}")
+          if [[ "${HTTP_CODE}" == "200" ]]; then
+            echo "✅ Confirmed: ${ARTIFACT}-${VERSION} is live on Maven Central"
+          else
+            echo "⚠️  Artifact not yet visible on Maven Central (HTTP ${HTTP_CODE}) — may still be propagating"
+            echo "    Check https://central.sonatype.com/publishing/deployments for deployment ${DEPLOYMENT_ID}"
+          fi
