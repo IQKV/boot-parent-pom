@@ -140,7 +140,7 @@
         <native-maven-plugin.version>1.1.14</native-maven-plugin.version>
         <qulice-maven-plugin.version>0.36.0</qulice-maven-plugin.version>
         <hypersistence-utils.version>3.16.0</hypersistence-utils.version>
-        <jqwik.version>1.10.1</jqwik.version>
+        <jqwik.version>1.10.2</jqwik.version>
         <stripe-java.version>34.0.0</stripe-java.version>
         <paypal-server-sdk.version>2.4.0</paypal-server-sdk.version>
         <shedlock.version>7.10.1</shedlock.version>
