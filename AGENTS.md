@@ -106,6 +106,34 @@ Examples:
 - `fix(checkstyle): pin checkstyle-config to 0.24.0 to match plugin version`
 - `chore(pitest): bump mutation testing plugin to 1.30.0`
 
+## Evaluation
+
+How we judge whether an agent task in this repository is actually done. Evaluation is evidence-based — a claim without the command and its observed result is not a pass.
+
+> This section starts minimal and grows with the repository. Add a gate only when a change type repeatedly slips through without it.
+
+### Definition of done
+
+A task is evaluated as done only when all of the following hold:
+
+- Every gate required by the change type below has run and passed.
+- The final report names the exact command(s) run and the observed result (pass/fail) — per AI Agent Development Guidelines.
+- No required gate was skipped silently. A gate that could not run is reported as a gap, never as a pass.
+
+### Required gates by change type
+
+| Change type | Required gates |
+| --- | --- |
+| Any change | `./mvnw validate` |
+| Dependency or plugin version bump | `./mvnw verify`, and compatibility checked against the Spring Boot / Spring Cloud matrix before presenting (per Execution Discipline) |
+| Adding to `<dependencyManagement>` | Confirm the dependency is used by two or more child services first, then `./mvnw verify` |
+| Plugin management change | `./mvnw verify`, then a build against at least one child service |
+| `AGENTS.md` or README only | No build gate — state that none applies |
+
+### Ordering
+
+Run the narrowest relevant gate first, then the full set for the change type. On the first failure, stop and report it — do not continue on an unproven base (see Execution Discipline).
+
 ## Development Commands
 
 ```bash
