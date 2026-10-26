@@ -5,7 +5,7 @@
 
     <groupId>com.iqkv</groupId>
     <artifactId>boot-parent-pom</artifactId>
-    <version>0.24.36-SNAPSHOT</version>
+    <version>0.24.37-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>boot-parent-pom</name>
@@ -50,6 +50,8 @@
         <iqkv.foundation-audit.version>0.24.0</iqkv.foundation-audit.version>
         <iqkv.foundation-tenancy.version>0.24.9</iqkv.foundation-tenancy.version>
         <iqkv.foundation-entitlement-plan-resolver-mvc.version>0.24.4</iqkv.foundation-entitlement-plan-resolver-mvc.version>
+
+        <iqkv.docintelligence-venue.version>0.24.0</iqkv.docintelligence-venue.version>
 
         <spring-boot.version>4.1.1</spring-boot.version>
         <spring-kafka.version>4.1.1</spring-kafka.version>
@@ -186,6 +188,11 @@
                 <groupId>com.iqkv</groupId>
                 <artifactId>foundation-entitlement-plan-resolver-mvc</artifactId>
                 <version>${iqkv.foundation-entitlement-plan-resolver-mvc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.iqkv</groupId>
+                <artifactId>docintelligence-venue</artifactId>
+                <version>${iqkv.docintelligence-venue.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
