@@ -116,7 +116,7 @@
         <embedded-redis.version>0.7.3</embedded-redis.version>
         <spring-cloud-starter-sleuth.version>3.1.11</spring-cloud-starter-sleuth.version>
         <springdoc-webflux-ui.version>1.8.0</springdoc-webflux-ui.version>
-        <spring-modulith.version>2.1.1</spring-modulith.version>
+        <spring-modulith.version>2.1.2</spring-modulith.version>
         <cucumber-bom.version>8.0.4</cucumber-bom.version>
         <pitest.version>1.30.1</pitest.version>
         <pact.version>4.6.18</pact.version>
