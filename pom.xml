@@ -5,7 +5,7 @@
 
     <groupId>com.iqkv</groupId>
     <artifactId>boot-parent-pom</artifactId>
-    <version>0.24.35-SNAPSHOT</version>
+    <version>0.24.36-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>boot-parent-pom</name>
@@ -46,6 +46,7 @@
 
         <iqkv.checkstyle.version>0.24.0</iqkv.checkstyle.version>
         <iqkv.foundation-misc-util.version>0.24.0</iqkv.foundation-misc-util.version>
+        <iqkv.foundation-mybatis-util.version>0.24.0</iqkv.foundation-mybatis-util.version>
         <iqkv.foundation-audit.version>0.24.0</iqkv.foundation-audit.version>
         <iqkv.foundation-tenancy.version>0.24.9</iqkv.foundation-tenancy.version>
         <iqkv.foundation-entitlement-plan-resolver-mvc.version>0.24.4</iqkv.foundation-entitlement-plan-resolver-mvc.version>
@@ -68,7 +69,7 @@
         <hibernate.version>7.2.4.Final</hibernate.version>
         <postgresql.version>42.7.14</postgresql.version>
         <r2dbc-postgresql.version>1.1.3.RELEASE</r2dbc-postgresql.version>
-        <mysql-connector.version>26.7.0</mysql-connector.version>
+        <mysql-connector.version>26.10.0</mysql-connector.version>
         <vladmihalcea.hibernate-types.version>2.21.1</vladmihalcea.hibernate-types.version>
 
         <javax-cache-api.version>1.1.1</javax-cache-api.version>
@@ -80,9 +81,9 @@
         <spring-cloud-stream.version>5.0.3</spring-cloud-stream.version>
         <kafka-streams.version>4.4.0</kafka-streams.version>
         <jjwt.version>0.13.0</jjwt.version>
-        <vaadin.version>25.3.2</vaadin.version>
+        <vaadin.version>25.3.3</vaadin.version>
 
-        <jackson.version>2.22.3</jackson.version>
+        <jackson.version>2.22.4</jackson.version>
         <org.mapstruct.version>1.6.3</org.mapstruct.version>
         <resilience4j.version>2.4.0</resilience4j.version>
         <apache-tika.version>3.3.1</apache-tika.version>
@@ -136,7 +137,7 @@
         <git-commit-id-plugin.version>10.0.1</git-commit-id-plugin.version>
         <maven-surefire-plugin.version>3.6.0</maven-surefire-plugin.version>
         <jacoco-maven-plugin.version>0.8.15</jacoco-maven-plugin.version>
-        <native-maven-plugin.version>1.1.14</native-maven-plugin.version>
+        <native-maven-plugin.version>1.1.16</native-maven-plugin.version>
         <qulice-maven-plugin.version>0.36.0</qulice-maven-plugin.version>
         <hypersistence-utils.version>3.16.0</hypersistence-utils.version>
         <jqwik.version>1.10.2</jqwik.version>
@@ -159,6 +160,11 @@
                 <groupId>com.iqkv</groupId>
                 <artifactId>foundation-misc-util</artifactId>
                 <version>${iqkv.foundation-misc-util.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.iqkv</groupId>
+                <artifactId>foundation-mybatis-util</artifactId>
+                <version>${iqkv.foundation-mybatis-util.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
