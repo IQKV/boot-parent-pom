@@ -53,7 +53,7 @@
 
         <iqkv.docintelligence-venue.version>0.24.0</iqkv.docintelligence-venue.version>
 
-        <spring-boot.version>4.1.1</spring-boot.version>
+        <spring-boot.version>4.1.2</spring-boot.version>
         <spring-kafka.version>4.1.2</spring-kafka.version>
         <spring-ai.version>2.0.1</spring-ai.version>
 
@@ -152,7 +152,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>4.1.1</version>
+        <version>4.1.2</version>
         <relativePath/>
     </parent>
 
