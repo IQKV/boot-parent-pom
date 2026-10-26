@@ -46,6 +46,7 @@
 
         <iqkv.checkstyle.version>0.24.0</iqkv.checkstyle.version>
         <iqkv.foundation-misc-util.version>0.24.0</iqkv.foundation-misc-util.version>
+        <iqkv.foundation-mybatis-util.version>0.24.0</iqkv.foundation-mybatis-util.version>
         <iqkv.foundation-audit.version>0.24.0</iqkv.foundation-audit.version>
         <iqkv.foundation-tenancy.version>0.24.9</iqkv.foundation-tenancy.version>
         <iqkv.foundation-entitlement-plan-resolver-mvc.version>0.24.4</iqkv.foundation-entitlement-plan-resolver-mvc.version>
@@ -159,6 +160,11 @@
                 <groupId>com.iqkv</groupId>
                 <artifactId>foundation-misc-util</artifactId>
                 <version>${iqkv.foundation-misc-util.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.iqkv</groupId>
+                <artifactId>foundation-mybatis-util</artifactId>
+                <version>${iqkv.foundation-mybatis-util.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iqkv</groupId>
