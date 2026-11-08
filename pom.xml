@@ -49,7 +49,7 @@
         <iqkv.foundation-mybatis-util.version>0.24.5</iqkv.foundation-mybatis-util.version>
         <iqkv.foundation-audit.version>0.24.0</iqkv.foundation-audit.version>
         <iqkv.foundation-tenancy.version>0.24.9</iqkv.foundation-tenancy.version>
-        <iqkv.foundation-mail.version>0.24.0-SNAPSHOT</iqkv.foundation-mail.version>
+        <iqkv.foundation-mail.version>0.24.0</iqkv.foundation-mail.version>
         <iqkv.foundation-entitlement-plan-resolver-mvc.version>0.24.4</iqkv.foundation-entitlement-plan-resolver-mvc.version>
 
         <iqkv.docintelligence-venue.version>0.24.6</iqkv.docintelligence-venue.version>
