@@ -52,7 +52,7 @@
         <iqkv.foundation-mail.version>0.24.0</iqkv.foundation-mail.version>
         <iqkv.foundation-entitlement-plan-resolver-mvc.version>0.24.4</iqkv.foundation-entitlement-plan-resolver-mvc.version>
 
-        <iqkv.docintelligence-venue.version>0.24.14</iqkv.docintelligence-venue.version>
+        <iqkv.docintelligence-venue.version>0.24.15</iqkv.docintelligence-venue.version>
 
         <spring-boot.version>4.1.2</spring-boot.version>
         <spring-kafka.version>4.1.2</spring-kafka.version>
