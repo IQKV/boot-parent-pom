@@ -146,7 +146,7 @@
         <jqwik.version>1.10.2</jqwik.version>
         <stripe-java.version>34.1.0</stripe-java.version>
         <paypal-server-sdk.version>2.4.0</paypal-server-sdk.version>
-        <shedlock.version>7.10.1</shedlock.version>
+        <shedlock.version>7.11.0</shedlock.version>
         <nanoid.version>2.0.0</nanoid.version>
     </properties>
 
