@@ -1136,11 +1136,6 @@
                     </executions>
                 </plugin>
                 <plugin>
-                    <groupId>org.hibernate.orm.tooling</groupId>
-                    <artifactId>hibernate-enhance-maven-plugin</artifactId>
-                    <version>${hibernate.version}</version>
-                </plugin>
-                <plugin>
                     <groupId>com.qulice</groupId>
                     <artifactId>qulice-maven-plugin</artifactId>
                     <version>${qulice-maven-plugin.version}</version>
