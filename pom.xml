@@ -56,7 +56,7 @@
 
         <spring-boot.version>4.2.0</spring-boot.version>
         <spring-kafka.version>4.2.0</spring-kafka.version>
-        <spring-ai.version>2.0.2</spring-ai.version>
+        <spring-ai.version>2.1.0</spring-ai.version>
 
 
         <spring-cloud-dependencies.version>2026.0.0</spring-cloud-dependencies.version>
